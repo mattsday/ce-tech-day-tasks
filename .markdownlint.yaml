@@ -1,0 +1,4 @@
+# First lines don't have to be headings for tasks - we already have one
+MD041: false
+# Allow any line length - this is annoying and prettier formats Markdown anyway
+MD013: false

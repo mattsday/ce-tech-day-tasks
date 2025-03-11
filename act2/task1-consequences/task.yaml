@@ -1,0 +1,21 @@
+---
+metadata:
+  version: 1
+task:
+  id: act2-task1
+  name: "Last Year's Sales 👀"
+  enabled: true
+  hidden: false
+  description: How did last year go? Did you succeed in winning sales?
+  overview:
+    - Secure seed funding from "angel investors" by delivering a compelling pitch for Cymbal Supplements.
+  group: Act 2
+parts:
+  - name: Act 1 Sales Report
+    open: true
+    id: part1
+    type: external
+    max_points: 2000
+    hidden: false
+    instructions_link: instructions.md
+  

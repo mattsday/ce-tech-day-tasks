@@ -1,0 +1,219 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "task-schema.json",
+  "$comment": "Hacksday Task Schema.",
+  "title": "Hacksday Task Schema",
+  "description": "Task Definition",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Required. Metadata for this task",
+      "properties": {
+        "version": {
+          "type": "integer",
+          "description": "Version of this schema (should be 1)"
+        }
+      },
+      "required": ["version"]
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Required. Task configuration",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Globally unique ID for this task. Is used for task sorting alphabetically."
+        },
+        "alias": {
+          "type": "array",
+          "description": "A list of aliases for this task. Currently unimplemented",
+          "items": {
+            "type": "string"
+          }
+        },
+        "group": {
+          "type": "string",
+          "description": "The logical group the task falls into - e.g. 'Act 1' or 'Infrastructure'",
+          "default": null
+        },
+        "name": {
+          "type": "string",
+          "description": "A name for this task - should be globally unique as it will appear this way in the UI"
+        },
+        "description": {
+          "type": "string",
+          "description": "Short task description used in tooltips and other similar aspects"
+        },
+        "overview": {
+          "type": "array",
+          "description": "Short task overview, each entry displayed as a paragraph in the UI",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enabled": {
+          "description": "Whether this task is enabled in the score app (it will still be visible unless hidden is set to false)",
+          "type": "boolean",
+          "default": true
+        },
+        "hidden": {
+          "description": "Whether this task is hidden or not in the score app",
+          "type": "boolean",
+          "default": false
+        },
+        "lb_hidden": {
+          "description": "Whether this task is hidden or not in the leaderboard",
+          "type": "boolean",
+          "default": false
+        },
+        "tf_enabled": {
+          "description": "Whether this task is enabled in terraform (pairs with both tf_host_var and tf_participant_var below)",
+          "type": "boolean",
+          "default": true
+        },
+        "tf_vars": {
+          "description": "Variable name to enable this in terraform - the variable must be declared in both the host and participant projects (even if not used)",
+          "type": "array",
+          "default": null,
+          "items": {
+            "type": "string"
+          }
+        },
+        "bq_datasets": {
+          "description": "BigQuery datasets to deploy for this task",
+          "type": "array",
+          "default": null,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Dataset name"
+              },
+              "description": {
+                "type": "string",
+                "description": "Dataset description"
+              },
+              "tables": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Table name"
+                    },
+                    "source": {
+                      "type": "string",
+                      "description": "Dataset CSV source - either a gs:// or https:// URL or a path relative to the root of the hacksday repo"
+                    },
+                    "schema": {
+                      "type": "string",
+                      "description": "Dataset JSON schema - a path relative to the root of the hacksday repo"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Table description"
+                    }
+                  },
+                  "title": "BigQuery table",
+                  "required": ["name", "description", "source", "schema"]
+                }
+              }
+            },
+            "title": "BigQuery Datasets",
+            "required": ["name", "description", "tables"]
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Metadata for this part",
+          "additionalProperties": { "type": "string" }
+        }
+      },
+      "required": ["description", "id", "name", "overview", "enabled"],
+      "title": "Task"
+    },
+    "parts": {
+      "type": "array",
+      "description": "A part of a task (subtask) configuration",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID for this part - does not need to be globally unique, just unique in the task (e.g. part1)"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name for this part as displayed in the UI"
+          },
+          "open": {
+            "type": "boolean",
+            "description": "Whether this task should be shown as open by default",
+            "default": false
+          },
+          "hidden": {
+            "type": "boolean",
+            "description": "If this part should be hidden",
+            "default": false
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of task (e.g. image or custom)"
+          },
+          "upload_text": {
+            "type": "string",
+            "description": "Text to show on the upload button if an image task"
+          },
+          "max_points": {
+            "type": "integer",
+            "description": "Maximum points awarded for completing this part"
+          },
+          "instructions_link": {
+            "type": "string",
+            "description": "Link to documentation for this task - should be a markdown document"
+          },
+          "good_examples": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Up to 3 good examples used by the LLM judge to determine a successful submission"
+          },
+          "llm_instructions": {
+            "type": "string",
+            "description": "Extra instructions for the LLM judge to help guide scoring for this part."
+          },
+          "challenge": {
+            "type": "boolean",
+            "description": "Whether this is a challenge task - not currently implemented",
+            "default": false
+          },
+          "component": {
+            "type": "string",
+            "description": "Custom component name to use if this task is of type custom"
+          },
+          "depends_on": {
+            "type": "array",
+            "description": "List of dependent parts that must score for this part to activate",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["id", "max_points", "name", "type", "instructions_link"],
+        "title": "Part"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": ["metadata", "task", "parts"]
+}

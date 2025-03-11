@@ -1,0 +1,21 @@
+---
+metadata:
+  version: 1
+task:
+  id: act1-task4
+  name: "Investor Pitch 🐲"
+  enabled: true
+  hidden: false
+  description: You need to raise money fast!  Create a pitch to angel investors.
+  overview:
+    - Secure seed funding from "angel investors" by delivering a compelling pitch for Cymbal Supplements.
+  group: Act 1
+parts:
+  - name: Book & Prepare a Pitch
+    open: true
+    id: part1
+    type: external
+    max_points: 2000
+    hidden: false
+    instructions_link: instructions.md
+  

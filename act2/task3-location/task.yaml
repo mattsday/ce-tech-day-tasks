@@ -1,0 +1,27 @@
+---
+metadata:
+  version: 1
+task:
+  id: act2-task3
+  name: Location Location Location 🏚
+  enabled: true
+  hidden: false
+  description: Select the best location to market your brand
+  overview:
+    - Cymbal Supplements, experiencing a surge in demand, needs to establish a new factory. Selecting the best location is crucial, requiring a data-driven approach that considers various factors.
+  group: Act 2
+parts:
+  - name: Flood risk assessment 🌊
+    id: part1
+    type: image
+    max_points: 1000
+    instructions_link: part1.md
+    upload_text: "Upload a Screenshot of your Flood Risk Assessment"
+  - name: Customer Demand Analysis 🔥
+    id: part2
+    type: image
+    max_points: 1000
+    instructions_link: part2.md
+    upload_text: "Upload a Screenshot of your Demand Data"
+    depends_on:
+      - part1

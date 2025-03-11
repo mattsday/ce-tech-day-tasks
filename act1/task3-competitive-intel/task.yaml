@@ -1,0 +1,38 @@
+---
+metadata:
+  version: 1
+task:
+  id: act1-task3
+  name: "Competitive Intelligence 🕵"
+  enabled: true
+  hidden: false
+  description: Come up with winning strategies to beat your competitors
+  overview:
+    - Your competition has posted an article on how your product adds age rather than reversing it.
+    - Utilise Agentspace to surface the latest internal research and craft a press release. 
+  group: Act 1
+parts:
+  - name: Hello NotebookLM
+    id: part1
+    type: image
+    upload_text: "Upload screenshot of your Notebook"
+    max_points: 500
+    instructions_link: part1.md
+    llm_instructions: Ensure they are using NotebookLM and uploading a screenshot of that UI. The examples are a good guide to stick with.
+    good_examples:
+      - examples/part1-1.jpg
+      - examples/part1-2.jpg
+    hidden: false
+  - name: Advanced NotebookLM
+    id: part2
+    challenge: true
+    type: image
+    upload_text: "Upload something special"
+    max_points: 1000
+    instructions_link: part2.md
+    llm_instructions: Reward creative use of NotebookLM. Look for evidence of complex queries, in-depth usage, etc. The examples provided show only a few sources on the left and therefore would recieve 25% points maximum. Look for reports, insights, a variety of data sources, and more.
+    good_examples:
+      - examples/part1-1.jpg
+      - examples/part1-2.jpg
+    hidden: false
+    depends_on: [part1]

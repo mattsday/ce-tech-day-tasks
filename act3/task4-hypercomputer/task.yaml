@@ -1,0 +1,42 @@
+metadata:
+  version: 1
+task:
+  id: act3-task4
+  name: "Decoding the Elixir 🧪"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: Deploying the AI Hypercomputer to decode the secret formula of the Inferno Elixir.
+  overview:
+    - Cymbal Supplements needs to analyze vast amounts of data to perfect the Inferno Elixir.
+    - Deploy a Slurm cluster and run an AI optimization program to find the optimal formula.
+  tf_enabled: true
+  tf_vars: [enable_cluster_toolkit, enable_slurm_cluster]
+  metadata:
+    cluster_toolkit_yaml: cluster_config.yaml
+    slurm_job: submit_elixir.sh
+    python_script: optimizing_elixir.py
+  group: Act 3
+parts:
+  - name: Cluster Standup 🧱
+    id: cluster_standup
+    type: image
+    max_points: 500
+    instructions_link: part1.md
+    upload_text: Upload a screenshot of the deployed Slurm cluster.
+    llm_instructions: Any evidence of the Slurm cluster being deployed and running will suffice.
+  - name: Run the Workload 🏃
+    id: run_workload
+    type: image
+    max_points: 250
+    instructions_link: part2.md
+    upload_text: Upload a screenshot of the Slurm job output.
+    llm_instructions: Any evidence of the Slurm job running and printing the hostname will suffice.
+  - name: Running the Python Optimization Program 🐍
+    id: run_python_program
+    challenge: true
+    type: image
+    max_points: 1250
+    instructions_link: part3.md
+    upload_text: Upload a screenshot of the Python program's output.
+    llm_instructions: Any evidence of the python script running and outputting the optimal elixir formula will suffice.

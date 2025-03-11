@@ -1,0 +1,49 @@
+metadata:
+  version: 1
+task:
+  id: act2-task4
+  name: "What about Marketing? 📈"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: "Cymbal Supplements needs to boost sales! Dive into data, find high-value customers, and create sizzling marketing content."
+  overview:
+    - "New factories are running, but sales need a kick! Cymbal needs to find their most valuable customers."
+    - "Use Google Cloud tools to analyze data and create targeted marketing campaigns."
+  tf_enabled: false
+  tf_vars: []
+  metadata:
+    service_name: marketing-analytics
+    db_name: bigquery
+    gcs_bucket: marketing-data
+  group: Act 2
+parts:
+  - name: Data Discovery and Preparation 🕵️‍♀️
+    id: data-prep
+    type: image
+    max_points: 500
+    instructions_link: part1.md
+    upload_text: Upload a screenshot of BigQuery Data Preparation showing data cleaning and transformation steps.
+    llm_instructions: "Any evidence of data cleaning and transformation steps in BigQuery Data Preparation will suffice. Focus on steps like filtering, cleaning, and joining data."
+  - name: Data Analysis 📊
+    id: data-analysis
+    type: custom
+    component: VerifyDataCanvas
+    max_points: 1000
+    instructions_link: part2.md
+    depends_on: [data-prep]
+    llm_instructions: "Verify the creation of a BigQuery Data Canvas visualization showing the top 5 customer segments based on order value and repeat rates. Provide hints about joining tables and using aggregate functions if needed."
+  - name: Content Generation 📑
+    id: content-generation
+    type: image
+    max_points: 1000
+    instructions_link: part3.md
+    depends_on: [data-analysis]
+    llm_instructions: "Verify screenshots of generated social media posts and personalized emails. Encourage the use of Gemini or the AI-Marketing-Toolbox. Offer suggestions for content improvement if needed."
+  - name: Sensitive Data Check 🔒
+    id: dlp-check
+    type: image
+    max_points: 100
+    instructions_link: part4.md
+    depends_on: [data-prep, data-analysis, content-generation]
+    llm_instructions: "Verify screenshots of DLP setup across BigQuery and GCS. Provide hints on configuring DLP jobs and inspection templates if needed."

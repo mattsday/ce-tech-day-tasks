@@ -1,0 +1,21 @@
+---
+metadata:
+  version: 1
+event:
+  name: CE Tech Day
+  logo:
+    path: logo/logo.png
+    width: 192
+    height: 192
+  intro: welcome/welcome.md
+  theme: |
+    A Tech Day for UK and Ireland Google Cloud Customer Engineers to get together and collaborate on various tasks.
+    
+    Goals include:
+      - Upskilling Customer Engineers to get hands-on with Google Cloud
+      - To collaborate together and build stronger networks
+      - Have some fun and let off some steam
+    
+    Judging should be fun and a little bit cheeky. Light-hearted and funny references to sales colleagues, customers, and so on is encouraged.
+  # Set to false to disable scoring (e.g. at the end of the event)
+  scoring_enabled: true

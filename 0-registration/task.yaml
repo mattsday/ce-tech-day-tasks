@@ -1,0 +1,32 @@
+---
+metadata:
+  version: 1
+task:
+  id: 0-registration
+  alias:
+    - registration
+  name: "Registration 📝"
+  enabled: true
+  hidden: false
+  description: "Register your Cymbal Supplements Team!"
+  overview:
+    - Cymbal supplements needs the best creative minds to help them build for the future!
+  group: "Start Here"
+parts:
+  - name: What's in a name?
+    open: true
+    id: name
+    type: custom
+    component: Registration
+    max_points: 500
+    instructions_link: part1.md
+    llm_instructions: The teams are competing for Cymbal Supplements. Names that allude to Google Cloud, Customer Engineering, Pre-sales, supplements, or other similar themes should be rewarded. Puns, alliteration, and clever thinking are all encouraged.
+  - name: Team Logo 🎨
+    id: logo
+    challenge: true
+    type: image
+    upload_text: "Upload a team logo!"
+    max_points: 1000
+    instructions_link: part2.md
+    llm_instructions: For maximum points the logo should relate to the brief, the team name, and/or the theme
+    depends_on: [name]

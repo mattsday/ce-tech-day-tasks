@@ -1,0 +1,36 @@
+---
+metadata:
+  version: 1
+task:
+  id: act2-task6
+  name: Hire Hire Hire! 🤝
+  enabled: true
+  hidden: false
+  description: Handle an influx of job applications
+  overview:
+    - Cymbal Supplements, experiencing a surge in demand, needs to establish a new factory. Selecting the best location is crucial, requiring a data-driven approach that considers various factors.
+  group: Act 2
+  metadata:
+    max_images: "4"
+parts:
+  - name: Data Ingestion & Preparation 😋
+    id: part1
+    type: image
+    max_points: 500
+    instructions_link: part1.md
+  - name: Candidate Scoring with Gemini ⚽
+    id: part2
+    type: custom
+    component: MultiImage
+    max_points: 1000
+    instructions_link: part2.md
+    # depends_on:
+      # - part1
+  - name: Ranking and Email Generation 📊
+    id: part3
+    type: image
+    max_points: 1000
+    instructions_link: part3.md
+    depends_on:
+      - part1
+      - part2

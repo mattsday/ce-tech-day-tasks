@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "tasks-schema.json",
+  "$comment": "Hacksday Tasks Schema.",
+  "title": "Hacksday Tasks Schema",
+  "description": "Tasks Definition",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Required. Metadata for this task",
+      "properties": {
+        "version": {
+          "type": "integer",
+          "description": "Version of this schema (should be 1)"
+        }
+      },
+      "required": ["version"]
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Required. Event configuration",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of your event (e.g. hacksday)"
+        },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "Path to a logo file"
+            },
+            "width": {
+              "type": "number",
+              "description": "Width of the logo in pixels"
+            },
+            "height": {
+              "type": "number",
+              "description": "Height of the logo in pixels"
+            }
+          },
+          "required": ["path", "width", "height"]
+        },
+        "intro": {
+          "type": "string",
+          "description": "Path to a markdown document introducing the hackathon and providing any background desired"
+        },
+        "scoring_enabled": {
+          "type": "boolean",
+          "description": "Whether scoring should be enabled - set to false to disable all scoring",
+          "default": true
+        },
+        "theme": {
+          "type": "string",
+          "description": "The theme of the event - this will be given to Gemini to provide extra context when judging."
+        }
+      },
+      "required": ["name", "logo", "scoring_enabled", "theme", "intro"]
+    }
+  },
+  "required": ["metadata", "event"]
+}

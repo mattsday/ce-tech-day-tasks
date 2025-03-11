@@ -1,0 +1,18 @@
+# Add Tasks to Project
+steps:
+  - name: golang:1.23
+    args:
+      - run
+      - "main.go"
+      - "--host-pid"
+      - "$_HOST_PID"
+      - "--base-folder"
+      - ${_ROOT_DIR}
+      - "--bucket"
+      - "$_BUCKET_NAME"
+    id: Build
+    entrypoint: go
+    dir: "${_TASK_DIR}"
+options:
+  substitutionOption: ALLOW_LOOSE
+  logging: CLOUD_LOGGING_ONLY
