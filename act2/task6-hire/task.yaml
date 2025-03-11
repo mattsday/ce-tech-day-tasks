@@ -11,7 +11,7 @@ task:
     - Cymbal Supplements, experiencing a surge in demand, needs to establish a new factory. Selecting the best location is crucial, requiring a data-driven approach that considers various factors.
   group: Act 2
   metadata:
-    max_images: "4"
+    max_images: "3"
 parts:
   - name: Data Ingestion & Preparation 😋
     id: part1
@@ -21,6 +21,7 @@ parts:
   - name: Candidate Scoring with Gemini ⚽
     id: part2
     type: custom
+    open: true
     component: MultiImage
     max_points: 1000
     instructions_link: part2.md
