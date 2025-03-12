@@ -1,34 +1,43 @@
----
 metadata:
   version: 1
 task:
   id: act1-task1
-  name: "Quality Control 👌"
+  name: "Quality Control: From Label to Lab 🔬"
   enabled: true
   hidden: false
-  description: Use Gemini to check product quality
+  description: "Use Vertex AI to check product ingredients and visualise compliance."
   overview:
-    - Cymbal Supplements are having some quality problems they need to fix quickly. Can AI help?
+    - Automate the label checks faster than a chili pepper can ignite your taste buds! Automation will ensure our secret formula stays compliant, and our customers stay forever young... or at least feel like it!
   group: Act 1
 parts:
-  - name: Anyone can build a Vertex app!
+  - name: "Label Analysis with Vertex AI 📊"
     id: part1
     type: image
-    upload_text: "Upload a Vertex AI Screenshot"
-    max_points: 500
+    upload_text: "Upload the Vertex AI Console with an appropriate System prompt"
+    max_points: 250
     instructions_link: part1.md
-    # good_examples:
-    #   - examples/part1-1.jpg
-    #   - examples/part1-2.jpg
     hidden: false
-  - name: The Allergen Apocalypse 🧟
+  - name: "The Allergen Apocalypse 🧟"
     id: part2
     type: image
-    max_points: 1000
+    max_points: 500
     instructions_link: part2.md
     upload_text: "Upload a Vertex AI Screenshot with your allergens"
-    # good_examples:
-    #   - examples/part2-1.jpg
-    #   - examples/part2-2.jpg
     depends_on:
       - part1
+  - name: "Export to Colab: The Recipe for Success 📝"
+    id: part3
+    type: custom
+    component: VerifyColabExport
+    max_points: 250
+    instructions_link: part3.md
+    depends_on:
+      - part2
+  - name: "Visual Compliance: Green Light, Go! 🚦"
+    id: part4
+    type: custom
+    component: VerifyComplianceVisual
+    max_points: 1500
+    instructions_link: part4.md
+    depends_on:
+      - part3
