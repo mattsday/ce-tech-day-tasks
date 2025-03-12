@@ -5,15 +5,16 @@ task:
   id: act2-task1
   name: "Fortune or Fiasco? 💰"
   enabled: true
-  hidden: false
+  hidden: true
+  lb_hidden: true
   description: "A surprise sales audit reveals the impact of your Act 1 performance. Will you be rewarded or face the consequences?"
   overview:
     - "Your performance in Act 1 has been scrutinized by the Cymbal Supplements sales team."
     - "Depending on whether you successfully resolved the production issues, you'll either receive a hefty bonus or a critical penalty."
   group: Act 2
   metadata:
-    source_task: act1-task2
-    threshold: "2500"
+    source_task: act2-task1
+    threshold: "500"
     max_points: success.md
     fail_points: fail.md
   upload_files:

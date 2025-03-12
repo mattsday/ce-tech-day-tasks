@@ -5,7 +5,8 @@ task:
   id: act2-task3
   name: Location Location Location 🏚
   enabled: true
-  hidden: false
+  hidden: true
+  lb_hidden: true
   description: Select the best location to market your brand
   overview:
     - Cymbal Supplements, experiencing a surge in demand, needs to establish a new factory. Selecting the best location is crucial, requiring a data-driven approach that considers various factors.

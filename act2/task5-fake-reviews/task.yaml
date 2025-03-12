@@ -5,7 +5,8 @@ task:
   id: act2-task5
   name: They said what?! 🔇
   enabled: true
-  hidden: false
+  hidden: true
+  lb_hidden: true
   description: Protect your brand and app from bots!
   overview:
     - In this task you will modify the reviews app to improve its protection against malicious user reviews using Firebase App Check and reCAPTCHA Enterprise

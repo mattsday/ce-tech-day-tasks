@@ -4,8 +4,8 @@ task:
   id: act3-task4
   name: "Decoding the Elixir 🧪"
   enabled: true
-  lb_hidden: false
-  hidden: false
+  hidden: true
+  lb_hidden: true
   description: Deploying the AI Hypercomputer to decode the secret formula of the Inferno Elixir.
   overview:
     - Cymbal Supplements needs to analyze vast amounts of data to perfect the Inferno Elixir.

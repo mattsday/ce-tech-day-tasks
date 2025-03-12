@@ -5,8 +5,8 @@ task:
   id: act1-task2
   name: "It worked on my laptop! 🪲"
   enabled: true
-  lb_hidden: false
-  hidden: false
+  lb_hidden: true
+  hidden: true
   description: Production is down! Help get Cymbal Supps back online asap!
   overview:
     - Customers are complaining - their orders are not getting through.
@@ -23,7 +23,7 @@ parts:
   - name: Root Cause Analysis 🕵
     id: basic
     type: image
-    max_points: 500
+    max_points: 500 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part1.md
     upload_text: Upload a screenshot of cloud assist assisting you!
     llm_instructions: Any evidence of Gemini Code Assist troubleshooting with Google Cloud logging and/or Gemini in the Google Cloud console will suffice.
@@ -35,7 +35,7 @@ parts:
     id: fix
     type: custom
     component: VerifyTroubleshootApp
-    max_points: 1000
+    max_points: 1000 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part2.md
     depends_on: [basic]
     llm_instructions: The task is to increase available memory for the instance and also increase autoscaling for the Cloud Run service. They have already run troubleshooting steps to get this far - so give them generic troubleshooting steps and advice if they have not scored full points.
@@ -44,7 +44,7 @@ parts:
     challenge: true
     type: custom
     component: VerifyDatabaseRepair
-    max_points: 1000
+    max_points: 1000 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part3.md
     depends_on: [basic, fix]
   - name: Securing a Brighter Future 🔒
@@ -52,6 +52,6 @@ parts:
     challenge: true
     type: custom
     component: VerifyServiceAccount
-    max_points: 250
+    max_points: 250 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part4.md
     depends_on: [basic, fix, database]
