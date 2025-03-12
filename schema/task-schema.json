@@ -134,6 +134,14 @@
           "type": "object",
           "description": "Metadata for this part",
           "additionalProperties": { "type": "string" }
+        },
+        "upload_files": {
+          "description": "List of additional files to upload",
+          "type": "array",
+          "default": null,
+          "items": {
+            "type": "string"
+          }
         }
       },
       "required": ["description", "id", "name", "overview", "enabled"],
@@ -166,7 +174,7 @@
           },
           "type": {
             "type": "string",
-            "description": "Type of task (e.g. image or custom)"
+            "description": "Type of task (e.g. image, multi-image, or custom)"
           },
           "upload_text": {
             "type": "string",
@@ -206,6 +214,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "max_files": {
+            "type": "number",
+            "description": "Maximum number of files to upload for this part (for multi-image parts)",
+            "default": 4
           }
         },
         "required": ["id", "max_points", "name", "type", "instructions_link"],

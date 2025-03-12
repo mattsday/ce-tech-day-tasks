@@ -3,19 +3,29 @@ metadata:
   version: 1
 task:
   id: act2-task1
-  name: "Last Year's Sales 👀"
+  name: "Fortune or Fiasco? 💰"
   enabled: true
   hidden: false
-  description: How did last year go? Did you succeed in winning sales?
+  description: "A surprise sales audit reveals the impact of your Act 1 performance. Will you be rewarded or face the consequences?"
   overview:
-    - Secure seed funding from "angel investors" by delivering a compelling pitch for Cymbal Supplements.
+    - "Your performance in Act 1 has been scrutinized by the Cymbal Supplements sales team."
+    - "Depending on whether you successfully resolved the production issues, you'll either receive a hefty bonus or a critical penalty."
   group: Act 2
+  metadata:
+    source_task: act1-task2
+    threshold: "2500"
+    max_points: success.md
+    fail_points: fail.md
+  upload_files:
+    - success.md
+    - fail.md
 parts:
-  - name: Act 1 Sales Report
+  - name: Act 1 Verdict 🧑‍⚖
     open: true
     id: part1
-    type: external
-    max_points: 2000
+    type: custom
+    component: ConditionalInstructions
+    max_points: 500
     hidden: false
     instructions_link: instructions.md
   
