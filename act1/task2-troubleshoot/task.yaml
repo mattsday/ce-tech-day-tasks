@@ -2,9 +2,9 @@
 metadata:
   version: 1
 task:
-  id: act1-task2
+  id: act1-task2 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
   name: "It worked on my laptop! 🪲"
-  enabled: true
+  enabled: false
   lb_hidden: true
   hidden: true
   description: Production is down! Help get Cymbal Supps back online asap!

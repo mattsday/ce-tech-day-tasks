@@ -58,18 +58,60 @@ func main() {
 	defer db.Close()
 
 	switch act {
+	case "start":
+		start(ctx)
 	case "troubleshoot":
 		troubleshoot(ctx)
 	case "act1-end":
 		act1End(ctx)
+	case "act2-end":
+		act2End(ctx)
+	case "act3-end":
+		act3End(ctx)
 	default:
 		log.Fatalf("Unknown action: %s", act)
 	}
 }
 
+func start(ctx context.Context) {
+	allowList := []string{}
+	blockList := []string{"act1-task2"}
+	disableGroups := []string{"Act 2", "Act 3"}
+	enableGroups := []string{"Act 1"}
+
+	tasksRef := db.Collection("tasks").Doc("tasks")
+	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
+		var err error
+		allTasks, err := tx.Get(tasksRef)
+		if err != nil {
+			return err
+		}
+		var t Tasks
+		allTasks.DataTo(&t)
+		t.Event.ScoringEnabled = true
+
+		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+		for _, v := range taskWriteBack {
+			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
+			if err != nil {
+				return err
+			}
+		}
+		err = tx.Set(tasksRef, t)
+		if err != nil {
+			return err
+		}
+		return nil
+	})
+	if err != nil {
+		log.Fatalf("Failed to retrieve tasks: %v", err)
+	}
+}
+
 func troubleshoot(ctx context.Context) {
 	allowList := []string{}
-	disableGroups := []string{}
+	blockList := []string{}
+	disableGroups := []string{"Act 2", "Act 3"}
 	enableGroups := []string{"Act 1"}
 
 	tasksRef := db.Collection("tasks").Doc("tasks")
@@ -82,7 +124,7 @@ func troubleshoot(ctx context.Context) {
 		var t Tasks
 		allTasks.DataTo(&t)
 
-		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList)
+		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
 		for _, v := range taskWriteBack {
 			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
 			if err != nil {
@@ -104,6 +146,7 @@ func troubleshoot(ctx context.Context) {
 func act1End(ctx context.Context) {
 	// Allow list to keep
 	allowList := []string{"act1-task2"}
+	blockList := []string{}
 	disableGroups := []string{"Act 1"}
 	enableGroups := []string{"Act 2"}
 
@@ -126,7 +169,7 @@ func act1End(ctx context.Context) {
 		allTasks.DataTo(&t)
 
 		// Disable tasks as required
-		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList)
+		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
 
 		scoreWriteBack := make(map[string]ScoreSchema)
 
@@ -186,7 +229,95 @@ func act1End(ctx context.Context) {
 	}
 }
 
-func disableTasks(t Tasks, tx *firestore.Transaction, disableGroups []string, enableGroups []string, allowList []string) map[string]TaskSchema {
+func act2End(ctx context.Context) {
+	// Allow list to keep
+	allowList := []string{"act1-task2"}
+	blockList := []string{}
+	disableGroups := []string{"Act 1", "Act 2"}
+	enableGroups := []string{"Act 3"}
+
+	// Retrieve tasks from Firestore
+	// Run as a transaction to ensure consistency
+	tasksRef := db.Collection("tasks").Doc("tasks")
+
+	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
+		allTasks, err := tx.Get(tasksRef)
+		if err != nil {
+			return err
+		}
+		var t Tasks
+		allTasks.DataTo(&t)
+
+		t.Event.ScoringEnabled = false
+
+		// Disable tasks as required
+		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+
+		// Now write back to Firestore
+		// Update tasks
+		for _, v := range taskWriteBack {
+			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
+			if err != nil {
+				return err
+			}
+		}
+		err = tx.Set(tasksRef, t)
+		if err != nil {
+			return err
+		}
+
+		return nil
+	})
+
+	if err != nil {
+		log.Fatalf("Failed to retrieve tasks: %v", err)
+	}
+}
+
+func act3End(ctx context.Context) {
+	// Allow list to keep
+	allowList := []string{}
+	blockList := []string{}
+	disableGroups := []string{"Act 1", "Act 2", "Act 3"}
+	enableGroups := []string{}
+
+	// Retrieve tasks from Firestore
+	// Run as a transaction to ensure consistency
+	tasksRef := db.Collection("tasks").Doc("tasks")
+
+	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
+		allTasks, err := tx.Get(tasksRef)
+		if err != nil {
+			return err
+		}
+		var t Tasks
+		allTasks.DataTo(&t)
+
+		// Disable tasks as required
+		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+
+		// Now write back to Firestore
+		// Update tasks
+		for _, v := range taskWriteBack {
+			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
+			if err != nil {
+				return err
+			}
+		}
+		err = tx.Set(tasksRef, t)
+		if err != nil {
+			return err
+		}
+
+		return nil
+	})
+
+	if err != nil {
+		log.Fatalf("Failed to retrieve tasks: %v", err)
+	}
+}
+
+func disableTasks(t Tasks, tx *firestore.Transaction, disableGroups []string, enableGroups []string, allowList []string, blockList []string) map[string]TaskSchema {
 	writeBack := make(map[string]TaskSchema)
 
 	for k, v := range t.Tasks {
@@ -204,7 +335,7 @@ func disableTasks(t Tasks, tx *firestore.Transaction, disableGroups []string, en
 		if slices.Contains(disableGroups, v.Group) && !slices.Contains(allowList, v.ID) {
 			// Disable the task
 			task.Task.Enabled = false
-		} else if slices.Contains(enableGroups, v.Group) {
+		} else if slices.Contains(enableGroups, v.Group) && !slices.Contains(blockList, v.ID) {
 			// Enable the task
 			task.Task.Hidden = false
 			task.Task.LBHidden = false

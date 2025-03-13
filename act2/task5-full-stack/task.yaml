@@ -1,0 +1,47 @@
+metadata:
+  version: 1
+task:
+  id: act2-task5
+  name: "Spice Up the Reviews! ✨"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: "Cymbal Supplements is launching a new review app! Help them test, improve, deploy, and secure it."
+  overview:
+    - "Cymbal Supplements is expanding its digital presence with a new review app."
+    - "Your mission: Ensure the app is functional, optimized, deployed, and secure."
+  tf_enabled: true
+  tf_vars: [enable_workstations, enable_review_app]
+  metadata:
+    service_name: review-app
+    firestore_collection: reviews
+  group: Act 2
+parts:
+  - name: "Flow Check: Genkit Validation 🧪"
+    id: genkit_validation
+    type: image
+    max_points: 500
+    instructions_link: part1.md
+    upload_text: "Upload a screenshot of the Genkit console validating your flow."
+    llm_instructions: "Any evidence of successful Genkit flow validation with screenshots will suffice."
+  - name: "Code Enhancement: Gemini's Verdict 🧑‍💻"
+    id: code_enhancement
+    type: image
+    max_points: 750
+    instructions_link: part2.md
+    llm_instructions: "The task is to modify the Next.js app using Gemini Code Assist and have Gemini assess the changes. If they have not achieved full points, provide hints related to code quality, efficiency, and adherence to best practices."
+  - name: "Firebase Fiesta: Deployment Delight 🚀"
+    id: firebase_deployment
+    type: custom
+    component: VerifyAppHosting
+    max_points: 1000
+    instructions_link: part3.md
+    llm_instructions: "Ensure the app is deployed correctly to Firebase App Hosting. If they have not scored full points, guide them through Firebase deployment steps and common troubleshooting tips."
+  - name: "Fortress Firestore: Security Savvy 🔒"
+    id: firestore_security
+    challenge: true
+    type: custom
+    component: VerifyFirestoreSecurityRules
+    max_points: 150
+    instructions_link: part4.md
+    llm_instructions: "The task is to improve Firestore security rules. If they have not achieved full points, provide hints related to rule specificity, user authentication, and data access control."
