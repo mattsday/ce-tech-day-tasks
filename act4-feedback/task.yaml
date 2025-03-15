@@ -1,0 +1,19 @@
+---
+metadata:
+  version: 1
+task:
+  id: act4-feedback # Do not rename this task without changing the points service
+  name: "Feedback ❤"
+  enabled: true
+  hidden: false
+  lb_hidden: false
+  description: "Give feedback - get points"
+  group: The End
+  overview:
+    - Recieve points for giving feedback. Simple as that!
+parts:
+  - name: Give Feedback
+    id: given
+    type: misc
+    max_points: 2000
+    instructions_link: part1.md
