@@ -27,16 +27,14 @@ parts:
       - part1
   - name: "Export to Colab: The Recipe for Success 📝"
     id: part3
-    type: custom
-    component: VerifyColabExport
+    type: image
     max_points: 250
     instructions_link: part3.md
     depends_on:
       - part2
   - name: "Visual Compliance: Green Light, Go! 🚦"
     id: part4
-    type: custom
-    component: VerifyComplianceVisual
+    type: image
     max_points: 1500
     instructions_link: part4.md
     depends_on:
