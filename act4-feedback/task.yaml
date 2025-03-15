@@ -2,7 +2,7 @@
 metadata:
   version: 1
 task:
-  id: act4-feedback # Do not rename this task without changing the points service
+  id: act4-feedback # Do not rename this task without changing the feedback appscript code too
   name: "Feedback ❤"
   enabled: true
   hidden: false
@@ -11,6 +11,8 @@ task:
   group: The End
   overview:
     - Recieve points for giving feedback. Simple as that!
+  metadata:
+    feedback: "feedback"
 parts:
   - name: Give Feedback
     id: given
