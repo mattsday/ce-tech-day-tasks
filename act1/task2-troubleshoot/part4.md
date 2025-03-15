@@ -1,6 +1,4 @@
-```important
-This step may have an affect on future tasks and point scoring!
-```
+::important[This step may have an affect on future tasks and point scoring!]
 
 Right now, your orders-service is running with the compute engine default service accounts - **which is like leaving the keys to the time machine under the doormat**.
 

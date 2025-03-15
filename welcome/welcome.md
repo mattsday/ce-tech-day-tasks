@@ -19,9 +19,7 @@ Prepare to dive deep into the Cymbal Supplements experience and prove your mettl
 
 Tasks can be completed in **any order** - and new tasks will be added as your business matures! You will not have time to do them all - so **pick and choose carefully**!
 
-```TaskList
-This code block will be replaced with a list of tasks
-```
+::tasklist
 
 ## hacksday
 

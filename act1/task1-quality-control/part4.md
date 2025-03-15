@@ -4,9 +4,7 @@ We need a simple, visual way to represent whether our ingredients are compliant.
 
 1. Using the Colab notebook you exported, add code to analyze the allergen results from Vertex AI.
 
-```info
-Hint: Use Gemini Code assist to help you generate code in your notebook!
-```
+::info[Hint: Use Gemini Code assist to help you generate code in your notebook!]
 
 2. Create a simple visualization (e.g., a traffic light using text or basic graphics) that displays:
     * **Green:** If no allergens are detected.

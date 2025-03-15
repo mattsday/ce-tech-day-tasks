@@ -138,18 +138,14 @@ Instructions should be written in Markdown format. There are some special instru
 To call out an information block, use an info code block:
 
 ````md
-:::alert[severity=info]
-It likely will not work! This is OK! Stay with us.
-:::
+::alert[It likely will not work! This is OK! Stay with us.]{severity=info}
 
 #### Important
 
 To mark something as important use an alert code block:
 
 ````md
-:::alert[severity=warning]
-Important: Ensure you create a new Notebook before continuing
-:::
+::alert[Important: Ensure you create a new Notebook before continuing]{severity=warning}
 ````
 
 #### Challenges
