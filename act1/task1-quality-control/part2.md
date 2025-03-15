@@ -1,8 +1,8 @@
 Cymbal Supplements isn't just about reversing age, it's about keeping our customers alive and kicking (and wrinkle-free, of course!).
 
-```challenge
+:::challenge
 We've got a mountain of mystery ingredients piling up, and we need your Vertex AI skills to sort the wheat from the... well, the potentially deadly wheat!
-```
+:::
 
 ### Task
 

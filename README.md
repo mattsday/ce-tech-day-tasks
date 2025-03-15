@@ -138,33 +138,28 @@ Instructions should be written in Markdown format. There are some special instru
 To call out an information block, use an info code block:
 
 ````md
-    ```info
-    It likely will not work! This is OK! Stay with us.
-    ```
-````
+:::alert[severity=info]
+It likely will not work! This is OK! Stay with us.
+:::
 
 #### Important
 
-To mark something as important use an important code block:
+To mark something as important use an alert code block:
 
 ````md
-    ```important
-
+:::alert[severity=warning]
 Important: Ensure you create a new Notebook before continuing
-
-```
-
-```
+:::
 ````
 
 #### Challenges
 
-To call out a challenge, use a challenge code block:
+To call out a challenge, use a challenge block:
 
-````md
-    ```challenge
-    Use Code assist to improve the app!
-    ```
+```md
+:::challenge
+Use Code assist to improve the app!
+:::
 ````
 
 #### Custom Code Blocks

@@ -1,8 +1,10 @@
 Our review app's code is like a mild salsa – it's okay, but we need to inject some serious flavor. Use Gemini Code Assist to transform this code into a masterpiece worthy of a thousand Scoville units.
 
-```challenge
-Use Code assist to improve the app. The files in the `components/` directory is a good place to start. Make any changes you wish - the bigger & bolder the changes - the more points from the judges!
-```
+:::challenge
+Use Code assist to improve the app. The files in the `components/` directory is a good place to start.
+
+Make any changes you wish - the bigger & bolder the changes - the more points from the judges!
+:::
 
 ### Task
 

@@ -19,7 +19,8 @@ This cluster will be the foundation for your **AI Hypercomputer**, enabling you 
 * Check out [the documentation](https://cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster) for step-by-step instructions
 * You can run this task either from the Cloud Shell or your [provisioned workstation](https://console.cloud.google.com/workstations/overview?project=%%CLIENT_PROJECT_ID%%)
 
-```yamlcollapse
+:::collapse{title="Show deployment.yaml"}
+```yaml
 ---
 blueprint_name: hpc-slurm
 
@@ -127,3 +128,4 @@ deployment_groups:
     settings:
       enable_controller_public_ips: true
 ```
+:::
