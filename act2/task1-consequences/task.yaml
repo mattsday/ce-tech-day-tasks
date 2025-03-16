@@ -5,8 +5,8 @@ task:
   id: act2-task1
   name: "Fortune or Fiasco? 💰"
   enabled: true
-  hidden: true
-  lb_hidden: true
+  hidden: false
+  lb_hidden: false
   description: "A surprise sales audit reveals the impact of your Act 1 performance. Will you be rewarded or face the consequences?"
   overview:
     - "Your performance in Act 1 has been scrutinized by the Cymbal Supplements sales team."
@@ -24,8 +24,9 @@ parts:
   - name: Act 1 Verdict 🧑‍⚖
     open: true
     id: part1
-    type: custom
-    component: ConditionalInstructions
+    type: none
+    # type: custom
+    # component: ConditionalInstructions
     max_points: 500
     hidden: false
     instructions_link: instructions.md
