@@ -1,9 +1,9 @@
-Your performance in Act 1 has been thoroughly reviewed by our meticulous sales auditors.
+Your security posture as been thoroughly reviewed by our meticulous auditors.
 
 ### Judge Gemini's Verdict 🧑‍⚖
-Your fate hinges on your ability to restore our production systems in Act 1. Let's see how you fared:
+Your fate hinges on how well you secured your systems during the tasks so far.
 
-:::scorecondition{sourcetask=act2-task1 minpoints=500 maxpoints=500}
+:::scorecondition{sourcetask=act2-task1 minpoints=2000 maxpoints=2000}
 ::loadfile{file=success.md}
 :::
 :::scorecondition{sourcetask=act2-task1 minpoints=-500 maxpoints=-1}

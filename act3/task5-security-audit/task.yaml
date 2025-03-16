@@ -1,0 +1,27 @@
+---
+metadata:
+  version: 1
+task:
+  id: act3-task5
+  name: "Security Audit 🔐"
+  enabled: true
+  hidden: false
+  lb_hidden: false
+  description: "Did all those pesky security tasks make a difference? Let's find out!"
+  overview:
+    - "Your commitment to security has been assessed. Is Cymbal Supplements secure or a free-for-all?"
+  group: Act 3
+  upload_files:
+    - success.md
+    - fail.md
+parts:
+  - name: Security Verdict 🧑‍⚖
+    open: true
+    id: part1
+    type: none
+    # type: custom
+    # component: ConditionalInstructions
+    max_points: 2000
+    hidden: false
+    instructions_link: instructions.md
+  
