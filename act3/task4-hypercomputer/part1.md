@@ -8,13 +8,12 @@ This cluster will be the foundation for your **AI Hypercomputer**, enabling you 
     * Use the provided Cluster Toolkit and YAML blueprint to deploy a Slurm cluster.
     * Ensure the cluster has sufficient compute resources to handle the upcoming AI workload.
 2. **Verification:**
-    * Provide a screenshot of the deployed Slurm cluster in the Google Cloud Console, showing the nodes and their status.
-    * Verify that the cluster is in a running state.
-
-::alert[Hint: The Cluster toolkit is already provisioned inside your Cloud Workstation]{severity=info}
+    * Provide a screenshot of your Compute Engine instance list showing the successful deployment of a controller and login instance
+    * Ensure your login and controller instances are showing
 
 ### Tips
 
+* Check out [the documentation](https://cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster) for step-by-step instructions on how to deploy a cluster using the YAML provided below
 * The [Cluster Toolkit](https://cloud.google.com/cluster-toolkit/docs/setup/configure-environment) has been built and compiled for you inside your [cloud workstation](https://console.cloud.google.com/workstations/overview?project=%%CLIENT_PROJECT_ID%%) (inside the `cluster-toolkit` folder). Use this or the Cloud Shell
     * Ensure you have logged into your workstation:
 
@@ -22,9 +21,6 @@ This cluster will be the foundation for your **AI Hypercomputer**, enabling you 
 gcloud auth login
 gcloud auth application-default login
 ```
-
-* Check out [the documentation](https://cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster) for step-by-step instructions on how to deploy a cluster using the YAML provided below
-
 
 :::collapse{title="Show deployment.yaml"}
 

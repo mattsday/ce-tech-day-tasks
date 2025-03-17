@@ -24,7 +24,10 @@ parts:
     max_points: 500
     instructions_link: part1.md
     upload_text: Upload a screenshot of the deployed Slurm cluster.
-    llm_instructions: Any evidence of the Slurm cluster being deployed and running will suffice.
+    llm_instructions: The user will upload an image of their Compute Engine instance list. Look for evidence of a slurm controller instance and login node. Ignore any other instances (e.g. workstations and so on) as they will have these deployed as part of other tasks they will need to do.
+    good_examples:
+      - examples/part1-1.jpg
+      - examples/part1-2.jpg
   - name: Run the Workload 🏃
     id: run_workload
     type: image
