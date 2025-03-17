@@ -1,0 +1,25 @@
+metadata:
+  version: 1
+task:
+  id: bonus-bug-bash
+  name: "Bug Bounty Bonanza 🐛"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: "Help improve Google Cloud by finding and reporting bugs! Extra points await those who contribute."
+  overview:
+    - "Cymbal Supplements believes in continuous improvement, and so does Google Cloud!"
+    - "Find and report bugs in Google Cloud services to earn bonus points."
+  tf_enabled: false
+  tf_vars: []
+  metadata: {}
+  group: Bonus
+parts:
+  - name: "Bug Report Submission 📝"
+    id: bug-report
+    type: none
+    open: true
+    max_points: 3000
+    instructions_link: bug_report.md
+    upload_text: "Enter your bug report details into the provided spreadsheet."
+    llm_instructions: "Ensure the bug reports are clear, concise, and include steps to reproduce. Bonus points will be awarded based on the quality and impact of the reported bugs."

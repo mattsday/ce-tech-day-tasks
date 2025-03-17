@@ -11,15 +11,23 @@ This cluster will be the foundation for your **AI Hypercomputer**, enabling you 
     * Provide a screenshot of the deployed Slurm cluster in the Google Cloud Console, showing the nodes and their status.
     * Verify that the cluster is in a running state.
 
+::alert[Hint: The Cluster toolkit is already provisioned inside your Cloud Workstation]{severity=info}
+
 ### Tips
 
-* Pay close attention to the YAML blueprint.
-* Ensure all necessary Google Cloud APIs are enabled.
-* Cluster Toolkit is your friend!
-* Check out [the documentation](https://cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster) for step-by-step instructions
-* You can run this task either from the Cloud Shell or your [provisioned workstation](https://console.cloud.google.com/workstations/overview?project=%%CLIENT_PROJECT_ID%%)
+* The [Cluster Toolkit](https://cloud.google.com/cluster-toolkit/docs/setup/configure-environment) has been built and compiled for you inside your [cloud workstation](https://console.cloud.google.com/workstations/overview?project=%%CLIENT_PROJECT_ID%%) (inside the `cluster-toolkit` folder). Use this or the Cloud Shell
+    * Ensure you have logged into your workstation:
+
+ ```sh
+gcloud auth login
+gcloud auth application-default login
+```
+
+* Check out [the documentation](https://cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster) for step-by-step instructions on how to deploy a cluster using the YAML provided below
+
 
 :::collapse{title="Show deployment.yaml"}
+
 ```yaml
 ---
 blueprint_name: hpc-slurm
@@ -28,7 +36,7 @@ vars:
   project_id: %%CLIENT_PROJECT_ID%%
   deployment_name: hpc-slurm
   region: %%LOCATION%%
-  zone: %%LOCATION%%-a
+  zone: %%LOCATION%%-b
 
 # Documentation for each of the modules used below can be found at
 # https://github.com/GoogleCloudPlatform/hpc-toolkit/blob/main/modules/README.md
@@ -94,8 +102,9 @@ deployment_groups:
     use: [network]
     settings:
       node_count_dynamic_max: 20
-      # Note that H3 is available in only specific zones. https://cloud.google.com/compute/docs/regions-zones
-      machine_type: h3-standard-88
+      # Normally you would provision H3 machines for something like this. However, this is just a lab so let's save some resources!
+      # machine_type: h3-standard-88
+      machine_type: e2-standard-2
       # H3 does not support pd-ssd and pd-standard
       # https://cloud.google.com/compute/docs/compute-optimized-machines#h3_disks
       disk_type: pd-balanced
@@ -128,4 +137,5 @@ deployment_groups:
     settings:
       enable_controller_public_ips: true
 ```
+
 :::

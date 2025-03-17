@@ -11,7 +11,7 @@ task:
     - Cymbal Supplements needs to analyze vast amounts of data to perfect the Inferno Elixir.
     - Deploy a Slurm cluster and run an AI optimization program to find the optimal formula.
   tf_enabled: true
-  tf_vars: [enable_cluster_toolkit, enable_slurm_cluster]
+  tf_vars: [enable_cluster_toolkit, enable_slurm_cluster, enable_workstations]
   metadata:
     cluster_toolkit_yaml: cluster_config.yaml
     slurm_job: submit_elixir.sh
