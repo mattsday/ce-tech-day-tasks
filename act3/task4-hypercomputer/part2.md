@@ -1,4 +1,4 @@
-Before running the complex AI optimization program, you need to verify that your Slurm cluster is functioning correctly. A simple 'Hello World' workload will serve as a test run.
+Before running the complex AI optimisation program, you need to verify that your Slurm cluster is functioning correctly. A simple 'Hello World' workload will serve as a test run.
 
 ## Task
 

@@ -9,22 +9,22 @@ task:
   description: Deploying the AI Hypercomputer to decode the secret formula of the Inferno Elixir.
   overview:
     - Cymbal Supplements needs to analyze vast amounts of data to perfect the Inferno Elixir.
-    - Deploy a Slurm cluster and run an AI optimization program to find the optimal formula.
+    - Deploy a Slurm cluster and run an AI optimisation program to find the optimal formula.
   tf_enabled: true
   tf_vars: [enable_cluster_toolkit, enable_slurm_cluster, enable_workstations]
-  metadata:
-    cluster_toolkit_yaml: cluster_config.yaml
-    slurm_job: submit_elixir.sh
-    python_script: optimizing_elixir.py
   group: Act 3
+  upload_files:
+    - deployment.yaml
+    - optimising_elixir.py
+    - submit.sh
 parts:
   - name: Cluster Standup 🧱
     id: cluster_standup
     type: image
     max_points: 500
     instructions_link: part1.md
-    upload_text: Upload a screenshot of the deployed Slurm cluster.
-    llm_instructions: The user will upload an image of their Compute Engine instance list. Look for evidence of a slurm controller instance and login node. Ignore any other instances (e.g. workstations and so on) as they will have these deployed as part of other tasks they will need to do.
+    upload_text: Upload a screenshot of the login screen
+    llm_instructions: The screenshot should show a black login screen with a large number of "S" characters on it. This is the slurm login screen. The attached examples are a good source of inspiration too. Be generous with points. If it looks like a blank terminal screen with S characters then it's most likely a Slurm cluster login and therefore worthy of maximum points.
     good_examples:
       - examples/part1-1.jpg
       - examples/part1-2.jpg
@@ -35,7 +35,7 @@ parts:
     instructions_link: part2.md
     upload_text: Upload a screenshot of the Slurm job output.
     llm_instructions: Any evidence of the Slurm job running and printing the hostname will suffice.
-  - name: Running the Python Optimization Program 🐍
+  - name: Running the Python Optimisation Program 🐍
     id: run_python_program
     challenge: true
     type: image
