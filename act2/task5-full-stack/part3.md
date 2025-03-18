@@ -1,7 +1,25 @@
-Our review app is like a rocket fueled by habanero peppers – it's ready for launch, but we need to make sure it reaches its destination. Your mission, should you choose to accept it (and trust me, you want to see this baby fly), is to deploy this app to Firebase App Hosting and verify its successful arrival.
+Our review app's code is like a mild salsa – it's okay, but we need to inject some serious flavor. Use Gemini Code Assist to transform this code into a masterpiece worthy of a thousand Scoville units.
+
+:::challenge
+Use Code assist to improve the app. The files in the `components/` directory is a good place to start.
+
+Make any changes you wish - the bigger & bolder the changes - the more points from the judges!
+:::
 
 ### Task
 
-1. **Prep the Firebase Launchpad**: Check out [the documentation for Firebase App Hosting](https://firebase.google.com/docs/app-hosting) and prepare for launch!
-2. **Ignite the Deployment Thrusters**: Use the Firebase CLI to deploy the review  app. This is where you unleash the fiery power of your code.
-3. **Verify Orbital Insertion**: Use the special verification button in the task interface to confirm the app has successfully reached its destination. Think of it as mission control confirming a successful landing on the moon – or in this case, Google Cloud.
+1. **Fire up the Stove**: Load a dev server that will show you live updates as you make changes:
+
+```bash
+npm run dev
+```
+
+2. **Enter the Code Kitchen**: Take a look at the files in the `components/` directory and see if you can improve them!
+3. **Consult the Gemini Spice Rack**: Unleash Gemini Code Assist to analyze the code like a master chef sniffing out the perfect blend of spices. What's missing? What's bland? What's downright offensive to taste buds?
+4. **Whip Up Some Code Magic**: Use Gemini's suggestions to make those changes. Think of it as adding a dash of ghost pepper extract to a bowl of chili – use with caution, but use it well!
+5. **Submit Your Spicy Creation**: Let's see what Gemini thinks of your modifications!
+
+### Tips
+
+1. Don't be afraid to experiment with code like a mad scientist mixing hot sauce ingredients.
+2. Not familiar with Typescript or React? Don't worry! Let Gemini Code Assist help you out!

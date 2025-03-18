@@ -1,9 +1,31 @@
-Our Firestore security rules are currently about as effective as a screen door on a submarine – they need some serious reinforcement. Your mission, should you choose to accept it (and you better, because the fate of Cymbal Supplements' reputation hangs in the balance!), is to fortify those rules and make our data impenetrable.
+Our review app is like a rocket fueled by habanero peppers – it's ready for launch, but we need to make sure it reaches its destination. Your mission, should you choose to accept it (and trust me, you want to see this baby fly), is to deploy this app to Firebase App Hosting and verify its successful arrival.
 
 ### Task
 
-1. **Infiltrate the Firestore Fortress**: Navigate to the Firestore security rules in the Firebase console. Think of it as breaking into a heavily guarded spice vault – but legally, of course.
-2. **Scout the Security Weaknesses**: Analyze the existing rules like a seasoned spy looking for vulnerabilities. Are there any backdoors? Any loose screws? Any gaping holes in our defenses?
-3. **Deploy the Security Enhancements**: Modify the rules to plug those holes and reinforce our defenses. Think of it as adding laser grids, motion sensors, and a team of highly trained pepper ninjas to our security system.
-4. **Test the Security Perimeter:** Use the Firebase simulator to test your new rules. Try to break in like a data thief – if you can't, you've succeeded!
-5. **Submit the Fortified Rules**: The system will automatically verify your Firestore security rules. If you've created an impenetrable fortress, you'll be swimming in points.
+1. **Prep the Firebase Launchpad**: Check out [the documentation for Firebase App Hosting](https://firebase.google.com/docs/app-hosting) and prepare for launch!
+2. **Ignite the Deployment Thrusters**: Use the Firebase CLI to deploy the review  app. This is where you unleash the fiery power of your code.
+3. **Verify Orbital Insertion**: Use the special verification button in the task interface to confirm the app has successfully reached its destination. Think of it as mission control confirming a successful landing on the moon – or in this case, Google Cloud.
+
+### Tips
+
+1. The Firebase CLI has already been installed into your environment
+2. Your project has already been setup as a Firebase project
+3. To use Firebase App Hosting you will need to push this code to GitHub and sign in with your GitHub account
+
+```bash
+git init
+git add .
+git commit -am "init"
+git branch -M main
+git remote add origin <your repo>
+git push -u origin main
+```
+
+Your Project ID:
+
+```plaintext
+%%CLIENT_PROJECT_ID%%
+```
+
+Firebase Console:
+[console.firebase.google.com](https://console.firebase.google.com)

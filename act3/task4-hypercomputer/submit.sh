@@ -5,4 +5,4 @@
 #SBATCH --time=00:10:00
 #SBATCH --output=output_%a.txt
 
-python optimising_elixir.py
+python3 optimising_elixir.py

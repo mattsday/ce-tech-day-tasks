@@ -5,8 +5,8 @@ task:
   id: act2-task6
   name: Hire Hire Hire! 🤝
   enabled: true
-  hidden: true
-  lb_hidden: true
+  hidden: false
+  lb_hidden: false
   description: Handle an influx of job applications
   overview:
     - Cymbal Supplements, experiencing a surge in demand, needs to establish a new factory. Selecting the best location is crucial, requiring a data-driven approach that considers various factors.

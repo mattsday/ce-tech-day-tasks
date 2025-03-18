@@ -2,7 +2,7 @@ metadata:
   version: 1
 task:
   id: act2-task5
-  name: "Spice Up the Reviews! ✨"
+  name: "Spice Up the Reviews! 🌶"
   enabled: true
   lb_hidden: false
   hidden: false
@@ -17,26 +17,45 @@ task:
     firestore_collection: reviews
   group: Act 2
 parts:
+  - name: "Local Launch: App Ignition 🚀"
+    id: "run-local"
+    type: image
+    max_points: 250
+    instructions_link: part1.md
+    good_examples:
+      - examples/part1-1.jpg
+      - examples/part1-2.jpg
+      - examples/part1-3.jpg
+    llm_instructions: Evidence of a screenshot that looks like the provided examples is sufficient. The app does not need to be special. The screenshot should show an App that clearly shows a number of sample reviews (with stars) and an input box at the bottom for a new review to be submitted. Don't award partial points, award 100% if the benefit of the doubt suggests they have successfully started the app.
   - name: "Flow Check: Genkit Validation 🧪"
     id: genkit_validation
     type: image
     max_points: 500
-    instructions_link: part1.md
+    instructions_link: part2.md
     upload_text: "Upload a screenshot of the Genkit console validating your flow."
     llm_instructions: "Any evidence of successful Genkit flow validation with screenshots will suffice."
+    depends_on:
+      - run-local
   - name: "Code Enhancement: Gemini's Verdict 🧑‍💻"
     id: code_enhancement
     type: image
     max_points: 750
-    instructions_link: part2.md
-    llm_instructions: "The task is to modify the Next.js app using Gemini Code Assist and have Gemini assess the changes. If they have not achieved full points, provide hints related to code quality, efficiency, and adherence to best practices."
+    instructions_link: part3.md
+    llm_instructions: "The provided examples show the original version of the app without changes. Look for colour differences, major additions, and meaningful changes to the app. The screenshot will not show any use of Gemini Code Assist - so trust that any changes or modifications to the app have been done this way, but it is not important - so long as the app is clearly modified in some way."
+    upload_text: "Upload Improved App Screenshot"
+    good_examples:
+      - examples/part1-1.jpg
+      - examples/part1-2.jpg
+      - examples/part1-3.jpg
   - name: "Firebase Fiesta: Deployment Delight 🚀"
     id: firebase_deployment
     type: custom
     component: VerifyAppHosting
     max_points: 1000
-    instructions_link: part3.md
+    instructions_link: part4.md
     llm_instructions: "Ensure the app is deployed correctly to Firebase App Hosting. If they have not scored full points, guide them through Firebase deployment steps and common troubleshooting tips."
+    depends_on:
+      - run-local
   - name: "Fortress Firestore: Security Savvy 🔒"
     id: firestore_security
     challenge: true

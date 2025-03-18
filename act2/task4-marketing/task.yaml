@@ -4,8 +4,8 @@ task:
   id: act2-task4
   name: "What about Marketing? 📈"
   enabled: true
-  hidden: true
-  lb_hidden: true
+  hidden: false
+  lb_hidden: false
   description: "Cymbal Supplements needs to boost sales! Dive into data, find high-value customers, and create sizzling marketing content."
   overview:
     - "New factories are running, but sales need a kick! Cymbal needs to find their most valuable customers."

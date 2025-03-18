@@ -1,25 +1,31 @@
-Our AI chef has whipped up a review flow using [Firebase Genkit](https://firebase.google.com/docs/genkit), but we need to know if it's a culinary masterpiece or a kitchen disaster.
+Before we dive into the complex AI flows and cloud deployments, let's start with the basics: getting this app running on your Cloud Workstation.
 
-Your mission, should you choose to accept it (and you better, because the fate of hot sauce reviews hangs in the balance!), is to validate this flow.
+Think of it as lighting the pilot light before firing up the industrial-sized hot sauce cooker. We need to ensure the foundation is solid before we start adding all those spicy ingredients.
 
-## Task
+This initial step will confirm you have the necessary tools and can get the app up and running in your own environment, setting the stage for the challenges to come.
 
-1. **Enter the Genkit Kitchen**:
+### Task
+
+1. **Open the Code**:
     1. Open Cloud Workstations and start your instance: [Cloud Workstations](https://console.cloud.google.com/workstations/overview).
     2. Inside workstations, select **Open Folder** and select **ai-app**
-    3. Launch the Genkit console – think of it as the control center for our AI chef. You can do that with this command:
+2.  **Install the Dependencies:** This is like stocking your spice rack – you need all the right ingredients to make the magic happen.
 
-```sh
-genkit start -- npx tsx --watch libs/genkit/genkit.ts
+```bash
+npm install
 ```
 
-2. **Fire Up the Flow**: Run that review flow like you're cranking up the heat on a ghost pepper. Throw some sample reviews at it – the spicier, the better!
-3. **Taste Test the Results**: Make sure the output is as expected. Did our AI chef nail the flavor, or did it burn the sauce?
-4. **Capture the Culinary Victory**: Take a screenshot of the Genkit console showing that the flow is working its magic. Think of it as your **"I survived the habanero"** badge of honor.
-5. **Serve Up the Screenshot**: Upload that screenshot like you're delivering the winning dish at a chili cook-off.
+3.  **Fire Up the Dev Server:** This is like lighting the stove – we need to get that heat going!
 
-## Tips
+```bash
+npm run dev
+```
 
-1. Don't be afraid to get creative with your sample reviews. The more ridiculous, the better!
-2. Double-check those results. We don't want any accidental "this sauce tastes like feet" reviews.
-3. Make sure the screenshot shows the validation process and the successful output. We need to see that spicy success!
+4.  **Witness the Glory:** Cloud Workstations will popup with a link to your `localhost` instance - if you miss it, check out the **Ports** tab at the bottom to open a preview of your app
+5.  **Capture the Proof:** Take a screenshot of the review app running in your browser. This is like taking a picture of your first successful batch of hot sauce – proof of your culinary prowess!
+6.  **Submit the Screenshot:** Upload that screenshot like you're presenting your winning dish at a chili cook-off.
+
+### Tips
+
+* If you encounter any errors, **ask Gemini Code Assist**. We don't want any kitchen fires!
+* Make sure your screenshot clearly shows the review app running in your browser. We need to see that spicy success!

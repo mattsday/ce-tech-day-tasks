@@ -14,10 +14,13 @@ This cluster will be the foundation for your **AI Hypercomputer**, enabling you 
 
 * Check out [the documentation](https://cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster) for step-by-step instructions on how to deploy a cluster using the YAML provided below
 * The [Cluster Toolkit](https://cloud.google.com/cluster-toolkit/docs/setup/configure-environment) has been built and compiled for you inside your [cloud workstation](https://console.cloud.google.com/workstations/overview?project=%%CLIENT_PROJECT_ID%%) (inside the `cluster-toolkit` folder). Use this or the Cloud Shell
-* Ensure you have logged into your workstation:
+* Ensure you have logged into your workstation with both user and application-default credentials:
 
  ```bash
 gcloud auth login
+```
+
+```bash
 gcloud auth application-default login
 ```
 

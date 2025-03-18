@@ -20,15 +20,27 @@ Now it's time to put your AI Hypercomputer to work! You'll be running a Python p
 
 ### Provided Code
 
-Expand the below to view your deployment specification to get you started
+Expand the below to view your code and deployment script.
 
 :::collapse{title="Show optimising_elixir.py"}
+
+Filename:
+
+```plaintext
+optimising_elixir.py
+```
 
 ::rawfile{file=optimising_elixir.py type=code language=python}
 
 :::
 
 :::collapse{title="submit.sh"}
+
+Filename:
+
+```plaintext
+submit.sh
+```
 
 ::rawfile{file=submit.sh type=code language=bash}
 

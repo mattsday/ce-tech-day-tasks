@@ -3,7 +3,7 @@ blueprint_name: hpc-slurm
 
 vars:
   project_id: "%%CLIENT_PROJECT_ID%%"
-  deployment_name: hpc-slurm
+  deployment_name: "hpc-slurm"
   region: "%%LOCATION%%"
   zone: "%%LOCATION%%-b"
 
@@ -26,30 +26,25 @@ deployment_groups:
         settings:
           local_mount: /home
 
-      - id: debug_nodeset
-        source: community/modules/compute/schedmd-slurm-gcp-v6-nodeset
-        use: [network]
+      - id: python
+        source: modules/scripts/startup-script
         settings:
-          node_count_dynamic_max: 4
-          machine_type: n2-standard-2
-          allow_automatic_updates: false
-
-      - id: debug_partition
-        source: community/modules/compute/schedmd-slurm-gcp-v6-partition
-        use:
-          - debug_nodeset
-        settings:
-          partition_name: debug
-          exclusive: false # allows nodes to stay up after jobs are done
-          is_default: true
+          runners:
+            - type: shell
+              destination: "python.sh"
+              content: |
+                #!/bin/bash
+                set -ex
+                sudo yum -y install python3 python3-pip
 
       - id: compute_nodeset
         source: community/modules/compute/schedmd-slurm-gcp-v6-nodeset
-        use: [network]
+        use: [network, python]
         settings:
-          node_count_dynamic_max: 20
-          bandwidth_tier: gvnic_enabled
+          node_count_dynamic_max: 3
           allow_automatic_updates: false
+          machine_type: e2-standard-2
+          on_host_maintenance: MIGRATE # Required for e2 images
 
       - id: compute_partition
         source: community/modules/compute/schedmd-slurm-gcp-v6-partition
@@ -57,41 +52,21 @@ deployment_groups:
           - compute_nodeset
         settings:
           partition_name: compute
-
-      - id: h3_nodeset
-        source: community/modules/compute/schedmd-slurm-gcp-v6-nodeset
-        use: [network]
-        settings:
-          node_count_dynamic_max: 20
-          # Normally you would provision H3 machines for something like this.
-          # ...however, this is just a lab so let's save some resources!
-          # machine_type: h3-standard-88
-          machine_type: e2-standard-2
-          disk_type: pd-balanced
-          bandwidth_tier: gvnic_enabled
-          allow_automatic_updates: false
-
-      - id: h3_partition
-        source: community/modules/compute/schedmd-slurm-gcp-v6-partition
-        use:
-          - h3_nodeset
-        settings:
-          partition_name: h3
+          is_default: true
+          exclusive: false
 
       - id: slurm_login
         source: community/modules/scheduler/schedmd-slurm-gcp-v6-login
         use: [network]
         settings:
-          machine_type: n2-standard-4
+          machine_type: e2-standard-2
           enable_login_public_ips: true
 
       - id: slurm_controller
         source: community/modules/scheduler/schedmd-slurm-gcp-v6-controller
         use:
           - network
-          - debug_partition
           - compute_partition
-          - h3_partition
           - homefs
           - slurm_login
         settings:
