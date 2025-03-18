@@ -29,3 +29,5 @@ Your Project ID:
 
 Firebase Console:
 [console.firebase.google.com](https://console.firebase.google.com)
+
+### Verification

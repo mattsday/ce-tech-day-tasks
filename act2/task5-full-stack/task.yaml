@@ -50,7 +50,7 @@ parts:
   - name: "Firebase Fiesta: Deployment Delight 🚀"
     id: firebase_deployment
     type: custom
-    component: VerifyAppHosting
+    component: AppHosting
     max_points: 1000
     instructions_link: part4.md
     llm_instructions: "Ensure the app is deployed correctly to Firebase App Hosting. If they have not scored full points, guide them through Firebase deployment steps and common troubleshooting tips."
@@ -60,7 +60,7 @@ parts:
     id: firestore_security
     challenge: true
     type: custom
-    component: VerifyFirestoreSecurityRules
+    component: CheckSecurityRules
     max_points: 150
-    instructions_link: part4.md
+    instructions_link: part5.md
     llm_instructions: "The task is to improve Firestore security rules. If they have not achieved full points, provide hints related to rule specificity, user authentication, and data access control."
