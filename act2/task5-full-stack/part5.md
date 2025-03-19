@@ -9,8 +9,8 @@ Your mission, should you choose to accept it (and you better, because the fate o
 Update your [Firestore Security Rules](https://console.firebase.google.com/project/%%CLIENT_PROJECT_ID%%/firestore/databases/-default-/rules) with the following constraints:
 
 - **Collection:** `users`
-  - **Read**: Users with the custom claim "admin" set to true
-  - **Write**: Users with the custom claim "admin" set to true
+  - **Read**: Only users with the custom claim "admin" set to "true"
+  - **Write**: Only users with the custom claim "admin" set to "true"
 - **Collection:** `reviews`
   - **Read**: Anyone (public to the internet)
   - **Write**: No one (written by the server)
