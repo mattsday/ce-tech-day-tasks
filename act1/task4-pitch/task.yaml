@@ -10,12 +10,15 @@ task:
   overview:
     - Secure seed funding from "angel investors" by delivering a compelling pitch for Cymbal Supplements.
   group: Act 1
+  metadata:
+    filetypes: .pdf
+    mimeType: application/pdf
 parts:
-  - name: Book & Prepare a Pitch
+  - name: Brand Blueprint 📝
     open: true
     id: part1
-    type: external
+    type: custom
+    component: FileUpload
     max_points: 2000
     hidden: false
     instructions_link: instructions.md
-  
