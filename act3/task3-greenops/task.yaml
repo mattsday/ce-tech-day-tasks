@@ -1,33 +1,33 @@
 metadata:
-  version: 1
+  version: 2
 task:
   id: act3-task3
-  name: "GreenOps: Spicy Sustainability 🌶️"
+  name: "GreenOps: Carbon Conscious Cymbal 🌍🌶️"
   enabled: true
   lb_hidden: false
   hidden: false
-  description: "Cymbal Supplements needs to hit a 15% reduction in cloud energy consumption. Help them leverage Google Cloud's tools and datasets to craft a winning sustainability strategy!"
+  description: "Help Cymbal Supplements achieve their sustainability goals by creating a carbon footprint dashboard in Google Cloud."
   overview:
-    - "Leadership has set a bold target: 15% energy reduction in the next quarter."
-    - "Craft a comprehensive CSR report and strategy using Google Cloud."
+    - "Leadership aims to reduce cloud energy consumption by 15%."
+    - "Build a dashboard to monitor, optimize, and track carbon emissions."
   tf_enabled: false
-  tf_vars:
+  tf_vars: []
   metadata:
     csr_target: 15
   group: Act 3
 parts:
-  - name: "NotebookLM: The Secret Sauce of Sustainability 📝"
-    id: notebooklm_setup
-    type: image
+  - name: "Carbon Data Export: Laying the Green Foundation 📊"
+    id: carbon_export
+    type: custom
+    component: VerifyCarbonExport
     max_points: 500
     instructions_link: part1.md
-    upload_text: "Upload a screenshot of NotebookLM with your CSR documents loaded and ready!"
-    llm_instructions: "Verify that relevant CSR documents and requirements (including the 15% target) are loaded into NotebookLM. Ensure the screenshot shows clear evidence of document upload and readiness."
-  - name: "Crafting the Green Strategy 🌿"
-    id: strategy_draft
+    llm_instructions: "Verify that the CE has successfully exported Carbon Footprint data to BigQuery. Check for the presence of the exported dataset and confirm it contains the necessary carbon emissions data."
+  - name: "Carbon Footprint Dashboard: Visualize Sustainability 📈"
+    id: carbon_dashboard
     type: custom
-    component: VerifyGeminiStrategy
-    max_points: 1500
+    component: VerifyCarbonDashboard
+    max_points: 1000
     instructions_link: part2.md
-    depends_on: [notebooklm_setup]
-    llm_instructions: "Use Gemini to evaluate the CE's sustainability strategy. Look for actionable plans leveraging Google Cloud tools (e.g., Carbon Footprint, BigQuery datasets, etc.). Ensure the strategy
+    depends_on: [carbon_export]
+    llm_instructions: "Evaluate the Looker Studio dashboard. Ensure it effectively visualizes carbon emissions data, including key metrics and trends. Verify that the dashboard provides insights for optimization and tracks progress towards the 15% reduction target."
