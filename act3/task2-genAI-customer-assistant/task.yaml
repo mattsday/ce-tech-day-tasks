@@ -1,0 +1,44 @@
+metadata:
+  version: 1
+task:
+  id: act3-task2
+  name: "GenAI Customer Assistant: Hot Sauce Help Desk 🌶️🤖"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: "Cymbal Supplements' sales team is drowning in customer inquiries! Build a GenAI-powered customer assistant to save the day (and their inboxes)."
+  overview:
+    - "Bryan Johnson's endorsement has caused a surge in global demand."
+    - "The sales team needs an automated customer service solution."
+    - "Your mission: create a GenAI assistant for their website."
+  tf_enabled: true
+  tf_vars: [enable_vertex_search, enable_model_armor, enable_website]
+  metadata:
+    data_bucket: cymbal-docs
+    website_url: cymbal-supplements.com
+  group: Act 3
+parts:
+  - name: "Set Up Better Search: Find the Fire 🔥🔍"
+    id: better_search
+    type: image
+    max_points: 500
+    instructions_link: part1.md
+    upload_text: "Upload a screenshot of the updated Cymbal website with the Vertex Search gadget."
+    llm_instructions: "Verify that the Vertex Search gadget is integrated into the website and that relevant product information is searchable. Ensure no internal sales data is included in the datastore."
+  - name: "Set Up Q&A Agent: Ask the Sauce Oracle 🔮💬"
+    id: qna_agent
+    type: custom
+    component: VerifyQAAgent
+    max_points: 1000
+    instructions_link: part2.md
+    depends_on: [better_search]
+    llm_instructions: "Verify the agent's playbook correctly identifies user intents and provides appropriate responses (product info, website links, or sales team contact). Ensure the agent is embedded on the website."
+  - name: "Set Up Model Armor: Keep it Spicy, Not Risky 🛡️🌶️"
+    id: model_armor
+    challenge: true
+    type: custom
+    component: VerifyModelArmor
+    max_points: 100
+    instructions_link: part3.md
+    depends_on: [qna_agent]
+    llm_instructions: "Verify that Model Armor API is integrated into the agent flow to filter potentially sensitive content in the responses."
