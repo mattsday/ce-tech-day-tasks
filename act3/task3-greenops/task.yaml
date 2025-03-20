@@ -13,7 +13,7 @@ task:
   tf_enabled: false
   tf_vars: []
   metadata:
-    csr_target: 15
+    csr_target: "15"
   group: Act 3
 parts:
   - name: "Carbon Data Export: Laying the Green Foundation 📊"
