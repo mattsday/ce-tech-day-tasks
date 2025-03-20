@@ -6,7 +6,11 @@ For more information on task configuration, see [the Task documentation](../../t
 
 ## Usage
 
-In most cases you can use [deploy.sh](../../tasks/deploy.sh) in the Task folder to deploy without invoking this utility directly. This will also fallback to using Cloud Build should Go fail for any reason.
+In most cases you can use [fast-deploy.sh](../../fastdeploy.sh) or [deploy.sh](../../deploy.sh) in the Task folder to deploy without invoking this utility directly. This will also fallback to using Cloud Build should Go fail for any reason.
+
+### Fast Deploy vs Deploy
+
+`fast-deploy.sh` only uploads markdown and yaml files. `deploy.sh` also uploads example images which is slower.
 
 ### Updating all Tasks
 

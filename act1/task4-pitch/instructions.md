@@ -1,5 +1,7 @@
 **Welcome, Cymbal Supplements team!**
 
+::alert[**Note**: You will not get an immediate score for this task - you will find out how you did at the end of Act 1]{severity=info}
+
 Your journey to revolutionize the hot sauce industry and reverse aging begins now.
 
 ### Task
@@ -35,3 +37,5 @@ Your journey to revolutionize the hot sauce industry and reverse aging begins no
 This task is part of a series you will discover throughout the event, with prizes for the best submissions. Can you balance this with all of your other duties? Time will tell.
 
 Good luck, and may your hot sauce be ever spicy!
+
+::alert[**Note**: You will not get an immediate score for this task - you will find out how you did at the end of Act 1]{severity=info}
