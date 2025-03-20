@@ -26,14 +26,18 @@ check_cmd() {
 }
 main() {
   if [[ -z "${HOST_PROJECT}" ]]; then
-    if [[ ! -f ../setup/config.sh ]]; then
-      error Cannot find config. Ensure HOST_PROJECT is set or ../setup/config.sh exists
+    if [[ ! -f config.sh ]]; then
+      if [[ ! -f ../setup/config.sh ]]; then
+        error Cannot find config. Ensure HOST_PROJECT is set or either ../setup/config.sh or config.sh exists
+      fi
+      . ../setup/config.sh
+    else
+      . config.sh
     fi
-    . ../setup/config.sh
   fi
 
   SCORE_BUCKET_NAME="${HOST_PROJECT}-score-assets"
-  
+
   go run ../utils/task-tool/main.go --base-folder "${PWD}" --bucket "${SCORE_BUCKET_NAME}" --host-pid="${HOST_PROJECT}" --upload-images=false
 
   echo Task deployment complete.
