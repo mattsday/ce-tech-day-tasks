@@ -5,7 +5,7 @@ steps:
       - run
       - "main.go"
       - "--host-pid"
-      - "$_HOST_PID"
+      - "$PROJECT_ID"
       - "--base-folder"
       - ${_ROOT_DIR}
       - "--bucket"
@@ -16,3 +16,6 @@ steps:
 options:
   substitutionOption: ALLOW_LOOSE
   logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _TASK_DIR: utils/task-tool
+  _ROOT_DIR: ../../
