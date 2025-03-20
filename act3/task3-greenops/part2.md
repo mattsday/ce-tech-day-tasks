@@ -7,6 +7,3 @@
 3.  Include key metrics and trends in your dashboard.
 4.  Ensure the dashboard provides insights for optimizing carbon emissions and tracking progress towards the 15% reduction target.
 
-## Scoring
-
-* **1000 points:** A well-designed Looker Studio dashboard that effectively visualizes carbon emissions data and provides insights for sustainability.
