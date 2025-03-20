@@ -9,7 +9,3 @@
 5.  Create a web search gadget and embed the code onto the Cymbal Supplements website.
 6.  Take a screenshot showing the integrated search gadget on the website.
 7.  Upload the screenshot.
-
-## Scoring
-
-* **500 points:** Successfully integrated Vertex Search with relevant data, excluding internal sales data.

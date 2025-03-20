@@ -1,28 +1,40 @@
----
 metadata:
-  version: 1
+  version: 2
 task:
   id: act2-task3
-  name: Location Location Location 🏚
+  name: "Factory Location: Finding Cymbal's Sweet Spot 🏭🌶️"
   enabled: true
-  hidden: false
   lb_hidden: false
-  description: Select the best location to market your brand
+  hidden: false
+  description: "Help Cymbal Supplements select the optimal location for their new factory by analyzing flood risk and land use data."
   overview:
-    - Cymbal Supplements, experiencing a surge in demand, needs to establish a new factory. Selecting the best location is crucial, requiring a data-driven approach that considers various factors.
-  group: Act 2
+    - "Cymbal Supplements needs a new factory to meet growing demand."
+    - "Analyze flood risk data from Earth Engine and BigQuery."
+    - "Identify suitable locations using OpenStreetMap data."
+  tf_enabled: false
+  tf_vars: []
+  metadata:
+    data_sources: [earth_engine_flood_data, openstreetmap_land_use]
+  group: Act 3
 parts:
-  - name: Flood risk assessment 🌊
-    id: part1
+  - name: "Flood Risk Assessment: Keeping Dry 🌊"
+    id: flood_risk
     type: image
     max_points: 1000
     instructions_link: part1.md
-    upload_text: "Upload a Screenshot of your Flood Risk Assessment"
-  - name: Customer Demand Analysis 🔥
-    id: part2
+    upload_text: "Upload a screenshot showing the geospatial visualization of flood risk data and the BigQuery query results."
+    llm_instructions: "Verify the BigQuery query correctly analyzes Earth Engine flood risk data. Ensure the screenshot shows a clear geospatial visualization with insights into flood risk factors. Confirm the query identifies risk levels accurately."
+  - name: "Off Limits: Avoiding the Fields 🌾"
+    id: land_use
     type: image
-    max_points: 1000
+    max_points: 500
     instructions_link: part2.md
-    upload_text: "Upload a Screenshot of your Demand Data"
-    depends_on:
-      - part1
+    upload_text: "Upload a screenshot showing the identified agricultural land using OpenStreetMap data."
+    llm_instructions: "Verify the screenshot accurately highlights agricultural land based on OpenStreetMap data. Ensure the CE has correctly identified areas to avoid for factory construction."
+  - name: "Location Suggestions: Pinpointing Potential 📍"
+    id: location_suggestions
+    type: image
+    max_points: 500
+    instructions_link: part3.md
+    upload_text: "Upload a screenshot of the location map with the top 3 suggested factory locations circled."
+    llm_instructions: "Evaluate the suggested factory locations based on the flood risk and land use analyses. Ensure the chosen locations are in low-risk flood zones and avoid agricultural land. Verify the CE has correctly circled the top 3 suitable areas."

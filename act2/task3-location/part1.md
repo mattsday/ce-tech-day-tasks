@@ -1,10 +1,9 @@
-Cymbal Supplements is booming!
+# Part 1: Flood Risk Assessment: Keeping Dry 🌊
 
-Their age-reversing hot sauce is flying off the shelves, and they need a new factory to keep up with demand. However, they're not about to build just anywhere. They need a location that's both safe from floods (nobody wants soggy hot sauce!) and close to their ever-growing customer base.
+## Instructions
 
-### Task
-
-1. Cymbal has a treasure trove of Earth Engine flood risk data stashed in BigQuery. Your team's mission is to query this data and pinpoint areas with the lowest flood risk.
-2. They must use BigQuery to analyse the Earth Engine data, and create a geospatial visual representation.
-3. They must take a screenshot that illustrates the geospatial data and grid with insights into flood risk factors.
-4. Upload the screenshot below
+1.  Use BigQuery to query the Earth Engine flood risk data.
+2.  Write a query to identify flood risk levels.
+3.  Create a geospatial visualization of the flood risk data.
+4.  Take a screenshot showing the geospatial visualization and BigQuery query results.
+5.  Upload the screenshot.
