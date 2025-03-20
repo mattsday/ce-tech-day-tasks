@@ -19,3 +19,4 @@ options:
 substitutions:
   _TASK_DIR: utils/task-tool
   _ROOT_DIR: ../../
+  _BUCKET_NAME: q2-25-tech-day-host-score-assets
