@@ -29,7 +29,7 @@ deploy_direct() {
   if ! command -v go >/dev/null 2>&1; then
     return 2
   fi
-  if ! go run ../utils/task-tool/main.go --base-folder "${PWD}" --bucket "${SCORE_BUCKET_NAME}" --host-pid="${HOST_PROJECT}"; then
+  if ! go run utils/task-tool/main.go --base-folder "${PWD}" --bucket "${SCORE_BUCKET_NAME}" --host-pid="${HOST_PROJECT}"; then
     return 2
   fi
 }
@@ -47,7 +47,7 @@ deploy_cloud_build() {
   info "Submitting Tasks"
 
   # Create archive for build
-  tar -czvf /tmp/tasks.tar.gz -C . . -C ../utils task-tool >/dev/null
+  tar -czvf /tmp/tasks.tar.gz -C . . -C utils task-tool >/dev/null
 
   # Copy archive to Cloud Storage
   gcloud storage cp "/tmp/tasks.tar.gz" "gs://${ASSET_BUCKET_NAME}/tasks.tar.gz" >/dev/null
