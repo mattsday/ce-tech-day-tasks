@@ -1,0 +1,33 @@
+metadata:
+  version: 1
+task:
+  id: act3-task3
+  name: "GreenOps: Spicy Sustainability 🌶️"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: "Cymbal Supplements needs to hit a 15% reduction in cloud energy consumption. Help them leverage Google Cloud's tools and datasets to craft a winning sustainability strategy!"
+  overview:
+    - "Leadership has set a bold target: 15% energy reduction in the next quarter."
+    - "Craft a comprehensive CSR report and strategy using Google Cloud."
+  tf_enabled: false
+  tf_vars:
+  metadata:
+    csr_target: 15
+  group: Act 3
+parts:
+  - name: "NotebookLM: The Secret Sauce of Sustainability 📝"
+    id: notebooklm_setup
+    type: image
+    max_points: 500
+    instructions_link: part1.md
+    upload_text: "Upload a screenshot of NotebookLM with your CSR documents loaded and ready!"
+    llm_instructions: "Verify that relevant CSR documents and requirements (including the 15% target) are loaded into NotebookLM. Ensure the screenshot shows clear evidence of document upload and readiness."
+  - name: "Crafting the Green Strategy 🌿"
+    id: strategy_draft
+    type: custom
+    component: VerifyGeminiStrategy
+    max_points: 1500
+    instructions_link: part2.md
+    depends_on: [notebooklm_setup]
+    llm_instructions: "Use Gemini to evaluate the CE's sustainability strategy. Look for actionable plans leveraging Google Cloud tools (e.g., Carbon Footprint, BigQuery datasets, etc.). Ensure the strategy
