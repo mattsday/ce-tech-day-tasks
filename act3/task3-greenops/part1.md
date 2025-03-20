@@ -1,10 +1,11 @@
-# Part 3: Model Armor: Guarding the Goods 🛡️
+# Part 1: Carbon Data Export: Laying the Green Foundation 📊
 
 ## Instructions
 
-1.  Integrate the Model Armor API into the Q&A agent's flow.
-2.  Ensure that the agent's responses are filtered for potentially sensitive content.
+1.  Ensure you have been granted Billing Viewer and Carbon Viewer IAM permissions.
+2.  Export Carbon Footprint data to BigQuery.
+3.  Verify that the data has been successfully exported to a BigQuery dataset.
 
 ## Scoring
 
-* **100 points:** Successfully integrated Model Armor to filter sensitive content.
+* **500 points:** Successfully exported Carbon Footprint data to BigQuery.
