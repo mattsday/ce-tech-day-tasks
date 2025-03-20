@@ -9,7 +9,3 @@
 3.  Embed the agent onto the Cymbal Supplements website.
 4.  Take a screenshot of the playbook showing the required flow.
 5.  Upload the screenshot.
-
-## Scoring
-
-* **1000 points:** A functional Q&A agent with a playbook that correctly identifies intents and provides relevant information.
