@@ -1,7 +1,7 @@
 metadata:
   version: 1
 task:
-  id: act2-task
+  id: act2-task2
   name: "Dragon's Den Auditions 🎬"
   enabled: true
   lb_hidden: false
