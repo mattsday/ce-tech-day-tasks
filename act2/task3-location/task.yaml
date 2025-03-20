@@ -2,7 +2,7 @@ metadata:
   version: 2
 task:
   id: act2-task3
-  name: "Factory Location: Finding Cymbal's Sweet Spot 🏭🌶️"
+  name: "Finding Cymbal's Sweet Spot 🏭"
   enabled: true
   lb_hidden: false
   hidden: false
@@ -13,9 +13,10 @@ task:
     - "Identify suitable locations using OpenStreetMap data."
   tf_enabled: false
   tf_vars: []
-  metadata:
-    data_sources: [earth_engine_flood_data, openstreetmap_land_use]
-  group: Act 3
+  # TODO - talk to Matt about how to add data sources 😃
+  # metadata:
+  #   data_sources: [earth_engine_flood_data, openstreetmap_land_use]
+  group: Act 2
 parts:
   - name: "Flood Risk Assessment: Keeping Dry 🌊"
     id: flood_risk

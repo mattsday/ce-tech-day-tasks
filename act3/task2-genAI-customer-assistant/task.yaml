@@ -2,7 +2,7 @@ metadata:
   version: 1
 task:
   id: act3-task2
-  name: "GenAI Customer Assistant: Hot Sauce Help Desk 🌶️🤖"
+  name: "Hot Sauce Help Desk 🌶️🤖"
   enabled: true
   lb_hidden: false
   hidden: false

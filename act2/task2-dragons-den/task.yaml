@@ -1,0 +1,26 @@
+metadata:
+  version: 1
+task:
+  id: act2-task2
+  name: "Dragon's Den Auditions 🎬"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: Create a captivating video audition for Cymbal Supplements' appearance on "Dragon's Den".
+  overview:
+    - Produce a short video showcasing your brand, products, and vision for Cymbal Supplements.
+    - Highlight your innovative use of Google Cloud and its impact on your business.
+    - Aim to impress the "Dragons" and secure a spot in the final pitch.
+  group: Act 2
+  metadata:
+    filetypes: ".mp4,mkv,webm"
+    mimeType: "video/mp4"
+parts:
+  - name: Video Audition 🎥
+    id: audition
+    type: custom
+    component: FileUpload
+    max_points: 1500
+    instructions_link: part1.md
+    upload_text: Upload your video audition for "Dragon's Den".
+    llm_instructions: Gemini will analyze the submitted video, scoring based on creativity, clarity, engagement, and effective communication of Google Cloud integration. Gemini will also generate a synopsis of the video and select the top 5 auditions.

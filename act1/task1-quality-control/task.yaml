@@ -2,7 +2,7 @@ metadata:
   version: 1
 task:
   id: act1-task1
-  name: "Quality Control: From Label to Lab 🔬"
+  name: "From Label to Lab 🔬"
   enabled: true
   hidden: false
   description: "Use Vertex AI to check product ingredients and visualise compliance."

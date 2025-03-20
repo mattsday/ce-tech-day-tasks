@@ -1,5 +1,5 @@
 metadata:
-  version: 2
+  version: 1
 task:
   id: act3-task3
   name: "GreenOps: Carbon Conscious Cymbal 🌍🌶️"
@@ -10,8 +10,6 @@ task:
   overview:
     - "Leadership aims to reduce cloud energy consumption by 15%."
     - "Build a dashboard to monitor, optimize, and track carbon emissions."
-  tf_enabled: false
-  tf_vars: []
   metadata:
     csr_target: "15"
   group: Act 3
