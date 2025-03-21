@@ -5,7 +5,7 @@ steps:
       - run
       - "main.go"
       - "--host-pid"
-      - "$PROJECT_ID"
+      - "$_HOST_PID"
       - "--base-folder"
       - ${_ROOT_DIR}
       - "--bucket"
@@ -20,3 +20,5 @@ substitutions:
   _TASK_DIR: utils/task-tool
   _ROOT_DIR: ../../
   _BUCKET_NAME: q2-25-tech-day-host-score-assets
+  _HOST_PID: $PROJECT_ID
+  
