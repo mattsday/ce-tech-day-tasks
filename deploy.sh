@@ -58,10 +58,14 @@ deploy_cloud_build() {
 
 main() {
   if [[ -z "${HOST_PROJECT}" ]]; then
-    if [[ ! -f ../setup/config.sh ]]; then
-      error Cannot find config. Ensure HOST_PROJECT is set or ../setup/config.sh exists
+    if [[ ! -f config.sh ]]; then
+      if [[ ! -f ../setup/config.sh ]]; then
+        error Cannot find config. Ensure HOST_PROJECT is set or either ../setup/config.sh or config.sh exists
+      fi
+      . ../setup/config.sh
+    else
+      . config.sh
     fi
-    . ../setup/config.sh
   fi
 
   ASSET_BUCKET_NAME="${HOST_PROJECT}-build-assets"
