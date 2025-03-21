@@ -53,7 +53,7 @@ deploy_cloud_build() {
   gcloud storage cp "/tmp/tasks.tar.gz" "gs://${ASSET_BUCKET_NAME}/tasks.tar.gz" >/dev/null
 
   # Run Cloud Build Job
-  gcloud builds submit "gs://${ASSET_BUCKET_NAME}/tasks.tar.gz" --config cloudbuild.yaml --substitutions="_BUCKET_NAME=${SCORE_BUCKET_NAME},_HOST_PID=${HOST_PROJECT},_ROOT_DIR=../,TASK_DIR=task-tool" --service-account="${service_account}" --project="${HOST_PROJECT}" --region "${LOCATION}" >/dev/null
+  gcloud builds submit "gs://${ASSET_BUCKET_NAME}/tasks.tar.gz" --config cloudbuild.yaml --substitutions="_BUCKET_NAME=${SCORE_BUCKET_NAME},_HOST_PID=${HOST_PROJECT},_ROOT_DIR=../,_TASK_DIR=task-tool" --service-account="${service_account}" --project="${HOST_PROJECT}" --region "${LOCATION}" >/dev/null
 }
 
 main() {
