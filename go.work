@@ -1,3 +1,6 @@
 go 1.23.3
 
-use ./utils/task-tool
+use (
+	./utils/task-tool
+	./utils/tech-day
+)

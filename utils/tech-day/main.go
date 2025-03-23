@@ -26,6 +26,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"os"
 	"slices"
 	"strings"
 
@@ -34,17 +35,25 @@ import (
 
 var (
 	hostPID string = "q2-25-tech-day-host"
-	act     string
+	action  string
 	db      *firestore.Client
 )
 
 func main() {
 	flag.StringVar(&hostPID, "host", hostPID, "Optional: Host Project ID")
-	flag.StringVar(&act, "action", "", "Action to enable")
+	flag.StringVar(&action, "action", "", "Action to enable")
 	flag.Parse()
 
-	if act == "" {
+	if action == "" {
 		log.Fatalf("Expected 'action' flag")
+	}
+
+	if hostPID == "" {
+		hostPID = os.Getenv("PROJECT_ID")
+	}
+
+	if hostPID == "" {
+		log.Fatalf("Expected 'host' flag or PROJECT_ID environment")
 	}
 
 	// Init Firestore
@@ -57,7 +66,7 @@ func main() {
 	}
 	defer db.Close()
 
-	switch act {
+	switch action {
 	case "start":
 		start(ctx)
 	case "troubleshoot":
@@ -66,10 +75,12 @@ func main() {
 		act1End(ctx)
 	case "act2-end":
 		act2End(ctx)
+	case "security-audit":
+		log.Fatalf("TODO")
 	case "act3-end":
 		act3End(ctx)
 	default:
-		log.Fatalf("Unknown action: %s", act)
+		log.Fatalf("Unknown action: %s", action)
 	}
 }
 
