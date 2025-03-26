@@ -82,6 +82,25 @@
             "type": "string"
           }
         },
+        "user_files": {
+          "description": "Files to upload to the user's GCS bucket",
+          "type": "array",
+          "default": null,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "source": {
+                "type": "string",
+                "description": "Source file to upload, relative to the repository root"
+              },
+              "destination": {
+                "type": "string",
+                "description": "Destination file and path - will be prefixed with the bucket name"
+              }
+            }
+          }
+        },
         "bq_datasets": {
           "description": "BigQuery datasets to deploy for this task",
           "type": "array",
@@ -134,14 +153,6 @@
           "type": "object",
           "description": "Metadata for this part",
           "additionalProperties": { "type": "string" }
-        },
-        "upload_files": {
-          "description": "List of additional files to upload",
-          "type": "array",
-          "default": null,
-          "items": {
-            "type": "string"
-          }
         }
       },
       "required": ["description", "id", "name", "overview", "enabled"],
