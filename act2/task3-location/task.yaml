@@ -11,8 +11,6 @@ task:
     - "Cymbal Supplements needs a new factory to meet growing demand."
     - "Analyze flood risk data from Earth Engine and BigQuery."
     - "Identify suitable locations using OpenStreetMap data."
-  tf_enabled: false
-  tf_vars: []
   # TODO - talk to Matt about how to add data sources 😃
   # metadata:
   #   data_sources: [earth_engine_flood_data, openstreetmap_land_use]
