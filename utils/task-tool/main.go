@@ -94,6 +94,7 @@ type Task struct {
 	TFVars      []string    `yaml:"tf_vars" firestore:"-"`
 	BQDatasets  []BQDataset `yaml:"bq_datasets" firestore:"-"`
 	UploadFiles []string    `yaml:"upload_files" firestore:"-"`
+	UserFiles   []UserFiles `yaml:"user_files" firestore:"-"`
 }
 
 type BQDataset struct {
@@ -107,6 +108,11 @@ type BQTable struct {
 	Source      string `yaml:"source"`
 	Schema      string `yaml:"schema"`
 	Description string `yaml:"description"`
+}
+
+type UserFiles struct {
+	Source      string `yaml:"source"`
+	Destination string `yaml:"destination"`
 }
 
 type Part struct {
@@ -387,6 +393,7 @@ func tfOnly() {
 
 	var tfFlags = make(map[string]bool)
 	var bqDatasets = make(map[string]BQDataset)
+	var userFiles = make(map[string]UserFiles)
 
 	// Traverse base folder for tasks
 	err := filepath.WalkDir(baseFolder, func(path string, d fs.DirEntry, err error) error {
@@ -411,6 +418,11 @@ func tfOnly() {
 				if len(t.Task.BQDatasets) != 0 {
 					for _, v := range t.Task.BQDatasets {
 						bqDatasets[v.Name] = v
+					}
+				}
+				if len(t.Task.UserFiles) != 0 {
+					for _, v := range t.Task.UserFiles {
+						userFiles[v.Source] = v
 					}
 				}
 				if err != nil {
@@ -450,6 +462,15 @@ func tfOnly() {
 		}
 		w.WriteString("\t\t]\n")
 		w.WriteString("\t},\n")
+	}
+	w.WriteString("]\n")
+	w.WriteString("user_files = [\n")
+	for _, v := range userFiles {
+		w.WriteString("\t{\n")
+		w.WriteString(fmt.Sprintf("\t\tsource = \"%v\"\n", v.Source))
+		w.WriteString(fmt.Sprintf("\t\tdestination = \"%v\"\n", v.Source))
+		w.WriteString("\t},\n")
+
 	}
 	w.WriteString("]\n")
 	w.Flush()
