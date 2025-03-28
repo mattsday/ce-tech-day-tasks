@@ -19,3 +19,4 @@ parts:
     type: misc
     max_points: 2000
     instructions_link: part1.md
+    open: true

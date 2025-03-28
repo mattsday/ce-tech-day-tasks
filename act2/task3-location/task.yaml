@@ -2,7 +2,7 @@ metadata:
   version: 2
 task:
   id: act2-task3
-  name: "Finding Cymbal's Sweet Spot 🏭"
+  name: "Finding Cymbal's Sweet Spot 🍬"
   enabled: true
   lb_hidden: false
   hidden: false
