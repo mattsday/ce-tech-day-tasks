@@ -15,17 +15,17 @@ task:
   # metadata:
   #   data_sources: [earth_engine_flood_data, openstreetmap_land_use]
   bq_datasets:
-    - name: flood-data
+    - name: midlands_factory_location
       description: Datasets describing geographical areas and flooding
       tables:
-        - name: areas-of-interest
+        - name: midlands_areas_of_interest
           source: gs://hacksday-resources/data/areas-of-interest.csv
           schema: deploy/data/tech-day/areas-of-interest.json
-          description: Areas of interest
-        - name: midlands
+          description: Midlands areas of interest
+        - name: midlands_earthengine_grid_data
           source: gs://hacksday-resources/data/midlands.csv
           schema: deploy/data/tech-day/midlands.json
-          description: Midlands data
+          description: Midlands Earth Engine grid data
   group: Act 2
 parts:
   - name: "Flood Risk Assessment: Keeping Dry 🌊"
