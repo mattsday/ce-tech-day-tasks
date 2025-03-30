@@ -129,6 +129,7 @@ type Part struct {
 	Component        string   `yaml:"component,omitempty" firestore:"component"`
 	Hidden           bool     `yaml:"hidden" firestore:"hidden"`
 	DependsOn        []string `yaml:"depends_on,omitempty" firestore:"depends_on"`
+	MaxFiles         int      `yaml:"max_files,omitempty" firestore:"max_files"`
 }
 
 type TaskSchema struct {
@@ -422,7 +423,7 @@ func tfOnly() {
 				}
 				if len(t.Task.UserFiles) != 0 {
 					for _, v := range t.Task.UserFiles {
-						userFiles[v.Source] = v
+						userFiles[fmt.Sprintf("%v --> %v", v.Source, v.Destination)] = v
 					}
 				}
 				if err != nil {
@@ -468,7 +469,7 @@ func tfOnly() {
 	for _, v := range userFiles {
 		w.WriteString("\t{\n")
 		w.WriteString(fmt.Sprintf("\t\tsource = \"%v\"\n", v.Source))
-		w.WriteString(fmt.Sprintf("\t\tdestination = \"%v\"\n", v.Source))
+		w.WriteString(fmt.Sprintf("\t\tdestination = \"%v\"\n", v.Destination))
 		w.WriteString("\t},\n")
 
 	}
