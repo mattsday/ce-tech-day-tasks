@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## The Grand Finale: Finding the Perfect Spot!
 
 You've braved the flood risks and navigated the urban landscape to identify potential brownfield sites. Now comes the ultimate challenge: combining your findings to suggest the *best* locations for the new Cymbal Supplements factory!
@@ -64,20 +63,4 @@ Upload one file containing:
 A satellite view of the Geo Viz map highlighting the top 5 suggested factory locations.
 
 
-
-
-
-
-
-
 Congratulations, you've successfully navigated the complexities of geospatial data to help Cymbal Supplements find the perfect location for their expansion! Now, let the hot sauce empire grow!
-=======
-# Part 3: Location Suggestions: Pinpointing Potential 📍
-
-## Instructions
-
-1.  Based on the flood risk and land use analyses, identify suitable locations for the new factory.
-2.  Circle the top 3 suggested locations on the location map.
-3.  Take a screenshot of the map with the circled locations.
-4.  Upload the screenshot.
->>>>>>> 4f9020188bb64225de548fa7529a3fcfde557687

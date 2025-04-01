@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## The Plot Thickens... (Not the Sauce, Hopefully!)
 
 Now that we know where *not* to build (thanks to your flood risk assessment!), let's focus on finding suitable land for our state-of-the-art hot sauce factory. We're not just looking for any patch of green; we're on the hunt for **brownfield land**.
@@ -45,14 +44,3 @@ Upload **one file** containing:
 * Your completed SQL query used to identify brownfield land.
 
 Let's find some prime real estate for Cymbal Supplements! No more squeezing sauce in cramped conditions!
-
-
-=======
-# Part 2: Off Limits: Avoiding the Fields 🌾
-
-## Instructions
-
-1.  Use OpenStreetMap data to identify agricultural land in the given area.
-2.  Take a screenshot showing the identified agricultural land.
-3.  Upload the screenshot.
->>>>>>> 4f9020188bb64225de548fa7529a3fcfde557687
