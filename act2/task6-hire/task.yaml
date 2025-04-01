@@ -21,13 +21,13 @@ task:
     department: "Research & Development"
     reports_to: "R&D Manager"
     job_summary: "Develop and refine new Cymbal Sauce recipes, ensuring quality, consistency, and innovation. Conduct sensory evaluations and shelf-life testing."
-    responsibilities:
+    responsibilities: |
       - "Formulate and test new sauce variations."
       - "Optimize existing recipes for improved flavor and stability."
       - "Conduct sensory analysis and maintain accurate records."
       - "Collaborate with suppliers for ingredient sourcing."
       - "Ensure compliance with food safety regulations."
-    qualifications:
+    qualifications: |
       - "Bachelor's degree in Food Science or related field."
       - "Experience in sauce or condiment development."
       - "Strong understanding of food chemistry and microbiology."
