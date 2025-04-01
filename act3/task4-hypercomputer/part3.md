@@ -9,7 +9,7 @@ Now it's time to put your AI Hypercomputer to work! You'll be running a Python p
 3. **Submit the Job:**
    - Submit the Slurm job to the cluster.
 4. **Verification:**
-   - Once the job has run, copy the contents of your `output.txt` file and paste it in the verification box below.
+   - Once the job has run, run the results collection tool to determine the best pepper combination for optimal youthfulness!
 
 ### Tips
 
@@ -19,6 +19,7 @@ Now it's time to put your AI Hypercomputer to work! You'll be running a Python p
 - Use `nano` to easily copy files to the login node
   - If you prefer to use `vim` then ensure to use the `:set paste` command if pasting multi-line python code
 - Use the `cat` command to obtain the contents of the slurm output (e.g. `cat output.txt`)
+- You can use `watch squeue` to see the state of your Slurm job
 
 ### Provided Code
 
@@ -48,4 +49,28 @@ submit.sh
 
 :::
 
+### Running
+
+Once you have submitted your job, you can monitor it with the `squeue` command:
+
+```bash
+watch squeue
+```
+
 ### Verification
+
+Once complete, run the following command to collect your results:
+
+First set your job ID (e.g. `export JOB_ID=2`)
+
+```bash
+export JOB_ID=xx
+```
+
+Now run the collector program
+
+```bash
+python3 optimising_elixir.py --output-dir "results_job_${JOB_ID}" collect
+```
+
+Copy the output and paste it below to get your score!
