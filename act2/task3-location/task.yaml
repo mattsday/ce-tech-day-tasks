@@ -11,8 +11,9 @@ task:
   hidden: false
   description: Cymbal Supplements needs a new factory! Help them find the perfect spot using geospatial data analysis.
   overview:
-    - Demand for age-reversing hot sauce is booming! A new factory is needed urgently.
-    - Analyze flood risk and brownfield land data to recommend the best location.
+    - Cymbal Supplements, experiencing a surge in demand, needs to establish a new factory. Selecting the best location is crucial, requiring a data-driven approach that considers various factors.
+    - To determine the optimal location, Cymbal will leverage services to analyse data related to flood risk and specific areas e.g. agricultural land. This will inform their product supply strategy and help them make an informed decision.
+    - To keep up with the demand, we need to find the perfect spot for a brand-new factory. But where? We're not just throwing darts at a map – we're going full data-detective!
   tf_enabled: false
   tf_vars: []
   metadata: {}
