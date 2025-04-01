@@ -14,6 +14,25 @@
         "version": {
           "type": "integer",
           "description": "Version of this schema (should be 1)"
+        },
+        "authors": {
+          "type": "array",
+          "description": "Task authors",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Author name"
+              },
+              "email": {
+                "type": "string",
+                "description": "Author email"
+              }
+            }
+          },
+          "required": ["name"]
         }
       },
       "required": ["version"]
