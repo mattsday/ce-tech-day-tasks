@@ -22,6 +22,10 @@ parts:
     max_points: 250
     instructions_link: part1.md
     hidden: false
+    good_examples:
+      - examples/part1-1.jpg
+    llm_instructions: |
+      Just a screenshot of the Vertex AI console showing system instructions is enough here. It can be basic and does not need to have been tested.
   - name: "The Allergen Apocalypse 🧟"
     id: part2
     type: image
