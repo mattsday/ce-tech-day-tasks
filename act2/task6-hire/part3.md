@@ -1,13 +1,26 @@
-We've got our scores, now let's sort the candidates and send out those interview invites. Think of it as packaging up our finest sauce for our most promising customers.
+## Part 3: Email Generation - Let's Get Saucy with Interviews! 📧
 
-### Task
+**Background:**
 
-1. Sort Candidates: "Sort the candidates by their 'Suitability Score', highest to lowest. We want the top 5."
-2. Identify Top 5: "These are our finalists! The crème de la crème of Cymbal's future website team."
-3. Create Email Generation Agent: "Time for another agent! We'll call this one 'The Interview Inviter'."
-4. Configure Email Agent:
-    * "Prompt: 'You're a friendly email writer. You'll personalize interview invites for our top candidates.'"
-    * "Instructions: 'Read the candidate's resume and their score. Use this info to personalize an email template. Highlight their strengths and why they're a great fit. Keep it professional and enthusiastic. Give clear instructions on how to book an interview.'"
-    * "Connect the candidate data and the email template as input."
-5. Run the Email Agent: "Generate those personalized invites! Let's get these top candidates excited to join the Cymbal Supplements team."
-6. TODO - how do we verify this?
+Fantastic work! You've narrowed down the applicant pool to the top 2 promising candidates. Now, it's time to reach out and invite them for an interview to see if they have the right blend of scientific knowledge and passion for all things spicy.
+
+**Task:**
+
+Your final challenge is to use Gemini to craft personalized interview invitation emails for each of the top 2 candidates.
+
+**Requirements:**
+
+1.  **Extract Email Addresses:** Utilize Gemini to identify and extract the email addresses of the top 2 candidates from their resume data (which should be available in the Agentspace output from Part 2).
+2.  **Generate Personalized Invitations:** For each candidate, use Gemini to generate a personalized interview invitation email. Each email should:
+    * Clearly state the purpose of the email: inviting them for an interview for the **R&D: Food Scientist (Sauce Development)** position.
+    * Reference specific skills or experiences from their resume (as identified by Gemini in Part 2) to personalize the invitation and show you've reviewed their application.
+    * Propose a 1-hour interview and suggest they reply to schedule a convenient time.
+    * Include a professional closing with your (fictitious recruiter) name and "Cymbal Supplements".
+
+**Success Criteria:**
+
+* You have successfully retrieved the email addresses for the top 2 candidates.
+* You have generated two distinct and personalized interview invitation emails using Gemini.
+* Each email clearly invites the candidate for a 1-hour interview and prompts them to schedule.
+* The emails include a professional closing.
+

@@ -1,4 +1,46 @@
 metadata:
+<<<<<<< HEAD
+  version: 2
+task:
+  id: act2-task3
+  name: "Location Location Location 📍"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: Cymbal Supplements needs a new factory! Help them find the perfect spot using geospatial data analysis.
+  overview:
+    - Demand for age-reversing hot sauce is booming! A new factory is needed urgently.
+    - Analyze flood risk and brownfield land data to recommend the best location.
+  tf_enabled: false
+  tf_vars: []
+  metadata: {}
+  group: Act 2
+parts:
+  - name: Flood Risk Assessment 🌊
+    id: flood-risk
+    type: image
+    max_points: 1000
+    instructions_link: part1.md
+    upload_text: Upload a screenshot of the Geo Viz map showing high flood risk areas and your SQL query.
+    llm_instructions: Ensure the screenshot clearly shows the geospatial data, grid, and evidence of identifying high flood risk areas based on the query criteria. The SQL query should correctly filter for built, water, and flooded vegetation land uses with low slope and HAND values.
+  - name: Brownfield Land Detection 🏭
+    id: brownfield
+    type: image
+    max_points: 1250
+    instructions_link: part2.md
+    depends_on: [flood-risk]
+    upload_text: Upload a screenshot of the Geo Viz map highlighting potential brownfield sites and your completed SQL query.
+    llm_instructions: The Geo Viz map should clearly display potential brownfield locations within the specified area of interest. The completed SQL query should correctly UNNEST the tags and filter for 'landuse' = 'brownfield'.
+  - name: Location Suggestions 🗺️
+    id: suggestions
+    challenge: true
+    type: image
+    max_points: 1500
+    instructions_link: part3.md
+    depends_on: [flood-risk, brownfield]
+    upload_text: Upload a satellite view of the Geo Viz map highlighting the top 5 suggested factory locations.
+    llm_instructions: The satellite view should clearly show the top 5 brownfield locations identified that are NOT in high flood risk areas. The completed aggregate SQL query should correctly use ST_UNION to group high-risk areas and ST_DISJOINT to find suitable brownfield sites.
+=======
   version: 1
   authors:
     - name: Kavi Manivarmane
@@ -52,3 +94,4 @@ parts:
     instructions_link: part3.md
     upload_text: "Upload a screenshot of the location map with the top 3 suggested factory locations circled."
     llm_instructions: "Evaluate the suggested factory locations based on the flood risk and land use analyses. Ensure the chosen locations are in low-risk flood zones and avoid agricultural land. Verify the CE has correctly circled the top 3 suitable areas."
+>>>>>>> 4f9020188bb64225de548fa7529a3fcfde557687
