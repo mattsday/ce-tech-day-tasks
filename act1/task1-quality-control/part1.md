@@ -4,7 +4,7 @@ Currently, we're relying on interns squinting at tiny labels, which is about as 
 
 ### Task
 
-1. Open [Vertex AI Chat](https://console.cloud.google.com/vertex-ai/studio/chat?project=%%CLIENT_PROJECT%%)
+1. Open [Vertex AI Chat](https://console.cloud.google.com/vertex-ai/studio/chat?project=%%CLIENT_PROJECT_ID%%)
 2. Edit the system instructions to identify any of the following known allergens
     * Celery
     * Cereals containing gluten
