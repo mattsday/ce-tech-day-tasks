@@ -1,14 +1,39 @@
-Cymbal Supplements is exploding! We need a crack team to keep our website running smoother than a freshly blended habanero. But sifting through piles of resumes? That's time we could be spending perfecting our 'Wrinkle-Be-Gone' hot sauce! Let's use Gemini to do the heavy lifting and find the cream of the candidate crop.
+## Part 1: Data Ingestion 📥
 
-First things first, we need to get our ingredients ready. Think of this as prepping the mise en place for our recruitment feast. We've got our resume data in a CSV, and the job description is waiting to be blended into our selection process."
+**Background:**
 
-### Steps
+Congratulations! Cymbal Supplements is experiencing explosive growth thanks to the incredible age-reversing properties of your hot sauces. This means it's time to expand the R&D team and bring in fresh talent to concoct even more miraculous concoctions.
 
-1. Open Agentspace: "Fire up Agentspace, our digital kitchen for this challenge. Let's get cooking!"
-2. Import **resumes.csv**:
-    * "Head to the data import section. We're pulling from Google Drive, so make sure you're logged in."
-    * "Find that 'resumes.csv' file in the shared folder. It's the secret recipe for our candidate pool."
-    * "Import it into Agentspace. Make sure it's in a format Gemini can understand – like a table. We don't want any lumpy data!"
-3. Import Job Description:
-    * "Grab the Job Description document from Google Drive. It's our flavor profile for the perfect candidate."
-4. TODO - how do we verify this?
+You've received a digital mountain of CVs from eager applicants, all conveniently stored in a CSV file accessible within Agentspace. This file contains key information about each candidate, including their skills, experience, and education.
+
+The Hiring Manager for the Food Production team has provided you with the crucial **Job Description (JD)** for the **R&D: Food Scientist (Sauce Development)** role:
+
+```
+Title: Food Scientist (Sauce Development)
+Department: Research & Development
+Reports To: R&D Manager
+Job Summary: Develop and refine new Cymbal Sauce recipes, ensuring quality, consistency, and innovation. Conduct sensory evaluations and shelf-life testing.
+Responsibilities:
+
+Formulate and test new sauce variations.
+Optimize existing recipes for improved flavor and stability.
+Conduct sensory analysis and maintain accurate records.
+Collaborate with suppliers for ingredient sourcing.
+Ensure compliance with food safety regulations. Qualifications:
+Bachelor's degree in Food Science or related field.
+Experience in sauce or condiment development.
+Strong understanding of food chemistry and microbiology.
+```
+
+**Task:**
+
+Your mission, should you choose to accept it, is to leverage the power of Agentspace to analyze the provided CSV of candidate resumes against the Food Scientist Job Description.
+
+**Requirement:**
+
+Using Agentspace, run a query that processes each candidate's resume data and calculates a "**Suitability Score**" based on how well their skills and experience align with the requirements outlined in the Job Description. You can directly input the Job Description into your Agentspace query.
+
+**Success Criteria:**
+
+* You have successfully executed an Agentspace query that iterates through the candidate data.
+* Each candidate in the output includes a calculated "Suitability Score" reflecting Gemini's assessment of their match to the Job Description.

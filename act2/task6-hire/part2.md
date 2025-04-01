@@ -1,12 +1,19 @@
-Now, let's turn up the heat! We're using Gemini to analyze each resume and give us a 'Suitability Score'. Think of it as a spice rating for each candidate – how well do they match our job description?
+## Part 2: Candidate Scoring with Gemini 🧠🌶️
 
-### Task
+**Background:**
 
-1. Create a Gemini Agent: "Let's create a new agent in Agentspace. We'll call it 'The Resume Rater'."
-2. Configure the Agent:
-    * "Give it a clear prompt. We need to tell Gemini exactly what we want. Something like: 'You're a recruitment expert, and you're going to score resumes based on this job description.'"
-    * "Instructions: 'Read the Job Description. Then, read each resume. Compare the skills and experience to the job requirements. Give each candidate a score from 0 to 100, where 100 is a perfect match. Tell us why you gave them that score. Consider experience, skills, and education. Give me the Name and Score and reasoning.'"
-    * "Connect the 'resumes.csv' and the Job Description as input. We need to feed Gemini the data!"
-3. Run the Agent: "Let Gemini do its thing. Let's see who's got the right blend of skills."
-4. Review Results: "Check the scores and reasoning. Did Gemini nail it? Or do we need to tweak the recipe?"
-5. TODO - how do we verify this?
+You've successfully ingested the resume data and Gemini has diligently crunched the numbers, providing a Suitability Score for each applicant. Now it's time to put on your discerning recruiter hat and identify the cream of the crop – the top 2 candidates who have the potential to bring the next level of heat (and scientific rigor) to Cymbal Supplements' R&D efforts.
+
+**Task:**
+
+Using the results from Part 1 within Agentspace, instruct Gemini to filter and identify the **top 2 candidates** based on their calculated Suitability Scores.
+
+**Requirement:**
+
+Gemini should clearly identify and present the top 2 candidates, along with their respective Suitability Scores, indicating why they are the strongest matches for the R&D: Food Scientist (Sauce Development) role according to its analysis.
+
+**Success Criteria:**
+
+* Gemini has accurately identified the 2 candidates with the highest Suitability Scores.
+* The output clearly states the names (or identifiers) of the top 2 candidates and their corresponding scores.
+* Ideally, Gemini provides a brief justification for why these candidates are considered the top matches based on their skills and experience in relation to the Job Description.
