@@ -1,10 +1,6 @@
-## Part 2: Entering the Marketing Command Center 🚀
+Now let's login to the Agentspace Demo!
 
-**Task:** Logging in to the Agentspace Retail Demo.
-
-**Points:** 500
-
-**Instructions:**
+**Task:**
 
 Access the Cymbal Agentspace environment using one of the following methods:
 

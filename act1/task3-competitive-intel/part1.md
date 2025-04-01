@@ -1,4 +1,4 @@
-Before we begin, let's get you registered for AgentSpace!
+Before we begin, let's get you registered for Agentspace!
 
 **Steps:**
 
