@@ -1,0 +1,12 @@
+{
+  "yaml.schemas": {
+    "schema/task-schema.json": "task.yaml",
+    "schema/tasks-schema.json": "tasks.yaml",
+    "https://json.schemastore.org/cloudbuild.json": "cloudbuild.yaml"
+  },
+  "cloudcode.yaml.validate": false,
+  "java.compile.nullAnalysis.mode": "automatic",
+  "cSpell.words": [
+    "cloudbuild"
+  ]
+}

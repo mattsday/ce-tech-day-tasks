@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "googlecloudtools.cloudcode",
+    "google.geminicodeassist",
+    "redhat.vscode-yaml",
+    "golang.go",
+  ]
+}
