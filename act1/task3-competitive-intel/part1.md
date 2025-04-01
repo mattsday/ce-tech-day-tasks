@@ -1,10 +1,6 @@
-## Part 1: Gearing Up for Action! ⚙️
+Before we begin, let's get you registered for AgentSpace!
 
-**Task:** Registering for access to the Agentspace Retail Demo.
-
-**Points:** 500
-
-**Instructions:**
+**Steps:**
 
 1. Using your **Google Profile**, navigate to the Cymbal Agentspace User Creation App: [https://demo-1218.1987984870407.demo.altostrat.com/](https://demo-1218.1987984870407.demo.altostrat.com/)
 
