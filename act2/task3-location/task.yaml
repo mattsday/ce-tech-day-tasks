@@ -16,7 +16,9 @@ task:
     - To keep up with the demand, we need to find the perfect spot for a brand-new factory. But where? We're not just throwing darts at a map – we're going full data-detective!
   tf_enabled: false
   tf_vars: []
-  metadata: {}
+  metadata: 
+    service_name: geo-viz
+    db_name: bigquery
   group: Act 2
 parts:
   - name: Flood Risk Assessment 🌊
