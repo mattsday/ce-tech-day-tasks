@@ -5,10 +5,15 @@ This cluster will be the foundation for your **AI Hypercomputer**, enabling you 
 ### Task
 
 1. **Deploy a Slurm Cluster:**
-    * Use the provided Cluster Toolkit and YAML blueprint to deploy a Slurm cluster.
+    * [Open your Cloud Workstation](https://console.cloud.google.com/workstations/overview) and use the provided Cluster Toolkit and YAML blueprint to deploy a Slurm cluster.
     * Ensure the cluster has sufficient compute resources to handle the upcoming AI workload.
 2. **Verification:**
     * Provide a screenshot of the Slurm login screen. You should be able to navigate to your instance in the GCE console and ssh into it.
+    * Login to your cluster with the following command:
+
+```bash
+gcloud compute ssh hpcslurm-slurm-login-001 --tunnel-through-iap --zone "%%LOCATION%%-b"
+```
 
 ### Tips
 
