@@ -1,38 +1,60 @@
----
 metadata:
   version: 1
 task:
   id: act1-task3
-  name: "Competitive Intelligence 🕵"
+  name: "Respond to Mud-slinging marketing!"
   enabled: true
+  lb_hidden: false
   hidden: false
-  description: Come up with winning strategies to beat your competitors
+  description: Chronos Chutney is attacking! Deploy an autonomous marketing agent to protect Cymbal Supplements' brand.
   overview:
-    - Your competition has posted an article on how your product adds age rather than reversing it.
-    - Utilise Agentspace to surface the latest internal research and craft a press release. 
+    - Our rival, Chronos Chutney, is spreading negative claims about Cymbal Sauce.
+    - Develop and test an autonomous agent to generate effective counter-marketing strategies.
+  tf_enabled: false
+  tf_vars: []
+  metadata:
+    brand_rival: Chronos Chutney
+    negative_claim: "Cymbal Sauce makes time fly instead of rewinding it."
   group: Act 1
 parts:
-  - name: Hello NotebookLM
-    id: part1
+  - name: Register for Agentspace Access 🔑
+    id: register
     type: image
-    upload_text: "Upload screenshot of your Notebook"
     max_points: 500
     instructions_link: part1.md
-    llm_instructions: Ensure they are using NotebookLM and uploading a screenshot of that UI. The examples are a good guide to stick with.
+    upload_text: Upload a screenshot confirming your registration.
+    llm_instructions: Evidence should show successful registration in the Cymbal Agentspace User Creation App.
     good_examples:
       - examples/part1-1.jpg
-      - examples/part1-2.jpg
-    hidden: false
-  - name: Advanced NotebookLM
-    id: part2
-    challenge: true
+  - name: Log in to Agentspace 🚪
+    id: login
     type: image
-    upload_text: "Upload something special"
-    max_points: 1000
+    max_points: 500
     instructions_link: part2.md
-    llm_instructions: Reward creative use of NotebookLM. Look for evidence of complex queries, in-depth usage, etc. The examples provided show only a few sources on the left and therefore would recieve 25% points maximum. Look for reports, insights, a variety of data sources, and more.
+    upload_text: Upload a screenshot of the Agentspace environment after login.
+    llm_instructions: Evidence should show successful login to the Cymbal Agentspace environment.
+    good_examples:
+      - examples/part2-1.jpg
+    depends_on: [register]
+  - name: Create Autonomous Agent 🤖
+    id: create_agent
+    type: custom
+    component: VerifyAgentspaceAgentCreation
+    max_points: 1000
+    instructions_link: part3.md
+    upload_text: Upload a screenshot of your agent configuration and a description of its functionality.
+    llm_instructions: Verify the agent is configured to receive text prompts and analyze visual input (screenshots) to generate marketing campaign ideas for brand protection.
+    good_examples:
+      - examples/part3-1.jpg
+    depends_on: [login]
+  - name: Test the Brand Defender! 🧪
+    id: test_agent
+    type: custom
+    component: VerifyAgentspaceAgentTesting
+    max_points: 1000
+    instructions_link: part4.md
+    upload_text: Upload a screenshot of your input and the agent's output, along with your evaluation.
+    llm_instructions: Verify the agent can process the simulated negative campaign and generate relevant and creative counter-marketing ideas.
     good_examples:
       - examples/part1-1.jpg
-      - examples/part1-2.jpg
-    hidden: false
-    depends_on: [part1]
+    depends_on: [create_agent]
