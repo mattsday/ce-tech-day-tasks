@@ -28,9 +28,18 @@ parts:
     max_points: 500
     instructions_link: part1.md
     upload_text: Upload a screenshot confirming your registration.
-    llm_instructions: Evidence should show successful registration in the Cymbal Agentspace User Creation App.
+    llm_instructions: |
+      The screenshot should be of the "Agentspace for Retail App" (similar to the examples) and have the following aspects:
+        - "User Email" field
+        - "Password" field
+        - "Demo User Profile information"
+
+      If all of these exist then it's likely the user has completed the task correctly. Award either full points or zero points. Do not award partial points.
+
+      If the screenshot is close enough to the above content, then award maximum points.
     good_examples:
       - examples/part1-1.jpg
+      - examples/part1-2.jpg
   - name: Log in to Agentspace 🚪
     id: login
     type: image
