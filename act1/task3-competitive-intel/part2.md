@@ -1,12 +1,21 @@
 Now let's login to the Agentspace Demo!
 
-**Task:**
+### Task
 
 Access the Cymbal Agentspace environment using one of the following methods:
 
-* **Method 1:** Carefully follow any specific login instructions provided upon successful registration in the User Creation App.
-* **Method 2:** Go directly to the Agentspace login page (which may be the same link as the registration page or a separate one provided upon registration) and enter the username and password you created in Part 1.
+1. Launch the [Agentspace Environment](https://vertexaisearch.cloud.google.com/u/1/home/cid/6798d158-f8a3-4d67-88ff-27e8005b00bf)
 
-**Evidence:**
+::alert[**Note**: If you recieve an error saying `Configuration is not authorized on "vertexaisearch.cloud.google.com". That's all we know.` then expand below for instructions]{severity=info}
+
+:::collapse{title="Help: Fixing 403 Errors"}
+If you get the following error, click the user circle in the top-right:
+
+![403 Workaround](https://storage.googleapis.com/hacksday-resources/tech-day/403-workaround.webp)
+
+Then click **Add another account** and fill in your agentspace account that you received in the above step. The app should then work. If it does not, talk to a judge.
+:::
+
+### Evidence
 
 Upload a screenshot of the Agentspace environment after you have successfully logged in. This should show a dashboard or landing page indicating that you have access.

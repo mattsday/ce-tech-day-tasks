@@ -1,6 +1,6 @@
 Before we begin, let's get you registered for Agentspace!
 
-**Steps:**
+### Task
 
 1. Using your **Google Profile**, navigate to the Cymbal Agentspace User Creation App: [https://demo-1218.1987984870407.demo.altostrat.com/](https://demo-1218.1987984870407.demo.altostrat.com/)
 
@@ -9,6 +9,6 @@ Before we begin, let's get you registered for Agentspace!
 2. Follow the on-screen instructions to register yourself as a new user within the Cymbal Agentspace environment.
 3. Ensure you record your username and password, as you will need these for the next part of the task.
 
-**Evidence:**
+### Evidence
 
 Upload a screenshot confirming your successful registration within the User Creation App. This should clearly show your username or a confirmation message.
