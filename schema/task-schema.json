@@ -168,9 +168,17 @@
             "required": ["name", "description", "tables"]
           }
         },
+        "upload_files": {
+          "type": "array",
+          "default": null,
+          "description": "Files to upload into the assets storage bucket (e.g. extra documents)",
+          "items": {
+            "type": "string"
+          }
+        },
         "metadata": {
           "type": "object",
-          "description": "Metadata for this part",
+          "description": "Metadata for this task",
           "additionalProperties": { "type": "string" }
         }
       },
