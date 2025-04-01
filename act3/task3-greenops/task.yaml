@@ -1,5 +1,8 @@
 metadata:
   version: 1
+  authors:
+    - name: Kavi Manivarmane
+      email: kmanivarmane@google.com
 task:
   id: act3-task3
   name: "GreenOps: Carbon Conscious Cymbal 🌍🌶️"

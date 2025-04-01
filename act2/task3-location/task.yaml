@@ -1,5 +1,8 @@
 metadata:
-  version: 2
+  version: 1
+  authors:
+    - name: Kavi Manivarmane
+      email: kmanivarmane@google.com
 task:
   id: act2-task3
   name: "Finding Cymbal's Sweet Spot 🍬"

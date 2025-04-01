@@ -1,5 +1,10 @@
 metadata:
   version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
+    - name: Kavi Manivarmane
+      email: kmanivarmane@google.com
 task:
   id: act1-task1
   name: "From Label to Lab 🔬"

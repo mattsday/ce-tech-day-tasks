@@ -1,6 +1,9 @@
 ---
 metadata:
   version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
 task:
   id: act1-task2 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
   name: "It worked on my laptop! 🪲"

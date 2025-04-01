@@ -1,5 +1,8 @@
 metadata:
   version: 1
+  authors:
+    - name: Yen Chau
+      email: yenchau@google.com
 task:
   id: act3-task2
   name: "Hot Sauce Help Desk 🌶️🤖"

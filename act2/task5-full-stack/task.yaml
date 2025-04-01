@@ -1,5 +1,10 @@
 metadata:
   version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
+    - name: Esther Lloyd
+      email: estherlloyd@google.com
 task:
   id: act2-task5
   name: "Spice Up the Reviews! 🌶"

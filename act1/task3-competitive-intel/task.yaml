@@ -1,5 +1,10 @@
 metadata:
   version: 1
+  authors:
+    - name: Debojyoti Das
+      email: dasdebojyoti@google.com
+    - name: Yen Chau
+      email: yenchau@google.com
 task:
   id: act1-task3
   name: "Respond to Mud-slinging marketing!"

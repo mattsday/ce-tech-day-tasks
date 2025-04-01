@@ -1,5 +1,8 @@
 metadata:
   version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
 task:
   id: bonus-bug-bash
   name: "Bug Bounty Bonanza 🐛"

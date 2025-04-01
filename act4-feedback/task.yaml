@@ -1,6 +1,9 @@
 ---
 metadata:
   version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
 task:
   id: act4-feedback # Do not rename this task without changing the feedback appscript code too
   name: "Feedback ❤"

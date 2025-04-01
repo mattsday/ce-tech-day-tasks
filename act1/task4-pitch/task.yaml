@@ -1,6 +1,9 @@
 ---
 metadata:
   version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
 task:
   id: act1-task4
   name: "Investor Pitch 🐲"

@@ -1,5 +1,12 @@
 metadata:
   version: 1
+  authors:
+    - name: Debojyoti Das
+      email: dasdebojyoti@google.com
+    - name: Yen Chau
+      email: yenchau@google.com
+    - name: Ashik Kay
+      email: ashikkay@google.com
 task:
   id: act2-task4
   name: "What about Marketing? 📈"

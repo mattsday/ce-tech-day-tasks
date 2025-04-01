@@ -1,6 +1,11 @@
 ---
 metadata:
   version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
+    - name: Yen Chau
+      email: yenchau@google.com
 task:
   id: act3-task5
   name: "Security Audit 🔐"

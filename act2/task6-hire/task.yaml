@@ -1,6 +1,9 @@
 ---
 metadata:
   version: 1
+  authors:
+    - name: Ashik Kay
+      email: ashikkay@google.com
 task:
   id: act2-task6
   name: Hire Hire Hire! 🤝

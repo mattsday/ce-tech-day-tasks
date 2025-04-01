@@ -1,6 +1,9 @@
 ---
 metadata:
   version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
 task:
   id: 0-registration
   alias:
