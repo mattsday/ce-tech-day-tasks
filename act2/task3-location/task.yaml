@@ -1,6 +1,8 @@
 metadata:
-<<<<<<< HEAD
   version: 2
+    authors:    
+    - name: Kavi Manivarmane
+      email: kmanivarmane@google.com
 task:
   id: act2-task3
   name: "Location Location Location 📍"
@@ -40,58 +42,4 @@ parts:
     depends_on: [flood-risk, brownfield]
     upload_text: Upload a satellite view of the Geo Viz map highlighting the top 5 suggested factory locations.
     llm_instructions: The satellite view should clearly show the top 5 brownfield locations identified that are NOT in high flood risk areas. The completed aggregate SQL query should correctly use ST_UNION to group high-risk areas and ST_DISJOINT to find suitable brownfield sites.
-=======
-  version: 1
-  authors:
-    - name: Kavi Manivarmane
-      email: kmanivarmane@google.com
-task:
-  id: act2-task3
-  name: "Finding Cymbal's Sweet Spot 🍬"
-  enabled: true
-  lb_hidden: false
-  hidden: false
-  description: "Help Cymbal Supplements select the optimal location for their new factory by analyzing flood risk and land use data."
-  overview:
-    - "Cymbal Supplements needs a new factory to meet growing demand."
-    - "Analyze flood risk data from Earth Engine and BigQuery."
-    - "Identify suitable locations using OpenStreetMap data."
-  # TODO - talk to Matt about how to add data sources 😃
-  # metadata:
-  #   data_sources: [earth_engine_flood_data, openstreetmap_land_use]
-  bq_datasets:
-    - name: midlands_factory_location
-      description: Datasets describing geographical areas and flooding
-      tables:
-        - name: midlands_areas_of_interest
-          source: gs://hacksday-resources/data/areas-of-interest.csv
-          schema: deploy/data/tech-day/areas-of-interest.json
-          description: Midlands areas of interest
-        - name: midlands_earthengine_grid_data
-          source: gs://hacksday-resources/data/midlands.csv
-          schema: deploy/data/tech-day/midlands.json
-          description: Midlands Earth Engine grid data
-  group: Act 2
-parts:
-  - name: "Flood Risk Assessment: Keeping Dry 🌊"
-    id: flood_risk
-    type: image
-    max_points: 1000
-    instructions_link: part1.md
-    upload_text: "Upload a screenshot showing the geospatial visualization of flood risk data and the BigQuery query results."
-    llm_instructions: "Verify the BigQuery query correctly analyzes Earth Engine flood risk data. Ensure the screenshot shows a clear geospatial visualization with insights into flood risk factors. Confirm the query identifies risk levels accurately."
-  - name: "Off Limits: Avoiding the Fields 🌾"
-    id: land_use
-    type: image
-    max_points: 500
-    instructions_link: part2.md
-    upload_text: "Upload a screenshot showing the identified agricultural land using OpenStreetMap data."
-    llm_instructions: "Verify the screenshot accurately highlights agricultural land based on OpenStreetMap data. Ensure the CE has correctly identified areas to avoid for factory construction."
-  - name: "Location Suggestions: Pinpointing Potential 📍"
-    id: location_suggestions
-    type: image
-    max_points: 500
-    instructions_link: part3.md
-    upload_text: "Upload a screenshot of the location map with the top 3 suggested factory locations circled."
-    llm_instructions: "Evaluate the suggested factory locations based on the flood risk and land use analyses. Ensure the chosen locations are in low-risk flood zones and avoid agricultural land. Verify the CE has correctly circled the top 3 suitable areas."
->>>>>>> 4f9020188bb64225de548fa7529a3fcfde557687
+
