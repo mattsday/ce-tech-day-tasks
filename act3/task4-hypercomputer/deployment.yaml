@@ -41,7 +41,8 @@ deployment_groups:
         source: community/modules/compute/schedmd-slurm-gcp-v6-nodeset
         use: [network, python]
         settings:
-          node_count_dynamic_max: 3
+          node_count_static: 3
+          node_count_dynamic_max: 0
           allow_automatic_updates: false
           machine_type: e2-standard-2
           on_host_maintenance: MIGRATE # Required for e2 images
