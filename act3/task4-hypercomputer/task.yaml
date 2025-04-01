@@ -43,7 +43,8 @@ parts:
   - name: Running the Python Optimisation Program 🐍
     id: run_python_program
     challenge: true
-    type: image
+    type: custom
+    component: VerifySlurm
     max_points: 1250
     instructions_link: part3.md
     upload_text: Upload a screenshot of the Python program's output.

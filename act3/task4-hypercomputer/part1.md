@@ -12,7 +12,7 @@ This cluster will be the foundation for your **AI Hypercomputer**, enabling you 
     * Login to your cluster with the following command:
 
 ```bash
-gcloud compute ssh hpcslurm-slurm-login-001 --tunnel-through-iap --zone "%%LOCATION%%-b"
+gcloud compute ssh hpcslurm-slurm-login-001 --tunnel-through-iap --zone "%%LOCATION%%-b" --project %%CLIENT_PROJECT_ID%%
 ```
 
 ### Tips
