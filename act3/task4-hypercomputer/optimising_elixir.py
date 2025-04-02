@@ -30,6 +30,7 @@ FERMENTATION_VESSELS = [
 # Does background music influence the elixir's potency? Of course!
 AMBIENT_MUSICS = [
     "mf_doom",  # Mm Food
+    "anthony_kiedis", # Funky vibes
     "heavy_metal_slayer",  # YOLO
     "barry_manilow_collection",  # Risky!
     "absolute_silence",  # For the purists
