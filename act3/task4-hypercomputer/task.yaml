@@ -22,6 +22,24 @@ task:
     - deployment.yaml
     - optimising_elixir.py
     - submit.sh
+  metadata:
+    systemPrompt: |
+      The user has submitted a Slurm job across several nodes. They will paste their output below. Ensure it looks generally correct.
+
+      In particular, it should be the results collection, like this:
+
+      "--- Collecting Results from Directory: results_job_xxx ---
+
+      --- The Ultimate Elixir Formula Has Been Revealed! ---
+      Best Pepper Variety : jalapeno
+      Best Fermentation Time: 60 hours
+      Best Vessel         : oak_barrel
+      Best Ambient Music  : mf_doom
+      Best Lunar Phase    : the_waterboys
+      Achieved Youth Score: 100.00
+      (Found by Task 2 out of 10)
+
+      Total combinations processed across all tasks: 5,775"
 parts:
   - name: Cluster Standup 🧱
     id: cluster_standup
