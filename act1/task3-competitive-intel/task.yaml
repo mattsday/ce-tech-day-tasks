@@ -46,14 +46,17 @@ parts:
     max_points: 500
     instructions_link: part2.md
     upload_text: Upload a screenshot of the Agentspace environment after login.
-    llm_instructions: Evidence should show successful login to the Cymbal Agentspace environment.
+    llm_instructions: |
+      Evidence should show successful login to the Cymbal Agentspace environment. An Agentspace home screen (similar to the examples) is sufficient.
+      
+      Either award zero points or maximum points for this task.
     good_examples:
       - examples/part2-1.jpg
+      - examples/part2-2.jpg
     depends_on: [register]
   - name: Create Autonomous Agent 🤖
     id: create_agent
-    type: custom
-    component: VerifyAgentspaceAgentCreation
+    type: image
     max_points: 1000
     instructions_link: part3.md
     upload_text: Upload a screenshot of your agent configuration and a description of its functionality.
@@ -63,8 +66,7 @@ parts:
     depends_on: [login]
   - name: Test the Brand Defender! 🧪
     id: test_agent
-    type: custom
-    component: VerifyAgentspaceAgentTesting
+    type: image
     max_points: 1000
     instructions_link: part4.md
     upload_text: Upload a screenshot of your input and the agent's output, along with your evaluation.
