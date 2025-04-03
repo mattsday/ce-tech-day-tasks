@@ -6,7 +6,7 @@ Your mission, should you choose to accept it (and you better, because the fate o
 
 1. **Enter the Genkit Kitchen**:
     1. Open Cloud Workstations and start your instance: [Cloud Workstations](https://console.cloud.google.com/workstations/overview).
-    2. Inside workstations, select **Open Folder** and select **ai-app**
+    2. Inside workstations, select **Open Folder** and select **reviews-app**
     3. Launch the Genkit console – think of it as the control center for our AI chef. You can do that with this command:
 
 ```sh

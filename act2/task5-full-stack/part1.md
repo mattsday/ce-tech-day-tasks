@@ -8,7 +8,7 @@ This initial step will confirm you have the necessary tools and can get the app 
 
 1. **Open the Code**:
     1. Open Cloud Workstations and start your instance: [Cloud Workstations](https://console.cloud.google.com/workstations/overview).
-    2. Inside workstations, select **Open Folder** and select **ai-app**
+    2. Inside workstations, select **Open Folder** and select **reviews-app**
 2.  **Install the Dependencies:** This is like stocking your spice rack – you need all the right ingredients to make the magic happen.
 
 ```bash
