@@ -1,0 +1,93 @@
+<speak>
+  <voice name="en-GB-Wavenet-B">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-B">Hello, Cymbal Supplements customer service. This is Charlie speaking. How may I assist you today?</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-F">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-F">Yes, hello. My name is Alex Henderson of 742 Evergreen Terrace. I'm calling about the 'Phoenix Fire' hot sauce I recently purchased. It was... well, it was like licking the sun!</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-B">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-B">I'm sorry to hear that, Ms. Henderson. Could you please elaborate on what you found unsatisfactory?</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-F">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-F">It was beyond hot! My mouth felt like it was filled with molten lava. I couldn't taste anything else in my food. It was advertised as 'fiery,' but this was an inferno! Completely inedible.</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-B">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-B">I understand your discomfort, Ms. Henderson. However, 'Phoenix Fire' is one of our hottest sauces, known for its intense heat derived from rare chili peppers. Perhaps it was hotter than you anticipated?</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-F">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-F">Anticipated? I enjoy spicy food! But this wasn't about flavor, it was just pure, unbearable heat. The product is faulty if it's that extreme. I want a refund.</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-B">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-B">Unfortunately, Ms. Henderson, we generally do not offer refunds on opened food products due to taste preference. We stand by the quality and potency of our ingredients. Perhaps you would be interested in a discount on one of our milder sauces, like the 'Sunset Salsa'?</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-F">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-F">A discount? I don't want another sauce that might spontaneously combust in my mouth! I want my money back. I'm not going to risk setting my taste buds on fire again. This is absurd.</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-B">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-B">Ms. Henderson, I understand you're upset. However, our policy is clearly stated on our website. I can offer you a 15% discount on your next order, or perhaps a complimentary sample of our 'Mellow Mango' sauce, which has a much gentler heat.</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-F">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-F">15%? That's adding insult to injury! I'm going to write a review so scorching it'll need its own hazard warning. And I'll tell everyone I know that Cymbal Supplements sells napalm in a bottle. This is the worst customer service I've ever encountered!</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-B">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-B">I'm sorry you feel that way, Ms. Henderson. Is there anything else I can assist you with?</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-F">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-F">No! Goodbye (and maybe invest in a Scoville scale with higher numbers!).</voice>
+      </prosody>
+    </p>
+  </voice>
+  <voice name="en-GB-Wavenet-B">
+    <p>
+      <prosody rate="medium">
+        <voice name="en-GB-Wavenet-B">Goodbye, Ms. Henderson.</voice>
+      </prosody>
+    </p>
+  </voice>
+</speak>

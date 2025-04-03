@@ -25,23 +25,23 @@ parts:
   - name: "Local Launch: App Ignition 🚀"
     id: "run-local"
     type: image
-    max_points: 250
+    max_points: 500
     instructions_link: part1.md
     good_examples:
       - examples/part1-1.jpg
       - examples/part1-2.jpg
       - examples/part1-3.jpg
     llm_instructions: Evidence of a screenshot that looks like the provided examples is sufficient. The app does not need to be special. The screenshot should show an App that clearly shows a number of sample reviews (with stars) and an input box at the bottom for a new review to be submitted. Don't award partial points, award 100% if the benefit of the doubt suggests they have successfully started the app.
-  - name: "Flow Check: Genkit Validation 🧪"
-    id: genkit_validation
-    type: image
-    max_points: 500
-    instructions_link: part2.md
-    upload_text: "Upload a screenshot of the Genkit console validating your flow."
-    llm_instructions: "Any evidence of successful Genkit flow validation with screenshots will suffice."
-    depends_on:
-      - run-local
-  - name: "Code Enhancement: Gemini's Verdict 🧑‍💻"
+  # - name: "Flow Check: Genkit Validation 🧪"
+  #   id: genkit_validation
+  #   type: image
+  #   max_points: 500
+  #   instructions_link: part2.md
+  #   upload_text: "Upload a screenshot of the Genkit console validating your flow."
+  #   llm_instructions: "Any evidence of successful Genkit flow validation with screenshots will suffice."
+  #   depends_on:
+  #     - run-local
+  - name: "[Optional] Code Enhancement: Gemini's Verdict 🧑‍💻"
     id: code_enhancement
     type: image
     max_points: 750

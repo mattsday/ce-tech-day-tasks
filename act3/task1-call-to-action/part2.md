@@ -1,6 +1,6 @@
 You've successfully harnessed the power of Gemini to understand basic sentiment – excellent work! But at Cymbal Supplements, we don't just stop at "good." We aim for "legendary!" This is your chance to take this audio analysis notebook and crank it up to eleven!
 
-::challenge[Be creative and extend this Colab Enterprise notebook to solve an even more interesting challenge related to our global customer feedback. Think about how you can further analyze this audio data or integrate it with other Google Cloud services to provide even richer insights for our marketing team.]::
+::challenge[Be creative and extend this Colab Enterprise notebook to solve an even more interesting challenge related to our global customer feedback. Think about how you can further analyze this audio data or integrate it with other Google Cloud services to provide even richer insights for our marketing team.]
 
 **Consider these ideas (but don't be limited by them!):**
 

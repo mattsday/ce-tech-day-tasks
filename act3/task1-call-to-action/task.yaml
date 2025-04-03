@@ -21,10 +21,10 @@ task:
   user_files:
     - source: deploy/notebooks/audio_analysis.ipynb
       destination: audio_analysis.ipynb
-    - source: deploy/notebooks/bad-service.ogg
-      destination: bad-service.ogg
-    - source: deploy/notebooks/bad-service.xml
-      destination: bad-service.xml
+    - source: tasks/act3/task1-call-to-action/recording.ogg
+      destination: recording.ogg
+    - source: tasks/act3/task1-call-to-action/recording.xml
+      destination: recording.xml
 parts:
   - name: Tuning into Sentiment 👂
     id: setup
@@ -39,8 +39,8 @@ parts:
     challenge: true
     type: image
     max_points: 2000
-    instructions_link: part3.md
-    upload_text: Upload a screenshot showcasing your creative extension of the Colab Enterprise notebook. Briefly describe your innovation in the upload.
+    instructions_link: part2.md
+    upload_text: Upload a screenshot showcasing your creative extension of the Colab Enterprise notebook
     llm_instructions: |
       Award points based on the creativity, technical implementation, and relevance to Cymbal Supplements' global expansion. Consider the use of other Google Cloud services like Text-to-Speech for summarizing positive feedback, Imagen for visualizing sentiment trends geographically, or Vertex AI for further analysis (e.g., topic modeling). Look for clear evidence of the implemented extension in the screenshot and the user's description. Encourage solutions that provide actionable insights for the marketing team.
       
