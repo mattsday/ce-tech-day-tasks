@@ -8,4 +8,4 @@ The Cloud SQL instance is showing signs of stress. 🤒
 
 1. Investigate the CloudSQL instance using Cloud Assist and other operations tools
 2. Mitigate the situation with an immediate fix
-3. (Optional) Prepare for the future by implementing high availability
+3. Prepare for the future by implementing high availability

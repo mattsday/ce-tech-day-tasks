@@ -34,6 +34,10 @@ parts:
     upload_text: "Upload a Vertex AI Screenshot with your allergens"
     depends_on:
       - part1
+    llm_instructions: |
+      The screenshot should show the Vertex AI console in Google Cloud with some suggestions around food allergens. The image they have been requested to provide will be small and is not important for scoring this task.
+
+      A successful submission will simply list some known ingredients. If in doubt, award full points. Do not award partial points for this challenge.
   - name: "Export to Colab: The Recipe for Success 📝"
     id: part3
     type: image
@@ -41,6 +45,8 @@ parts:
     instructions_link: part3.md
     depends_on:
       - part2
+    llm_instructions: |
+      Award full points if the user is clearly in Colab Enterprise with any kind of notebook present.
   - name: "Visual Compliance: Green Light, Go! 🚦"
     id: part4
     type: image
@@ -48,3 +54,5 @@ parts:
     instructions_link: part4.md
     depends_on:
       - part3
+    llm_instructions: |
+      Award maximum points if the user has it right and their traffic light has a colour (e.g. a red circle). Award partial points if it does not have colour output and instruct them to add them.

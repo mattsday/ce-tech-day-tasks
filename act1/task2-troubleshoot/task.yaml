@@ -29,7 +29,10 @@ parts:
     max_points: 500 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part1.md
     upload_text: Upload a screenshot of cloud assist assisting you!
-    llm_instructions: Any evidence of Gemini Code Assist troubleshooting with Google Cloud logging and/or Gemini in the Google Cloud console will suffice.
+    llm_instructions: |
+      Any evidence of Gemini Code Assist troubleshooting with Google Cloud logging and/or Gemini in the Google Cloud console will suffice.
+
+      If the user has Gemini Cloud Assist open and it mentions memory issues (e.g. out of memory, memory leaks, etc) then award maximum points. Do not award partial points.
     # good_examples:
     #   - examples/part1-1.jpg
     #   - examples/part1-2.jpg
@@ -49,12 +52,12 @@ parts:
     component: VerifyDatabaseRepair
     max_points: 1000 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part3.md
-    depends_on: [basic, fix]
+    depends_on: [basic]
   - name: Securing a Brighter Future 🔒
     id: security
     challenge: true
     type: custom
     component: VerifyServiceAccount
-    max_points: 250 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
+    max_points: 100 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part4.md
     depends_on: [basic, fix, database]

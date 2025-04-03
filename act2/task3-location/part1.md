@@ -6,7 +6,7 @@ Your mission, should you choose to accept it, is to dive into the world of geosp
 
 ## Your Task
 
-1.  Query the Flood Data: Use BigQuery to analyze the `midlands_factory_location.midlands_earthengine_grid_data` table. Write a SQL query to identify grid cells with a high flood risk based on the following criteria:
+1.  Query the Flood Data: [Open BigQuery Studio](https://console.cloud.google.com/bigquery?project=%%CLIENT_PROJECT_ID%%) to analyze the `midlands_factory_location.midlands_earthengine_grid_data` table. Write a SQL query to identify grid cells with a high flood risk based on the following criteria:
     * Land use (`dw_classnumber`) is classified as "built", "water", or "flooded_vegetation". We want to avoid building on existing structures, bodies of water, or areas already prone to flooding. *(Hint: You can use a `SELECT DISTINCT dw_class_name` query to find the corresponding `dw_classnumber` values)*
     * The average slope (`lidar_mean_slope`) of the grid cell is below 5% (relatively flat terrain). We don't want our factory sliding down a hill!
     * The Height Above Nearest Drainage (`merit_hand`) is below 1.5 meters. Areas close to drainage are more susceptible to flooding.
