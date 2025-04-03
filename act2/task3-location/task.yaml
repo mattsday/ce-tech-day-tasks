@@ -1,8 +1,8 @@
 metadata:
   version: 1
-  authors:    
-  - name: Kavi Manivarmane
-    email: kmanivarmane@google.com
+  authors:
+    - name: Kavi Manivarmane
+      email: kmanivarmane@google.com
 task:
   id: act2-task3
   name: "Location Location Location 📍"
@@ -16,10 +16,22 @@ task:
     - To keep up with the demand, we need to find the perfect spot for a brand-new factory. But where? We're not just throwing darts at a map – we're going full data-detective!
   tf_enabled: false
   tf_vars: []
-  metadata: 
+  metadata:
     service_name: geo-viz
     db_name: bigquery
   group: Act 2
+  bq_datasets:
+    - name: midlands_factory_location
+      description: Datasets describing geographical areas and flooding
+      tables:
+        - name: midlands_areas_of_interest
+          source: gs://hacksday-resources/data/areas-of-interest.csv
+          schema: deploy/data/tech-day/areas-of-interest.json
+          description: Midlands areas of interest
+        - name: midlands_earthengine_grid_data
+          source: gs://hacksday-resources/data/midlands.csv
+          schema: deploy/data/tech-day/midlands.json
+          description: Midlands Earth Engine grid data
 parts:
   - name: Flood Risk Assessment 🌊
     id: flood-risk
@@ -45,4 +57,3 @@ parts:
     depends_on: [flood-risk, brownfield]
     upload_text: Upload a satellite view of the Geo Viz map highlighting the top 5 suggested factory locations.
     llm_instructions: The satellite view should clearly show the top 5 brownfield locations identified that are NOT in high flood risk areas. The completed aggregate SQL query should correctly use ST_UNION to group high-risk areas and ST_DISJOINT to find suitable brownfield sites.
-
