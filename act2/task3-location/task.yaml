@@ -39,7 +39,10 @@ parts:
     max_points: 1000
     instructions_link: part1.md
     upload_text: Upload a screenshot of the Geo Viz map showing high flood risk areas and your SQL query.
-    llm_instructions: Ensure the screenshot clearly shows the geospatial data, grid, and evidence of identifying high flood risk areas based on the query criteria. The SQL query should correctly filter for built, water, and flooded vegetation land uses with low slope and HAND values.
+    llm_instructions: |
+      Ensure the screenshot clearly shows the geospatial data, grid, and evidence of identifying high flood risk areas based on the query criteria. The SQL query should correctly filter for built, water, and flooded vegetation land uses with low slope and HAND values.
+
+      If there is obviously geographical map coverage and it is using the Geo Viz tool and there is a suitable SQL query then award maximum points. Only award partial points if the task is obviously not completed (e.g. the screenshot is of BigQuery studio).
   - name: Brownfield Land Detection 🏭
     id: brownfield
     type: image
@@ -47,7 +50,8 @@ parts:
     instructions_link: part2.md
     depends_on: [flood-risk]
     upload_text: Upload a screenshot of the Geo Viz map highlighting potential brownfield sites and your completed SQL query.
-    llm_instructions: The Geo Viz map should clearly display potential brownfield locations within the specified area of interest. The completed SQL query should correctly UNNEST the tags and filter for 'landuse' = 'brownfield'.
+    llm_instructions: |
+      The Geo Viz map should clearly display potential brownfield locations within the specified area of interest. The completed SQL query should correctly UNNEST the tags and filter for 'landuse' = 'brownfield'.
   - name: Location Suggestions 🗺️
     id: suggestions
     challenge: true
@@ -56,4 +60,5 @@ parts:
     instructions_link: part3.md
     depends_on: [flood-risk, brownfield]
     upload_text: Upload a satellite view of the Geo Viz map highlighting the top 5 suggested factory locations.
-    llm_instructions: The satellite view should clearly show the top 5 brownfield locations identified that are NOT in high flood risk areas. The completed aggregate SQL query should correctly use ST_UNION to group high-risk areas and ST_DISJOINT to find suitable brownfield sites.
+    llm_instructions: |
+      The satellite view should clearly show the top 5 brownfield locations identified that are NOT in high flood risk areas. The completed aggregate SQL query should correctly use ST_UNION to group high-risk areas and ST_DISJOINT to find suitable brownfield sites.

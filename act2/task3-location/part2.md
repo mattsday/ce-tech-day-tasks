@@ -1,4 +1,4 @@
-## The Plot Thickens... (Not the Sauce, Hopefully!)
+The Plot Thickens... (Not the Sauce, Hopefully!)
 
 Now that we know where *not* to build (thanks to your flood risk assessment!), let's focus on finding suitable land for our state-of-the-art hot sauce factory. We're not just looking for any patch of green; we're on the hunt for **brownfield land**.
 
@@ -6,7 +6,7 @@ Brownfield land, for those not in the know, is previously developed land that ma
 
 For this part of the mission, we'll be using the amazing **OpenStreetMap (OSM)** dataset, which is conveniently available as a public dataset in BigQuery. Specifically, we're interested in the `planet_features_multipolygons` table, which contains polygon features representing various land uses.
 
-## Your Task
+### Task
 
 1.  **Explore OSM Data:** We're interested in land plots marked with the `landuse` key set to the value `brownfield`. These tags provide valuable information about how the land is currently (or was previously) used. You can learn more about the `landuse` key and its possible values here: [https://wiki.openstreetmap.org/wiki/Key:landuse](https://wiki.openstreetmap.org/wiki/Key:landuse)
 
@@ -36,9 +36,9 @@ For this part of the mission, we'll be using the amazing **OpenStreetMap (OSM)**
 
 4.  **Capture Your Findings:** Take a clear screenshot of the Geo Viz map, highlighting the potential brownfield sites within the Midlands sample area. Also, make sure to save your completed SQL query.
 
-## Upload
+### Scoring
 
-Upload **one file** containing:
+Upload a screenshot containing:
 
 * A clear screenshot of the Geo Viz map highlighting potential brownfield sites.
 * Your completed SQL query used to identify brownfield land.
