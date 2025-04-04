@@ -62,3 +62,4 @@ parts:
     upload_text: Upload a satellite view of the Geo Viz map highlighting the top 5 suggested factory locations.
     llm_instructions: |
       The satellite view should clearly show the top 5 brownfield locations identified that are NOT in high flood risk areas. The completed aggregate SQL query should correctly use ST_UNION to group high-risk areas and ST_DISJOINT to find suitable brownfield sites.
+    feedback_popup: true

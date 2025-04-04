@@ -40,3 +40,4 @@ parts:
     depends_on: [scoring]
     upload_text: Upload the two personalized interview invitation emails.
     llm_instructions: Verify that two distinct, personalized interview invitation emails were generated. Each email should mention the Food Scientist role at Cymbal Supplements, suggest a 1-hour interview, and ideally include a personalized touch based on the candidate's inferred strengths from their resume (as analyzed by Gemini). Award full points if two plausible and personalized invitation emails are provided.
+    feedback_popup: true

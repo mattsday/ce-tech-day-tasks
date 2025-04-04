@@ -33,3 +33,4 @@ parts:
     instructions_link: part2.md
     llm_instructions: For maximum points the logo should relate to the brief, the team name, and/or the theme
     depends_on: [name]
+    feedback_popup: true

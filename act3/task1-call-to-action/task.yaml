@@ -48,3 +48,4 @@ parts:
       Award points based on the creativity, technical implementation, and relevance to Cymbal Supplements' global expansion. Consider the use of other Google Cloud services like Text-to-Speech for summarizing positive feedback, Imagen for visualizing sentiment trends geographically, or Vertex AI for further analysis (e.g., topic modeling). Look for clear evidence of the implemented extension in the screenshot and the user's description. Encourage solutions that provide actionable insights for the marketing team.
       
       The examples show a minimal notebook - there should be more complex queries and it should not just be sentiment analysis.
+    feedback_popup: true

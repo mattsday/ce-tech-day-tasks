@@ -54,3 +54,4 @@ parts:
     instructions_link: part4.md
     depends_on: [data-prep, data-analysis, content-generation]
     llm_instructions: "Verify screenshots of DLP setup across BigQuery and GCS. Provide hints on configuring DLP jobs and inspection templates if needed."
+    feedback_popup: true

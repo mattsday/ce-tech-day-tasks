@@ -74,3 +74,4 @@ parts:
     good_examples:
       - examples/part1-1.jpg
     depends_on: [create_agent]
+    feedback_popup: true

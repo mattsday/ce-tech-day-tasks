@@ -69,3 +69,4 @@ parts:
     max_points: 150
     instructions_link: part5.md
     llm_instructions: "The task is to improve Firestore security rules. If they have not achieved full points, provide hints related to rule specificity, user authentication, and data access control. Points are binary - either they get everything right and earn full points, or they make a single mistake and earn 0 points."
+    feedback_popup: true

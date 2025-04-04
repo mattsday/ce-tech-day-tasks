@@ -36,3 +36,4 @@ parts:
     max_points: 2000
     instructions_link: pure-evil.md
     hidden: false
+    feedback_popup: true

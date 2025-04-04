@@ -32,3 +32,4 @@ parts:
     instructions_link: part2.md
     depends_on: [carbon_export]
     llm_instructions: "Evaluate the Looker Studio dashboard. Ensure it effectively visualizes carbon emissions data, including key metrics and trends. Verify that the dashboard provides insights for optimization and tracks progress towards the 15% reduction target."
+    feedback_popup: true

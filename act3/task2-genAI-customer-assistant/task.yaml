@@ -45,3 +45,4 @@ parts:
     instructions_link: part3.md
     depends_on: [qna_agent]
     llm_instructions: "Verify that Model Armor API is integrated into the agent flow to filter potentially sensitive content in the responses."
+    feedback_popup: true

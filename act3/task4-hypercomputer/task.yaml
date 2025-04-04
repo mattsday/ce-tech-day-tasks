@@ -67,3 +67,4 @@ parts:
     instructions_link: part3.md
     upload_text: Upload a screenshot of the Python program's output.
     llm_instructions: Any evidence of the python script running and outputting the optimal elixir formula will suffice.
+    feedback_popup: true

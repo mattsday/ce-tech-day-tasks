@@ -33,4 +33,4 @@ parts:
     max_points: 500
     hidden: false
     instructions_link: instructions.md
-  
+    feedback_popup: true

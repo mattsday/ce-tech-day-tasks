@@ -28,3 +28,4 @@ parts:
     instructions_link: part1.md
     upload_text: Upload your video audition for "Dragon's Den".
     llm_instructions: Gemini will analyze the submitted video, scoring based on creativity, clarity, engagement, and effective communication of Google Cloud integration. Gemini will also generate a synopsis of the video and select the top 5 auditions.
+    feedback_popup: true

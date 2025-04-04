@@ -61,3 +61,4 @@ parts:
     max_points: 100 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part4.md
     depends_on: [basic, fix, database]
+    feedback_popup: true
