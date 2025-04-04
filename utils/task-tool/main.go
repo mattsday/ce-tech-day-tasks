@@ -136,6 +136,7 @@ type Part struct {
 	Hidden           bool     `yaml:"hidden" firestore:"hidden"`
 	DependsOn        []string `yaml:"depends_on,omitempty" firestore:"depends_on"`
 	MaxFiles         int      `yaml:"max_files,omitempty" firestore:"max_files"`
+	FeedbackPopup    bool     `yaml:"feedback_popup,omitempty" firestore:"feedback_popup"`
 }
 
 type TaskSchema struct {

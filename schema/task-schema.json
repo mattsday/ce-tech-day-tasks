@@ -257,6 +257,11 @@
             "type": "number",
             "description": "Maximum number of files to upload for this part (for multi-image parts)",
             "default": 4
+          },
+          "feedback_popup": {
+            "type": "boolean",
+            "description": "Show the feedback popup after this task is complete",
+            "default": false
           }
         },
         "required": ["id", "max_points", "name", "type", "instructions_link"],
