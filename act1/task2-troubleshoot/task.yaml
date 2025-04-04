@@ -6,7 +6,7 @@ metadata:
       email: mattsday@google.com
 task:
   id: act1-task2 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
-  name: "It worked on my laptop! 🪲"
+  name: "It worked on my laptop!! 🪲"
   enabled: true
   lb_hidden: false
   hidden: false
