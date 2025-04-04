@@ -24,6 +24,23 @@ task:
     db_name: bigquery
     gcs_bucket: marketing-data
   group: Act 2
+  bq_datasets:
+    - name: campaign_marketing
+      description: Marketing Campaign Performance
+      tables:
+        - name: campaign_performance
+          source: gs://hacksday-resources/data/campaign_performance.csv
+          schema: deploy/data/tech-day/campaign_performance.json
+          description: Marketing Campaign Performance
+        - name: customer
+          source: gs://hacksday-resources/data/customer.csv
+          schema: deploy/data/tech-day/customer.json
+          description: Customer Data
+        - name: order
+          source: gs://hacksday-resources/data/order.csv
+          schema: deploy/data/tech-day/order.json
+          description: Order Data
+
 parts:
   - name: Data Discovery and Preparation 🕵️‍♀️
     id: data-prep
