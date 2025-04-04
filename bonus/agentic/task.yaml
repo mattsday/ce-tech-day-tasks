@@ -1,0 +1,36 @@
+---
+metadata:
+  version: 1
+task:
+  id: bonus-agentic-agents
+  name: "Agentic Agents 🕵"
+  enabled: true
+  lb_hidden: true # Keep bonus points off the main live leaderboard to avoid confusion? Or false if you want immediate reflection. True is often better for bonus tasks.
+  hidden: false # Participants need to know this exists!
+  description: "Why click when your AI minion can click for you? Automate tasks using AI Agents for massive bonus points!"
+  overview:
+    - Cymbal Supplements' age-reversing hot sauce is flying off the shelves! Efficiency is key.
+    - We believe in working smarter, not harder. Or... ideally, having an AI Agent do the work entirely.
+    - This *bonus* challenge rewards teams who successfully use AI Agents to complete parts (or all!) of other Tech Day tasks.
+    - Show us your agent overlords in action and reap the rewards!
+  tf_enabled: false # This task itself doesn't deploy TF resources
+  tf_vars: []
+  metadata: {} # No specific infra metadata needed for this bonus task
+  group: Bonus
+parts:
+  - name: "Delegate to the Digital 🤖"
+    id: agent_proof
+    open: true
+    type: none # Requires manual review/judging based on submitted evidence for other tasks
+    # OR potentially use 'manual_grade' if the platform supports it directly. 'custom' allows for a component but implies manual review here.
+    component: ManualAgentReview # Placeholder - signifies judges review this submission
+    max_points: 5000 # Total potential bonus points available across all tasks
+    instructions_link: agent_proof.md
+    # Use a text field for submission, asking for consolidated proof.
+    llm_instructions: |
+      Judges: Review the submitted text. Assess the claims of using AI agents to complete *other* Tech Day tasks. Award bonus points (up to 5000 total per team) based on:
+      1.  **Significance:** Did the agent perform a substantial part of the task(s)?
+      2.  **Success:** Did the agent achieve the correct outcome for the task(s)?
+      3.  **Innovation/Complexity:** Was it a sophisticated use of agents (e.g., multi-step planning, tool use) or just a simple script?
+      4.  **Number of Tasks Automated:** Using agents effectively across multiple tasks warrants more points.
+      Verify links/evidence provided. Focus on genuine automation/significant assistance. Simple API calls might score low; full task completion via agent scores high.
