@@ -1,19 +1,15 @@
-## Part 2: Candidate Scoring with Gemini 🧠🌶️
+You've successfully ingested the resume data and used Gemini within Agentspace to generate a Suitability Score for each applicant based on the Food Scientist (Sauce Development) Job Description. Now, the Hiring Manager at Cymbal Supplements needs you to narrow down the pool of candidates to the most promising ones. They're particularly interested in the top contenders who closely match the required skills and experience.
 
-**Background:**
+::challenge[Leverage Gemini's capabilities within Agentspace to filter the candidates based on the Suitability Scores generated in Part 1. Your objective is to identify the top 2 candidates who appear to be the best fit for the Food Scientist role according to Gemini's analysis.]
 
-You've successfully ingested the resume data and Gemini has diligently crunched the numbers, providing a Suitability Score for each applicant. Now it's time to put on your discerning recruiter hat and identify the cream of the crop – the top 2 candidates who have the potential to bring the next level of heat (and scientific rigor) to Cymbal Supplements' R&D efforts.
+### Task
 
-**Task:**
+Gemini, through your interaction in Agentspace, must be able to identify and present the top 2 candidates based on their calculated Suitability Scores.
 
-Using the results from Part 1 within Agentspace, instruct Gemini to filter and identify the **top 2 candidates** based on their calculated Suitability Scores.
+1. Return to your Agentspace environment where you ran the query in Part 1.
+2. Formulate a new query (or refine your previous one) using Gemini. This query should:
+   - Access the results of the previous analysis, including the Suitability Scores.
+   - Instruct Gemini to identify the top 2 candidates with the highest Suitability Scores.
+   - Request Gemini to output the names (or identifiers) and their corresponding Suitability Scores for these top 2 candidates.
 
-**Requirement:**
-
-Gemini should clearly identify and present the top 2 candidates, along with their respective Suitability Scores, indicating why they are the strongest matches for the R&D: Food Scientist (Sauce Development) role according to its analysis.
-
-**Success Criteria:**
-
-* Gemini has accurately identified the 2 candidates with the highest Suitability Scores.
-* The output clearly states the names (or identifiers) of the top 2 candidates and their corresponding scores.
-* Ideally, Gemini provides a brief justification for why these candidates are considered the top matches based on their skills and experience in relation to the Job Description.
+Provide a screenshot showing the output of your Agentspace query, clearly identifying the top 2 candidates and their Suitability Scores as determined by Gemini.
