@@ -5,7 +5,7 @@ metadata:
       email: yenchau@google.com
 task:
   id: act3-task2
-  name: "Hot Sauce Help Desk 🌶️🤖"
+  name: "Hot Sauce Help Desk 🤖"
   enabled: true
   lb_hidden: false
   hidden: false

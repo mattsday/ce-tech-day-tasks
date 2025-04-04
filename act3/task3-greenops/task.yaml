@@ -5,7 +5,7 @@ metadata:
       email: kmanivarmane@google.com
 task:
   id: act3-task3
-  name: "GreenOps: Carbon Conscious Cymbal 🌍🌶️"
+  name: "GreenOps: Carbon Conscious Cymbal 🌍"
   enabled: true
   lb_hidden: false
   hidden: false
