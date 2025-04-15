@@ -67,6 +67,12 @@ func main() {
 	defer db.Close()
 
 	switch action {
+	case "lock":
+		lock(ctx, false)
+	case "unlock":
+		lock(ctx, true)
+	case "testing":
+		testing(ctx)
 	case "start":
 		start(ctx)
 	case "troubleshoot":
@@ -81,6 +87,66 @@ func main() {
 		act3End(ctx)
 	default:
 		log.Fatalf("Unknown action: %s", action)
+	}
+}
+
+func lock(ctx context.Context, lock bool) {
+	tasksRef := db.Collection("tasks").Doc("tasks")
+
+	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
+
+		allTasks, err := tx.Get(tasksRef)
+		if err != nil {
+			return err
+		}
+		var t Tasks
+		allTasks.DataTo(&t)
+
+		t.Event.ScoringEnabled = lock
+
+		err = tx.Set(tasksRef, t)
+
+		return err
+	})
+
+	if err != nil {
+		log.Fatalf("%v", err)
+	}
+
+}
+
+func testing(ctx context.Context) {
+	allowList := []string{}
+	blockList := []string{}
+	disableGroups := []string{}
+	enableGroups := []string{"Act 1", "Act 2", "Act 3"}
+
+	tasksRef := db.Collection("tasks").Doc("tasks")
+	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
+		var err error
+		allTasks, err := tx.Get(tasksRef)
+		if err != nil {
+			return err
+		}
+		var t Tasks
+		allTasks.DataTo(&t)
+		t.Event.ScoringEnabled = true
+
+		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+		for _, v := range taskWriteBack {
+			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
+			if err != nil {
+				return err
+			}
+		}
+		err = tx.Set(tasksRef, t)
+		if err != nil {
+			return err
+		}
+		return nil
+	})
+	if err != nil {
+		log.Fatalf("Failed to retrieve tasks: %v", err)
 	}
 }
 
@@ -259,7 +325,7 @@ func act2End(ctx context.Context) {
 		var t Tasks
 		allTasks.DataTo(&t)
 
-		t.Event.ScoringEnabled = false
+		// t.Event.ScoringEnabled = false
 
 		// Disable tasks as required
 		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
@@ -353,6 +419,7 @@ func disableTasks(t Tasks, tx *firestore.Transaction, disableGroups []string, en
 			task.Task.Enabled = true
 		}
 		v = task.Task
+		fmt.Printf("%v = %v\n", task.Task.ID, task.Task.Enabled)
 		writeBack[task.Task.ID] = task
 		t.Tasks[k] = task.Task
 	}
