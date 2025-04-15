@@ -136,6 +136,11 @@
                 "type": "string",
                 "description": "Dataset description"
               },
+              "location": {
+                "type": "string",
+                "description": "Dataset location",
+                "default": "EU"
+              },
               "tables": {
                 "type": "array",
                 "items": {

@@ -106,6 +106,7 @@ type Task struct {
 type BQDataset struct {
 	Name        string    `yaml:"name"`
 	Description string    `yaml:"description"`
+	Location    string    `yaml:"location,omitempty"`
 	Tables      []BQTable `yaml:"tables"`
 }
 
@@ -459,6 +460,9 @@ func tfOnly() {
 		w.WriteString("\t{\n")
 		w.WriteString(fmt.Sprintf("\t\tname = \"%v\"\n", v.Name))
 		w.WriteString(fmt.Sprintf("\t\tdescription = \"%v\"\n", v.Description))
+		if v.Location != "" {
+			w.WriteString(fmt.Sprintf("\t\tlocation = \"%v\"\n", v.Location))
+		}
 		w.WriteString("\t\ttables = [\n")
 		for _, v1 := range v.Tables {
 			w.WriteString("\t\t\t{\n")

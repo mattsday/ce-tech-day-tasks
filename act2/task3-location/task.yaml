@@ -23,6 +23,7 @@ task:
   bq_datasets:
     - name: midlands_factory_location
       description: Datasets describing geographical areas and flooding
+      location: US
       tables:
         - name: midlands_areas_of_interest
           source: gs://hacksday-resources/data/areas-of-interest.csv
