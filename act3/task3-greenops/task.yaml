@@ -16,6 +16,15 @@ task:
   metadata:
     csr_target: "15"
   group: Act 3
+  bq_datasets:
+    - name: carbon_footprint
+      description: Carbon Footprint Data
+      location: EU
+      tables:
+        - name: carbon_footprint
+          source: gs://hacksday-resources-us/data/carbon_footprint.csv
+          schema: deploy/data/tech-day/carbon_footprint.json
+          description: Carbon Footprint
 parts:
   - name: "Carbon Data Export: Laying the Green Foundation 📊"
     id: carbon_export
