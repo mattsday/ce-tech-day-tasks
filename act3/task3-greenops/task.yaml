@@ -22,7 +22,7 @@ task:
       location: EU
       tables:
         - name: carbon_footprint
-          source: gs://hacksday-resources-us/data/carbon_footprint.csv
+          source: gs://hacksday-resources/data/carbon_footprint.csv
           schema: deploy/data/tech-day/carbon_footprint.json
           description: Carbon Footprint
 parts:
