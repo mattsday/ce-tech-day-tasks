@@ -26,11 +26,11 @@ task:
       location: US
       tables:
         - name: midlands_areas_of_interest
-          source: gs://hacksday-resources/data/areas-of-interest.csv
+          source: gs://hacksday-resources-us/data/areas-of-interest.csv
           schema: deploy/data/tech-day/areas-of-interest.json
           description: Midlands areas of interest
         - name: midlands_earthengine_grid_data
-          source: gs://hacksday-resources/data/midlands.csv
+          source: gs://hacksday-resources-us/data/midlands.csv
           schema: deploy/data/tech-day/midlands.json
           description: Midlands Earth Engine grid data
 parts:
