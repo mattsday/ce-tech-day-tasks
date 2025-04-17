@@ -132,7 +132,7 @@ func testing(ctx context.Context) {
 		allTasks.DataTo(&t)
 		t.Event.ScoringEnabled = true
 
-		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
 		for _, v := range taskWriteBack {
 			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
 			if err != nil {
@@ -153,7 +153,7 @@ func testing(ctx context.Context) {
 func start(ctx context.Context) {
 	allowList := []string{}
 	blockList := []string{"act1-task2"}
-	disableGroups := []string{"Act 2", "Act 3"}
+	disableGroups := []string{"Act 2", "Act 3", "The End"}
 	enableGroups := []string{"Act 1"}
 
 	tasksRef := db.Collection("tasks").Doc("tasks")
@@ -167,7 +167,7 @@ func start(ctx context.Context) {
 		allTasks.DataTo(&t)
 		t.Event.ScoringEnabled = true
 
-		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: true, lbHidden: true})
 		for _, v := range taskWriteBack {
 			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
 			if err != nil {
@@ -201,7 +201,7 @@ func troubleshoot(ctx context.Context) {
 		var t Tasks
 		allTasks.DataTo(&t)
 
-		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
 		for _, v := range taskWriteBack {
 			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
 			if err != nil {
@@ -246,7 +246,7 @@ func act1End(ctx context.Context) {
 		allTasks.DataTo(&t)
 
 		// Disable tasks as required
-		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
 
 		scoreWriteBack := make(map[string]ScoreSchema)
 
@@ -328,7 +328,7 @@ func act2End(ctx context.Context) {
 		// t.Event.ScoringEnabled = false
 
 		// Disable tasks as required
-		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
 
 		// Now write back to Firestore
 		// Update tasks
@@ -371,7 +371,7 @@ func act3End(ctx context.Context) {
 		allTasks.DataTo(&t)
 
 		// Disable tasks as required
-		taskWriteBack := disableTasks(t, tx, disableGroups, enableGroups, allowList, blockList)
+		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
 
 		// Now write back to Firestore
 		// Update tasks
@@ -394,7 +394,16 @@ func act3End(ctx context.Context) {
 	}
 }
 
-func disableTasks(t Tasks, tx *firestore.Transaction, disableGroups []string, enableGroups []string, allowList []string, blockList []string) map[string]TaskSchema {
+type TaskModification struct {
+	disableGroups []string
+	enableGroups  []string
+	allowList     []string
+	blockList     []string
+	hidden        bool
+	lbHidden      bool
+}
+
+func disableTasks(t Tasks, tx *firestore.Transaction, mod TaskModification) map[string]TaskSchema {
 	writeBack := make(map[string]TaskSchema)
 
 	for k, v := range t.Tasks {
@@ -409,17 +418,23 @@ func disableTasks(t Tasks, tx *firestore.Transaction, disableGroups []string, en
 		var task TaskSchema
 		taskDoc.DataTo(&task)
 
-		if slices.Contains(disableGroups, v.Group) && !slices.Contains(allowList, v.ID) {
+		if slices.Contains(mod.disableGroups, v.Group) && !slices.Contains(mod.allowList, v.ID) {
 			// Disable the task
 			task.Task.Enabled = false
-		} else if slices.Contains(enableGroups, v.Group) && !slices.Contains(blockList, v.ID) {
-			// Enable the task
+			// Hide tasks from the UI / Leaderboard if configured
+			if mod.hidden {
+				task.Task.Hidden = true
+			}
+			if mod.lbHidden {
+				task.Task.LBHidden = true
+			}
+		} else if slices.Contains(mod.enableGroups, v.Group) && !slices.Contains(mod.blockList, v.ID) {
+			// Enable the task and unhide it
 			task.Task.Hidden = false
 			task.Task.LBHidden = false
 			task.Task.Enabled = true
 		}
 		v = task.Task
-		fmt.Printf("%v = %v\n", task.Task.ID, task.Task.Enabled)
 		writeBack[task.Task.ID] = task
 		t.Tasks[k] = task.Task
 	}
