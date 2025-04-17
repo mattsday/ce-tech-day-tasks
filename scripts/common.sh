@@ -2,10 +2,21 @@
 
 export PROJECT_ID=q2-25-tech-day-host
 
+basepath=../utils
+
+if [[ ! -f "${basepath}/tech-day/main.go" ]]; then
+  basepath=../../utils
+  if [[ ! -f "${basepath}/tech-day/main.go" ]]; then
+    echo Cannot determine base path
+    exit 1
+  fi
+fi
+
 tech-day() {
-  go run ../utils/tech-day/*.go "${@}"
+
+  go run "${basepath}"/tech-day/*.go "${@}"
 }
 
 asset-score() {
-  echo Asset Score Tool
+  go run "${basepath}"/asset-rank/*.go
 }

@@ -1,4 +1,4 @@
 #!/bin/bash
 . common.sh
 
-tech-day --action lock
+tech-day --action unlock

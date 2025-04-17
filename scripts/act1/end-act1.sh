@@ -1,5 +1,5 @@
 #!/bin/bash
-. common.sh
+. ../common.sh
 
 # Lock all tasks
 echo Locking all tasks
@@ -11,3 +11,5 @@ export PART_ID=part1
 asset-score
 
 # Run Act 1 Ending
+tech-day --action act1-end
+

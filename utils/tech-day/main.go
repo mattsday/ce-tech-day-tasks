@@ -79,6 +79,8 @@ func main() {
 		troubleshoot(ctx)
 	case "act1-end":
 		act1End(ctx)
+	case "act2":
+		act2(ctx)
 	case "act2-end":
 		act2End(ctx)
 	case "security-audit":
@@ -155,75 +157,30 @@ func start(ctx context.Context) {
 	blockList := []string{"act1-task2"}
 	disableGroups := []string{"Act 2", "Act 3", "The End"}
 	enableGroups := []string{"Act 1"}
-
-	tasksRef := db.Collection("tasks").Doc("tasks")
-	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
-		var err error
-		allTasks, err := tx.Get(tasksRef)
-		if err != nil {
-			return err
-		}
-		var t Tasks
-		allTasks.DataTo(&t)
-		t.Event.ScoringEnabled = true
-
-		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: true, lbHidden: true})
-		for _, v := range taskWriteBack {
-			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
-			if err != nil {
-				return err
-			}
-		}
-		err = tx.Set(tasksRef, t)
-		if err != nil {
-			return err
-		}
-		return nil
-	})
-	if err != nil {
-		log.Fatalf("Failed to retrieve tasks: %v", err)
-	}
+	updateList(ctx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: true, lbHidden: true})
 }
 
 func troubleshoot(ctx context.Context) {
 	allowList := []string{}
 	blockList := []string{}
-	disableGroups := []string{"Act 2", "Act 3"}
+	disableGroups := []string{"Act 2", "Act 3", "The End"}
 	enableGroups := []string{"Act 1"}
+	updateList(ctx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: true, lbHidden: true})
+}
 
-	tasksRef := db.Collection("tasks").Doc("tasks")
-	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
-		var err error
-		allTasks, err := tx.Get(tasksRef)
-		if err != nil {
-			return err
-		}
-		var t Tasks
-		allTasks.DataTo(&t)
-
-		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
-		for _, v := range taskWriteBack {
-			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
-			if err != nil {
-				return err
-			}
-		}
-		err = tx.Set(tasksRef, t)
-		if err != nil {
-			return err
-		}
-		return nil
-	})
-	if err != nil {
-		log.Fatalf("Failed to retrieve tasks: %v", err)
-	}
+func act2(ctx context.Context) {
+	allowList := []string{}
+	blockList := []string{}
+	disableGroups := []string{"Act 1", "Act 3", "The End"}
+	enableGroups := []string{"Act 2"}
+	updateList(ctx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
 }
 
 // End Act 1 - disable all tasks and score the consequences task in act 2
 func act1End(ctx context.Context) {
 	// Allow list to keep
 	allowList := []string{"act1-task2"}
-	blockList := []string{}
+	blockList := []string{"act2-task1"}
 	disableGroups := []string{"Act 1"}
 	enableGroups := []string{"Act 2"}
 
@@ -262,7 +219,7 @@ func act1End(ctx context.Context) {
 			successful := true
 			for _, v := range scoreParts {
 				key := fmt.Sprintf("%v_%v", taskId, v)
-				if s.Tasks[key] < 400 {
+				if s.Tasks[key] < 350 {
 					successful = false
 					s.Tasks[key] = punishment
 				}
@@ -403,6 +360,36 @@ type TaskModification struct {
 	lbHidden      bool
 }
 
+// Update a list of tasks without changing points
+func updateList(ctx context.Context, mod TaskModification) {
+	tasksRef := db.Collection("tasks").Doc("tasks")
+	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
+		var err error
+		allTasks, err := tx.Get(tasksRef)
+		if err != nil {
+			return err
+		}
+		var t Tasks
+		allTasks.DataTo(&t)
+		t.Event.ScoringEnabled = true
+		taskWriteBack := disableTasks(t, tx, mod)
+		for _, v := range taskWriteBack {
+			err = tx.Set(db.Collection("tasks").Doc(v.Task.ID), v)
+			if err != nil {
+				return err
+			}
+		}
+		err = tx.Set(tasksRef, t)
+		if err != nil {
+			return err
+		}
+		return nil
+	})
+	if err != nil {
+		log.Fatalf("Failed to retrieve tasks: %v", err)
+	}
+}
+
 func disableTasks(t Tasks, tx *firestore.Transaction, mod TaskModification) map[string]TaskSchema {
 	writeBack := make(map[string]TaskSchema)
 
@@ -428,6 +415,15 @@ func disableTasks(t Tasks, tx *firestore.Transaction, mod TaskModification) map[
 			if mod.lbHidden {
 				task.Task.LBHidden = true
 			}
+		} else if slices.Contains(mod.blockList, v.ID) {
+			log.Printf("%v is blocklisted", v.ID)
+			if mod.hidden {
+				task.Task.Hidden = true
+			}
+			if mod.lbHidden {
+				task.Task.LBHidden = true
+			}
+
 		} else if slices.Contains(mod.enableGroups, v.Group) && !slices.Contains(mod.blockList, v.ID) {
 			// Enable the task and unhide it
 			task.Task.Hidden = false

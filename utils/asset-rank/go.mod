@@ -1,17 +1,18 @@
-module task-tool
+module asset-rank
 
 go 1.23.3
 
 require (
 	cloud.google.com/go/firestore v1.18.0
 	cloud.google.com/go/storage v1.51.0
+	cloud.google.com/go/vertexai v0.13.3
 	google.golang.org/api v0.226.0
-	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
 	cel.dev/expr v0.19.2 // indirect
 	cloud.google.com/go v0.118.3 // indirect
+	cloud.google.com/go/aiplatform v1.74.0 // indirect
 	cloud.google.com/go/auth v0.15.0 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.7 // indirect
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
