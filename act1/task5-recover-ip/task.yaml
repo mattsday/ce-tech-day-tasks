@@ -11,29 +11,29 @@ task:
   hidden: false
   description: Go on a treasure hunt to find clues and recover your IP!
   overview:
-    - The briefcase with your secret recipes in has gone missing. Use the clues to hunt it down and find it!
+    - Key research components have been scattered and "secured" for safekeeping (not lost)
   group: Act 1
   metadata:
-    treasure-hunt: "2255879a"
-    basic-mayo: "2d3c484b-e531-487b-8adb-d51163683926"
-    pure-evil: "296a869b-a481-4062-8b66-8e5acb313535"
+    riddle: "4211c28e-1b76-11f0-95d4-00163e9071e6"
+    binary: "2d3c484b-e531-487b-8adb-d51163683926"
+    cipher: "296a869b-a481-4062-8b66-8e5acb313535"
 parts:
-  - name: "Treasure Hunt: The Lost Batches of Cymbal Supplements"
-    id: treasure-hunt
+  - name: "A Reliable Riddle"
+    id: riddle
     type: external
-    max_points: 0
+    max_points: 250
     instructions_link: instructions.md
     hidden: false
-  - name: "Basic Mayo"
-    id: basic-mayo
+  - name: "Bothersome Binary"
+    id: binary
     type: external
     max_points: 500
-    instructions_link: basic-mayo.md
+    instructions_link: binary.md
     hidden: false
-  - name: "Pure Evil Sauce"
-    id: pure-evil
+  - name: "Cryptic Cipher"
+    id: cipher
     type: external
-    max_points: 2000
-    instructions_link: pure-evil.md
+    max_points: 750
+    instructions_link: cipher.md
     hidden: false
     feedback_popup: true

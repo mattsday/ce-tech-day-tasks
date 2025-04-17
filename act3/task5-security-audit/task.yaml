@@ -10,8 +10,8 @@ task:
   id: act3-task5
   name: "Security Audit 🔐"
   enabled: true
-  hidden: false
-  lb_hidden: false
+  hidden: true
+  lb_hidden: true
   description: "Did all those pesky security tasks make a difference? Let's find out!"
   overview:
     - "Your commitment to security has been assessed. Is Cymbal Supplements secure or a free-for-all?"

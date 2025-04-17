@@ -16,6 +16,9 @@ import (
 	"google.golang.org/api/iterator"
 )
 
+// Maximum retries to score a team
+const maxAttempts = 5
+
 func main() {
 	// Get the task key from the environment variable.
 	taskId := os.Getenv("TASK_ID")
@@ -30,6 +33,8 @@ func main() {
 	if projectID == "" {
 		log.Fatal("PROJECT_ID environment variable not set")
 	}
+
+	log.Printf("Evaluating asset submissions for %v", taskId)
 
 	taskKey := fmt.Sprintf("%s_%s", taskId, partId)
 
@@ -207,34 +212,46 @@ func main() {
 				FileURI:  gcsURL,
 			}
 
-			res, err := gemini.GenerateContent(ctx, file, prompt)
-			if err != nil {
-				log.Printf("File: %v, error generating content: %v", gcsURL, err)
-				continue
-			}
-			if len(res.Candidates) == 0 ||
-				len(res.Candidates[0].Content.Parts) == 0 {
-				log.Printf("empty response from model")
-				continue
-			}
-			// Unmarshal the JSON response into the Verdict struct
-			var verdict Verdict
-			jsonString, ok := res.Candidates[0].Content.Parts[0].(genai.Text)
-			if !ok {
-				log.Printf("Could not convert response to string")
-				continue
-			}
-			err = json.Unmarshal([]byte(jsonString), &verdict)
-			if err != nil {
-				log.Printf("Error unmarshalling JSON: %v, JSON: %v", err, jsonString)
-				continue
-			}
+			attempt := 0
+			complete := false
+			for attempt < maxAttempts {
+				log.Printf("Attempt %v of %v for team %v\n", attempt+1, maxAttempts, doc.Ref.ID)
+				attempt++
 
-			s.Tasks[taskKey] = verdict.Score
-			s = updateScoreTotal(s, taskId)
-			scoreWriteBack[doc.Ref.ID] = s
+				res, err := gemini.GenerateContent(ctx, file, prompt)
+				if err != nil {
+					log.Printf("File: %v, error generating content: %v", gcsURL, err)
+					continue
+				}
+				if len(res.Candidates) == 0 ||
+					len(res.Candidates[0].Content.Parts) == 0 {
+					log.Printf("empty response from model")
+					continue
+				}
+				// Unmarshal the JSON response into the Verdict struct
+				var verdict Verdict
+				jsonString, ok := res.Candidates[0].Content.Parts[0].(genai.Text)
+				if !ok {
+					log.Printf("Could not convert response to string")
+					continue
+				}
+				err = json.Unmarshal([]byte(jsonString), &verdict)
+				if err != nil {
+					log.Printf("Error unmarshalling JSON: %v, JSON: %v", err, jsonString)
+					continue
+				}
+				complete = true
 
-			feedbackWriteBack[fmt.Sprintf("%v-%v-%v", doc.Ref.ID, taskId, partId)] = Feedback{AIFeedback: verdict.Verdict, AIScore: verdict.Score}
+				s.Tasks[taskKey] = verdict.Score
+				s = updateScoreTotal(s, taskId)
+				scoreWriteBack[doc.Ref.ID] = s
+
+				feedbackWriteBack[fmt.Sprintf("%v-%v-%v", doc.Ref.ID, taskId, partId)] = Feedback{AIFeedback: verdict.Verdict, AIScore: verdict.Score}
+				break
+			}
+			if attempt+1 >= maxAttempts && !complete {
+				log.Printf("Warning: %v took more than %v attempts - content NOT evaluated\n", doc.Ref.ID, attempt)
+			}
 		}
 		log.Printf("Analysis complete, writing scores & feedback\n")
 		// Update scores

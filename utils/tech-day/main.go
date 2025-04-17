@@ -180,7 +180,7 @@ func act2(ctx context.Context) {
 func act1End(ctx context.Context) {
 	// Allow list to keep
 	allowList := []string{"act1-task2"}
-	blockList := []string{"act2-task1"}
+	blockList := []string{}
 	disableGroups := []string{"Act 1"}
 	enableGroups := []string{"Act 2"}
 
@@ -266,7 +266,7 @@ func act1End(ctx context.Context) {
 func act2End(ctx context.Context) {
 	// Allow list to keep
 	allowList := []string{"act1-task2"}
-	blockList := []string{}
+	blockList := []string{"act3-task5"}
 	disableGroups := []string{"Act 1", "Act 2"}
 	enableGroups := []string{"Act 3"}
 

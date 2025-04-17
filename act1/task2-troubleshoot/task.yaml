@@ -21,6 +21,7 @@ task:
     db_name: postgres
     db_instance: orders
     iam_role: roles/cloudsql.client
+    security_part: security
   group: Act 1
 parts:
   - name: Root Cause Analysis 🕵

@@ -25,7 +25,7 @@ parts:
     good_examples:
       - examples/part1-1.jpg
     llm_instructions: |
-      Just a screenshot of the Vertex AI console showing system instructions is enough here. It can be basic and does not need to have been tested.
+      Just a screenshot of the Vertex AI console showing system instructions is enough here. It can be basic and does not need to have been tested. Do not award partial points. Award zero points if the task is not complete, otherwise award maximum points.
   - name: "The Allergen Apocalypse 🧟"
     id: part2
     type: image
@@ -57,3 +57,11 @@ parts:
     llm_instructions: |
       Award maximum points if the user has it right and their traffic light has a colour (e.g. a red circle). Award partial points if it does not have colour output and instruct them to add them.
     feedback_popup: true
+  - name: "You said what? 🔤"
+    id: part5
+    type: image
+    max_points: 100
+    instructions_link: part5.md
+    depends_on:
+      - part4
+    llm_instructions: The screenshot should show safety filter configuration. Do not award partial points. Either award maximum or zero points
