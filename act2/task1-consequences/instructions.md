@@ -1,8 +1,3 @@
-Your performance in Act 1 has been thoroughly reviewed by our meticulous sales auditors.
-
-### Judge Gemini's Verdict 🧑‍⚖
-Your fate hinges on your ability to restore our production systems in Act 1. Let's see how you fared:
-
 :::scorecondition{sourcetask=act2-task1 minpoints=500 maxpoints=500}
 ::loadfile{file=success.md}
 :::

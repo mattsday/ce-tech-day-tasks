@@ -61,12 +61,12 @@ parts:
     llm_instructions: "Ensure the app is deployed correctly to Firebase App Hosting. If they have not scored full points, guide them through Firebase deployment steps and common troubleshooting tips."
     depends_on:
       - run-local
+    feedback_popup: true
   - name: "Fortress Firestore: Security Savvy 🔒"
     id: firestore_security
     challenge: true
     type: custom
     component: CheckSecurityRules
-    max_points: 150
+    max_points: 100
     instructions_link: part5.md
     llm_instructions: "The task is to improve Firestore security rules. If they have not achieved full points, provide hints related to rule specificity, user authentication, and data access control. Points are binary - either they get everything right and earn full points, or they make a single mistake and earn 0 points."
-    feedback_popup: true

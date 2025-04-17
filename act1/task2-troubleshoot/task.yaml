@@ -54,6 +54,7 @@ parts:
     max_points: 1000 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part3.md
     depends_on: [basic]
+    feedback_popup: true
   - name: Securing a Brighter Future 🔒
     id: security
     challenge: true
@@ -62,4 +63,3 @@ parts:
     max_points: 100 # DO NOT CHANGE WITHOUT TALKING TO MATT (BREAKS SCRIPTS)
     instructions_link: part4.md
     depends_on: [basic, fix, database]
-    feedback_popup: true

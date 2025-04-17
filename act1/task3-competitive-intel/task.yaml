@@ -40,7 +40,7 @@ parts:
     good_examples:
       - examples/part1-1.jpg
       - examples/part1-2.jpg
-  - name: Log in to Agentspace 🚪
+  - name: Log into Agentspace 🚪
     id: login
     type: image
     max_points: 500

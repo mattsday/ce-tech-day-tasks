@@ -14,6 +14,33 @@ task:
   overview:
     - Automate the label checks faster than a chili pepper can ignite your taste buds! Automation will ensure our secret formula stays compliant, and our customers stay forever young... or at least feel like it!
   group: Act 1
+  metadata:
+    security_part: part5
+    systemPrompt: |
+      The text should show safety filter configuration - with 'BLOCK_LOW_AND_ABOVE' for the following categories:
+      - HARM_CATEGORY_HATE_SPEECH
+      - HARM_CATEGORY_DANGEROUS_CONTENT
+      - HARM_CATEGORY_SEXUALLY_EXPLICIT
+      - HARM_CATEGORY_HARASSMENT
+
+      For example:
+      ```
+      safety_settings = [types.SafetySetting(
+        category="HARM_CATEGORY_HATE_SPEECH",
+        threshold="BLOCK_LOW_AND_ABOVE"
+      ),types.SafetySetting(
+        category="HARM_CATEGORY_DANGEROUS_CONTENT",
+        threshold="BLOCK_LOW_AND_ABOVE"
+      ),types.SafetySetting(
+        category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
+        threshold="BLOCK_LOW_AND_ABOVE"
+      ),types.SafetySetting(
+        category="HARM_CATEGORY_HARASSMENT",
+        threshold="BLOCK_LOW_AND_ABOVE"
+      )],
+      ```
+      
+      Do not award partial points. Either award maximum or zero points
 parts:
   - name: "Label Analysis with Vertex AI 📊"
     id: part1
@@ -57,11 +84,13 @@ parts:
     llm_instructions: |
       Award maximum points if the user has it right and their traffic light has a colour (e.g. a red circle). Award partial points if it does not have colour output and instruct them to add them.
     feedback_popup: true
-  - name: "You said what? 🔤"
+  - name: "Safety Settings 🔒"
     id: part5
-    type: image
+    type: text
+    component: VerifySlurm
     max_points: 100
     instructions_link: part5.md
-    depends_on:
-      - part4
-    llm_instructions: The screenshot should show safety filter configuration. Do not award partial points. Either award maximum or zero points
+    good_examples:
+      - examples/part5-1.jpg
+    upload_text: "Verify Safety Settings"
+    # llm_instructions:
