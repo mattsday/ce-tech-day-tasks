@@ -5,7 +5,7 @@ metadata:
     - name: Matt Day
       email: mattsday@google.com
 task:
-  id: act1-task6
+  id: act2-task7
   name: "Recover your IP! 💼"
   enabled: true
   hidden: false
