@@ -5,14 +5,14 @@ metadata:
     - name: Matt Day
       email: mattsday@google.com
 task:
-  id: act1-task5
+  id: act1-task6
   name: "Recover your IP! 💼"
   enabled: true
   hidden: false
   description: Go on a treasure hunt to find clues and recover your IP!
   overview:
     - Key research components have been scattered and "secured" for safekeeping (not lost)
-  group: Act 1
+  group: Act 2
   metadata:
     riddle: "4211c28e-1b76-11f0-95d4-00163e9071e6"
     binary: "2d3c484b-e531-487b-8adb-d51163683926"

@@ -1,0 +1,43 @@
+metadata:
+  version: 1
+task:
+  id: act1-task5
+  name: "Unlock the Ancient Secrets 🏺"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: Cymbal R&D has unearthed ancient puzzles rumoured to hold secrets to longevity. Head to the Puzzle Zone and crack their codes!
+  overview:
+    - The Cymbal R&D team, in their relentless pursuit of eternal youth (and market dominance!), has acquired three mysterious artifacts.
+    - Legends say each artifact holds a piece of the puzzle to unlocking extraordinary vitality – or perhaps just the original recipes for our age-defying hot sauces!
+    - Head to the R&D Vault (aka the Puzzle Zone), examine the artifacts, and solve their mechanisms.
+    - Each solved puzzle will reveal a QR code containing a fragment of ancient knowledge (and precious points!). Scan it fast!
+  tf_enabled: false
+  tf_vars: []
+  metadata:
+    chest: "c8d66e2c-1f6e-11f0-ac73-00163e9071e6"
+    bottle: "cbf2fb48-1f6e-11f0-a19f-00163e9071e6"
+    calendar: "d030e9f4-1f6e-11f0-a6b8-00163e9071e6"
+  group: Act 1
+parts:
+  - name: R&D Puzzles 🧩
+    id: overview
+    instructions_link: overview.md
+    max_points: 0
+    type: none
+    open: true
+  - name: The Emperor's Chest 👑
+    id: chest
+    type: qr
+    max_points: 500
+    instructions_link: chest.md
+  - name: The Grecian Bottle 🍾
+    id: bottle
+    type: qr
+    max_points: 500
+    instructions_link: bottle.md
+  - name: Caesar's Calendar 🗓️
+    id: calendar
+    type: qr
+    max_points: 500
+    instructions_link: calendar.md
