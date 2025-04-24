@@ -1,6 +1,6 @@
 **Welcome, Cymbal Supplements team!**
 
-::alert[**Note**: You will not get an immediate score for this task - you will find out how you did at the end of Act 1]{severity=info}
+::alert[**Note**: You will not get an immediate score for this task - you will find out how you did at the end of Act 1. You only get one shot at this - so ensure you've uploaded your best version before the end of Act1]{severity=info}
 
 Your journey to revolutionize the hot sauce industry and reverse aging begins now.
 

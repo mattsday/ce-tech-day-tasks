@@ -266,7 +266,7 @@ func act1End(ctx context.Context) {
 func act2End(ctx context.Context) {
 	// Allow list to keep
 	allowList := []string{"act1-task2"}
-	blockList := []string{"act3-task5"}
+	blockList := []string{}
 	disableGroups := []string{"Act 1", "Act 2"}
 	enableGroups := []string{"Act 3"}
 
@@ -315,9 +315,12 @@ func act3End(ctx context.Context) {
 	disableGroups := []string{"Act 1", "Act 2", "Act 3"}
 	enableGroups := []string{}
 
+	secAudit := "act3-task6"
+
 	// Retrieve tasks from Firestore
 	// Run as a transaction to ensure consistency
 	tasksRef := db.Collection("tasks").Doc("tasks")
+	scoreRef := db.Collection("scores")
 
 	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
 		allTasks, err := tx.Get(tasksRef)
@@ -326,6 +329,38 @@ func act3End(ctx context.Context) {
 		}
 		var t Tasks
 		allTasks.DataTo(&t)
+
+		securityTasks := []string{}
+
+		// Loop through all tasks and pick out security tasks
+		for _, v := range t.Tasks {
+			if secPart, ok := v.Metadata["security_part"]; ok {
+				log.Printf("Extracting security part: %v %v", v.ID, secPart)
+				securityTasks = append(securityTasks, fmt.Sprintf("%v_%v", v.ID, secPart))
+			}
+		}
+
+		secMax := t.Tasks[secAudit].MaxPoints
+		secParts := len(securityTasks)
+		secPPP := secMax / secParts
+		log.Printf("Security Parts: %v; Max points: %v, Points per part: %v", secParts, secMax, secPPP)
+
+		// Tot up security totals
+		iter := tx.Documents(scoreRef)
+		for {
+			doc, err := iter.Next()
+			if err != nil {
+				break
+			}
+			var s ScoreSchema
+			doc.DataTo(&s)
+			// Loop through security tasks and see if they scored
+			for _, v := range securityTasks {
+				if score, ok := s.Tasks[v]; ok {
+					log.Printf("Score: %v for task - granting %v bonus points", score, secPPP)
+				}
+			}
+		}
 
 		// Disable tasks as required
 		taskWriteBack := disableTasks(t, tx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})

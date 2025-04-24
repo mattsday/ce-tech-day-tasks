@@ -20,6 +20,7 @@ task:
   metadata:
     service_name: review-app
     firestore_collection: reviews
+    security_part: firestore_security
   group: Act 2
 parts:
   - name: "Local Launch: App Ignition 🚀"

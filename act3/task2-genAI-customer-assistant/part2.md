@@ -1,6 +1,4 @@
-# Part 2: Q&A Agent: Your Virtual Spice Expert 🗣️
-
-## Instructions
+## Task
 
 1.  Build a Q&A agent to handle general customer inquiries.
 2.  Create a playbook with the following instructions:

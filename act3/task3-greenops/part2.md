@@ -1,6 +1,4 @@
-# Part 2: Carbon Footprint Dashboard: Visualize Sustainability 📈
-
-## Instructions
+## Task
 
 1.  Use Looker Studio to create a dashboard that visualizes the exported carbon emissions data from BigQuery.
 2.  Process and transform the data as needed to create meaningful visualizations.

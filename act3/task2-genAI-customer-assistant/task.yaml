@@ -19,6 +19,7 @@ task:
   metadata:
     data_bucket: cymbal-docs
     website_url: cymbal-supplements.com
+    security_part: model_armor
   group: Act 3
 parts:
   - name: "Set Up Better Search: Find the Fire 🔥🔍"

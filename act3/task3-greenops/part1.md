@@ -1,6 +1,4 @@
-# Part 1: Carbon Data Export: Laying the Green Foundation 📊
-
-## Instructions
+## Task
 
 1.  Ensure you have been granted Billing Viewer and Carbon Viewer IAM permissions.
 2.  Export Carbon Footprint data to BigQuery.
