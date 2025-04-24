@@ -18,14 +18,14 @@ parts:
   - name: BigQuery Insights Expedition 🔍
     id: bq-insights
     type: image
-    max_points: 800
+    max_points: 500
     instructions_link: part1.md
     upload_text: Upload a screenshot showcasing your BigQuery Insights exploration.
     llm_instructions: The screenshot should clearly show evidence of using BigQuery Insights to explore the carbon footprint dataset. This could include generated summaries, identified trends, or other insights surfaced by the tool.
   - name: Data Canvas Visualization Voyage 📊
     id: data-canvas
     type: image
-    max_points: 1700
+    max_points: 750
     instructions_link: part2.md
     depends_on: [bq-insights]
     upload_text: Upload a screenshot of your Data Canvas visualization of carbon emissions per GCP project and the Data Canvas query.
