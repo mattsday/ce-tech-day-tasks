@@ -23,6 +23,7 @@ task:
     service_name: marketing-analytics
     db_name: bigquery
     gcs_bucket: marketing-data
+    security_part: dlp-check
   group: Act 2
   bq_datasets:
     - name: campaign_marketing
