@@ -6,6 +6,10 @@ Lights, camera, action! It's time for Cymbal Supplements to shine in the spotlig
 
 ### Task
 
+Short on time? Consider using [Veo2](https://console.cloud.google.com/vertex-ai/studio/media/generate;tab=video?project=%%CLIENT_PROJECT_ID%%) for this task!
+
+Feeling creative? Why not try [Google Vids](https://workspace.google.com/products/vids/) (use your corporate profile to access).
+
 1. **Video Content:**
    - Produce a short video (maximum 3 minutes) showcasing your brand, products, and vision for Cymbal Supplements.
    - Highlight the unique selling proposition of your hot sauce and its age-reversing properties.
