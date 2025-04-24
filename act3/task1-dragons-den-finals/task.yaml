@@ -20,9 +20,8 @@ parts:
   - name: The final Verdict
     id: finals
     open: true
-    type: custom
-    component: FileUpload
-    max_points: 1500
+    type: none
+    max_points: 1000
     instructions_link: part1.md
     upload_text: Upload your video audition for "Dragon's Den".
     feedback_popup: true

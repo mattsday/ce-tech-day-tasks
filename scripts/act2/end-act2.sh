@@ -10,6 +10,9 @@ export TASK_ID=act2-task2
 export PART_ID=audition
 asset-score
 
-# Run Act 1 Ending
+# Now calculate Dragon's Den places
+go run ../../utils/dragons-finals/main.go
+
+# Run Act 2 Ending
 tech-day --action act2-end
 

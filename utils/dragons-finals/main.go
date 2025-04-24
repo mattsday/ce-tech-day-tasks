@@ -157,11 +157,28 @@ func main() {
 		// Write output to dragons collection
 		// Structure in a way Firestore likes it
 		fbVerdict := make(map[string]Verdict)
+		apVerdict := make(map[string]Appointments)
+
+		appointments := []string{"16:10", "16:18", "16:27", "16:35", "16:43"}
+
+		a := 0
 
 		for _, v := range verdict {
 			fbVerdict[v.TeamID] = v
+			if v.Success {
+				apVerdict[v.TeamID] = Appointments{
+					Time:   appointments[a],
+					Score:  v.Score,
+					Reason: v.Reason,
+				}
+				a++
+			}
 		}
 		err = tx.Set(db.Collection("dragons").Doc("scores"), fbVerdict)
+		if err != nil {
+			log.Printf("Error saving scores: %v", err)
+		}
+		err = tx.Set(db.Collection("dragons").Doc("appointments"), apVerdict)
 		if err != nil {
 			log.Printf("Error saving scores: %v", err)
 		}
@@ -196,4 +213,10 @@ type Verdict struct {
 	Score   int    `json:"score" firestore:"score"`
 	Reason  string `json:"reason" firestore:"reason"`
 	Success bool   `json:"success" firestore:"success"`
+}
+
+type Appointments struct {
+	Time   string `firestore:"time"`
+	Score  int    `firestore:"score"`
+	Reason string `firestore:"reason"`
 }
