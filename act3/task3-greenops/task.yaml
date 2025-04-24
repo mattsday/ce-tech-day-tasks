@@ -10,9 +10,6 @@ task:
   overview:
     - Cymbal Supplements is going green! They need to understand their carbon emissions on Google Cloud.
     - Use BigQuery Insights and Data Canvas to explore and visualize their carbon footprint data.
-  tf_enabled: false
-  tf_vars: []
-  metadata: {}
   group: Act 3
   bq_datasets:
     - name: carbon_footprint
