@@ -1,10 +1,12 @@
-Cymbal Sauce has a mountain of data from marketing campaigns, online and offline sales, and product inventory. But it's a bit of a mess! Your mission is to clean it up and make it useful.
+Cymbal Supplements has a mountain of data from marketing campaigns, online and offline sales, and product inventory. But it's a bit of a mess! Your mission is to clean it up and make it useful.
+
+Start with [BigQuery Studio](https://console.cloud.google.com/bigquery?project=%%CLIENT_PROJECT_ID%%&ws=!1m4!1m3!3m2!1s%%CLIENT_PROJECT_ID%%!2scampaign_marketing)
 
 ## Task
 
-1.  **Explore BigQuery Datasets:**
+1. **Explore BigQuery Datasets:**
     * Dive into the available datasets. Look for tables that contain customer information (CRM, loyalty programs, GA4 data), sales data, and ad campaign data.
-2.  **Data Preparation with BigQuery:**
+2. **Data Preparation with BigQuery:**
     * Use BigQuery Data Preparation to clean, transform, and enrich the data.
     * Focus on fixing data quality issues, standardizing formats, and joining relevant tables.
 
