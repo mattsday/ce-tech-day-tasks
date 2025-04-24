@@ -32,7 +32,7 @@ echo "-----------------------------------------"
 
 # --- Run the Python script in 'run' mode ---
 # Pass the iterations and output dir to the script
-python3 ${PYTHON_SCRIPT} run --iterations ${ITERATIONS} --output-dir ${RESULTS_DIR}
+python3 "${PYTHON_SCRIPT}" run --iterations "${ITERATIONS}" --output-dir "${RESULTS_DIR}"
 
 echo "-----------------------------------------"
 echo "Finished Slurm Task ${SLURM_ARRAY_TASK_ID}"

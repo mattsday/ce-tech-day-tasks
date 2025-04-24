@@ -9,3 +9,5 @@ But the reality is a chaotic mess. The Cloud Run service, responsible for handli
 1. Open the [Cloud Run Console](https://console.cloud.google.com/run?project=%%CLIENT_PROJECT_ID%%) and select the **orders-service**
 2. Take a look at the logs to determine the issue and use Gemini Cloud Assist to understand workarounds
 3. Upload a screenshot of Cloud Assist helping you with the issue
+
+::info[**Hint:** You may need to invoke the service first to obtain the logs you need - click the URL from the Cloud Run console!]
