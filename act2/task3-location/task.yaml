@@ -47,7 +47,7 @@ parts:
   - name: Brownfield Land Detection 🏭
     id: brownfield
     type: image
-    max_points: 1250
+    max_points: 1500
     instructions_link: part2.md
     depends_on: [flood-risk]
     upload_text: Upload a screenshot of the Geo Viz map highlighting potential brownfield sites and your completed SQL query.
@@ -57,7 +57,7 @@ parts:
     id: suggestions
     challenge: true
     type: image
-    max_points: 1500
+    max_points: 2500
     instructions_link: part3.md
     depends_on: [flood-risk, brownfield]
     upload_text: Upload a satellite view of the Geo Viz map highlighting the top 5 suggested factory locations.
