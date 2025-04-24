@@ -1,28 +1,19 @@
-Greetings, Cymbal Supplements Innovators!
+### TL;DR: Use Agents to complete tasks
 
 ::info[This is a **highly advanced task** for those willing to put in extra effort - and risk - to win sweet, sweet points]
 
-Our age-reversing hot sauce is a global phenomenon! Demand is through the roof, and frankly, we're struggling to keep up. Manual clicking? Tedious infrastructure management? Ain't nobody got time for that when there's eternal youth (and profit!) to be made!
+Got what it takes? Prove to judges that you have built & used an agent to automate your work and we'll grant you some bonus points!
 
-We need **maximum efficiency**. We need **automation**. We need... **AI Agents** to take the wheel!
+We recognise this will take time - so there's quite a few points on offer here. So, dig deep and show us what you've got!
 
-::challenge[This is your chance to shine as true masters of modern technology (or laziness, we don't judge). Your mission, should you choose to accept it, is to **use AI Agents to complete or significantly assist with other tasks** throughout the Tech Day competition.]
+### What counts as an "Agent"?
 
-Think:
-
-- Provisioning infrastructure based on task requirements.
-- Debugging applications by analyzing logs and suggesting fixes.
-- Automating security configurations.
-- Generating reports or summaries needed for a task.
-- Anything else where you can offload the work to a digital entity!
-
-**What counts as an "Agent"?**
 We're looking for more than just a simple script calling a single API. An AI Agent typically involves:
 
-1.  **Goal Orientation:** You give it a high-level objective.
-2.  **Planning:** It breaks down the objective into steps.
-3.  **Tool Usage:** It interacts with external systems (Google Cloud APIs, CLIs, SDKs, etc.) to execute steps.
-4.  **(Semi-)Autonomy:** It can proceed through multiple steps, potentially adapting based on results, with minimal human intervention.
+1. **Goal Orientation:** You give it a high-level objective.
+2. **Planning:** It breaks down the objective into steps.
+3. **Tool Usage:** It interacts with external systems (Google Cloud APIs, CLIs, SDKs, etc.) to execute steps.
+4. **(Semi-)Autonomy:** It can proceed through multiple steps, potentially adapting based on results, with minimal human intervention.
 
 Examples include using frameworks like LangChain, CrewAI, AutoGen, leveraging Vertex AI Agents, or building your own custom agent logic using models like Gemini.
 

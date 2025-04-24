@@ -7,7 +7,7 @@ metadata:
       email: yenchau@google.com
 task:
   id: act1-task3
-  name: "Respond to Mud-slinging marketing!"
+  name: "Respond to Mud-slinging Marketing! 💩"
   enabled: true
   lb_hidden: false
   hidden: false

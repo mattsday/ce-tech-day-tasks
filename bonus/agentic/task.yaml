@@ -9,13 +9,8 @@ task:
   hidden: false # Participants need to know this exists!
   description: "Why click when your AI minion can click for you? Automate tasks using AI Agents for massive bonus points!"
   overview:
-    - Cymbal Supplements' age-reversing hot sauce is flying off the shelves! Efficiency is key.
-    - We believe in working smarter, not harder. Or... ideally, having an AI Agent do the work entirely.
-    - This *bonus* challenge rewards teams who successfully use AI Agents to complete parts (or all!) of other Tech Day tasks.
-    - Show us your agent overlords in action and reap the rewards!
+    - This bonus task rewards the creative use of agents to complete tasks
   tf_enabled: false # This task itself doesn't deploy TF resources
-  tf_vars: []
-  metadata: {} # No specific infra metadata needed for this bonus task
   group: Bonus
 parts:
   - name: "Delegate to the Digital 🤖"
