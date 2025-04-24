@@ -1,7 +1,6 @@
 ## Task
 
-1.  Use Looker Studio to create a dashboard that visualizes the exported carbon emissions data from BigQuery.
-2.  Process and transform the data as needed to create meaningful visualizations.
-3.  Include key metrics and trends in your dashboard.
-4.  Ensure the dashboard provides insights for optimizing carbon emissions and tracking progress towards the 15% reduction target.
-
+1.  In the BigQuery console, navigate to the carbon footprint dataset. Open Data Canvas associated with this dataset.
+2.  Using the Data Canvas interface, build a query that shows that the carbon emissions data per Google Cloud Project. 
+3.  Create a barchart visualisation in Data Canvas that shows the carbon emissions for each GCP project.
+4.  Take a screenshot of your Data Canvas workspace. This screenshot should clearly show both the visualization you created and the query you built in Data Canvas to generate it. 

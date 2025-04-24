@@ -1,20 +1,15 @@
 metadata:
   version: 1
-  authors:
-    - name: Kavi Manivarmane
-      email: kmanivarmane@google.com
 task:
   id: act3-task3
-  name: "GreenOps: Carbon Conscious Cymbal 🌍"
+  name: "Carbon Footprint Crusaders 👣"
   enabled: true
   lb_hidden: false
   hidden: false
-  description: "Help Cymbal Supplements achieve their sustainability goals by creating a carbon footprint dashboard in Google Cloud."
+  description: Analyse Cymbal Supplements' carbon footprint using BigQuery and Data Canvas.
   overview:
-    - "Leadership aims to reduce cloud energy consumption by 15%."
-    - "Build a dashboard to monitor, optimize, and track carbon emissions."
-  metadata:
-    csr_target: "15"
+    - Cymbal Supplements is going green! They need to understand their carbon emissions on Google Cloud.
+    - Use BigQuery Insights and Data Canvas to explore and visualize their carbon footprint data.
   group: Act 3
   bq_datasets:
     - name: carbon_footprint
@@ -26,19 +21,18 @@ task:
           schema: deploy/data/tech-day/carbon_footprint.json
           description: Carbon Footprint
 parts:
-  - name: "Carbon Data Export: Laying the Green Foundation 📊"
-    id: carbon_export
-    type: custom
-    component: VerifyCarbonExport
+  - name: BigQuery Insights Expedition 🔍
+    id: bq-insights
+    type: image
     max_points: 500
     instructions_link: part1.md
-    llm_instructions: "Verify that the CE has successfully exported Carbon Footprint data to BigQuery. Check for the presence of the exported dataset and confirm it contains the necessary carbon emissions data."
-  - name: "Carbon Footprint Dashboard: Visualize Sustainability 📈"
-    id: carbon_dashboard
-    type: custom
-    component: VerifyCarbonDashboard
-    max_points: 1000
+    upload_text: Upload a screenshot showcasing your BigQuery Insights exploration.
+    llm_instructions: The screenshot should clearly show evidence of using BigQuery Insights to explore the carbon footprint dataset. This could include generated summaries, identified trends, or other insights surfaced by the tool.
+  - name: Data Canvas Visualization Voyage 📊
+    id: data-canvas
+    type: image
+    max_points: 750
     instructions_link: part2.md
-    depends_on: [carbon_export]
-    llm_instructions: "Evaluate the Looker Studio dashboard. Ensure it effectively visualizes carbon emissions data, including key metrics and trends. Verify that the dashboard provides insights for optimization and tracks progress towards the 15% reduction target."
-    feedback_popup: true
+    depends_on: [bq-insights]
+    upload_text: Upload a screenshot of your Data Canvas visualization of carbon emissions per GCP project and the Data Canvas query.
+    llm_instructions: The screenshot should display a clear and informative visualization created in Data Canvas, showing the carbon emissions broken down by GCP project. Ensure the Data Canvas query used to generate this visualization is also visible or included in the uploaded file.
