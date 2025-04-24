@@ -1,0 +1,28 @@
+metadata:
+  version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
+task:
+  id: act3-task1
+  name: "Dragon's Den Finals 💸"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: Did you make it to the coveted finals?
+  overview:
+    - It's all come down to this. Did you make it to the dragons den finals? Check below to find out!
+  group: Act 3
+  metadata:
+    filetypes: ".mp4,mkv,webm"
+    mimeType: "video/mp4"
+parts:
+  - name: The final Verdict
+    id: finals
+    open: true
+    type: custom
+    component: FileUpload
+    max_points: 1500
+    instructions_link: part1.md
+    upload_text: Upload your video audition for "Dragon's Den".
+    feedback_popup: true

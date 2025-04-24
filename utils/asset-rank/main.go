@@ -91,6 +91,8 @@ func main() {
 	}
 	gemini := aiClient.GenerativeModel("gemini-2.0-flash-001")
 	gemini.GenerationConfig.ResponseMIMEType = "application/json"
+	// Set a low temperature for consistent judgements
+	gemini.Temperature = genai.Ptr[float32](0.1)
 
 	// Get the GCS object
 	rc, err := gcsClient.Bucket(bucketName).Object(gcsPath).NewReader(ctx)
@@ -128,7 +130,7 @@ func main() {
 	mimeType := "application/pdf"
 
 	if val, ok := taskSchema.Task.Metadata["mimeType"]; ok {
-		log.Printf("Setting MIME type to %v\n", mimeType)
+		log.Printf("Setting MIME type to %v\n", val)
 		mimeType = val
 	}
 
