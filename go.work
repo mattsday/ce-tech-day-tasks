@@ -3,6 +3,7 @@ go 1.23.3
 use (
 	./utils/asset-rank
 	./utils/dragons-finals
+	./utils/score-loader
 	./utils/task-tool
 	./utils/tech-day
 )

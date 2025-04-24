@@ -83,10 +83,12 @@ func main() {
 		act2(ctx)
 	case "act2-end":
 		act2End(ctx)
-	case "security-audit":
-		log.Fatalf("TODO")
+	case "act3":
+		act3(ctx)
 	case "act3-end":
 		act3End(ctx)
+	case "end":
+		end(ctx)
 	default:
 		log.Fatalf("Unknown action: %s", action)
 	}
@@ -121,7 +123,7 @@ func testing(ctx context.Context) {
 	allowList := []string{}
 	blockList := []string{}
 	disableGroups := []string{}
-	enableGroups := []string{"Act 1", "Act 2", "Act 3"}
+	enableGroups := []string{"Act 1", "Act 2", "Act 3", "The End"}
 
 	tasksRef := db.Collection("tasks").Doc("tasks")
 	err := db.RunTransaction(ctx, func(ctx context.Context, tx *firestore.Transaction) error {
@@ -173,6 +175,22 @@ func act2(ctx context.Context) {
 	blockList := []string{}
 	disableGroups := []string{"Act 1", "Act 3", "The End"}
 	enableGroups := []string{"Act 2"}
+	updateList(ctx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
+}
+
+func act3(ctx context.Context) {
+	allowList := []string{}
+	blockList := []string{}
+	disableGroups := []string{"Act 1", "Act 2"}
+	enableGroups := []string{"Act 3", "The End"}
+	updateList(ctx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
+}
+
+func end(ctx context.Context) {
+	allowList := []string{}
+	blockList := []string{}
+	disableGroups := []string{"Act 1", "Act 2", "Act 3", "The End"}
+	enableGroups := []string{}
 	updateList(ctx, TaskModification{disableGroups: disableGroups, enableGroups: enableGroups, allowList: allowList, blockList: blockList, hidden: false, lbHidden: false})
 }
 
@@ -295,11 +313,11 @@ func act2End(ctx context.Context) {
 				return err
 			}
 		}
+
 		err = tx.Set(tasksRef, t)
 		if err != nil {
 			return err
 		}
-
 		return nil
 	})
 
@@ -330,20 +348,21 @@ func act3End(ctx context.Context) {
 		var t Tasks
 		allTasks.DataTo(&t)
 
-		securityTasks := []string{}
+		securityParts := []string{}
 
 		// Loop through all tasks and pick out security tasks
 		for _, v := range t.Tasks {
 			if secPart, ok := v.Metadata["security_part"]; ok {
-				log.Printf("Extracting security part: %v %v", v.ID, secPart)
-				securityTasks = append(securityTasks, fmt.Sprintf("%v_%v", v.ID, secPart))
+				securityParts = append(securityParts, fmt.Sprintf("%v_%v", v.ID, secPart))
 			}
 		}
 
 		secMax := t.Tasks[secAudit].MaxPoints
-		secParts := len(securityTasks)
+		secParts := len(securityParts)
 		secPPP := secMax / secParts
 		log.Printf("Security Parts: %v; Max points: %v, Points per part: %v", secParts, secMax, secPPP)
+
+		scoreWriteBack := make(map[string]ScoreSchema)
 
 		// Tot up security totals
 		iter := tx.Documents(scoreRef)
@@ -354,12 +373,30 @@ func act3End(ctx context.Context) {
 			}
 			var s ScoreSchema
 			doc.DataTo(&s)
+
+			secTotal := 0
+
 			// Loop through security tasks and see if they scored
-			for _, v := range securityTasks {
+			for _, v := range securityParts {
 				if score, ok := s.Tasks[v]; ok {
-					log.Printf("Score: %v for task - granting %v bonus points", score, secPPP)
+					if score >= 100 {
+						secTotal += secPPP
+					}
 				}
 			}
+			if secTotal >= secMax {
+				// 4x security total - they smashed it!
+				secTotal *= 4
+			}
+			if secTotal <= 0 {
+				// Award negative points - they deserve it
+				secTotal = secMax * -1
+			}
+			s.Tasks[fmt.Sprintf("%v_%v", secAudit, "part1")] = secTotal
+
+			s = updateScoreTotal(s, secAudit)
+
+			scoreWriteBack[doc.Ref.ID] = s
 		}
 
 		// Disable tasks as required
@@ -374,6 +411,15 @@ func act3End(ctx context.Context) {
 			}
 		}
 		err = tx.Set(tasksRef, t)
+
+		// Update scores
+		for k, v := range scoreWriteBack {
+			err = tx.Set(db.Collection("scores").Doc(k), v)
+			if err != nil {
+				return err
+			}
+		}
+
 		if err != nil {
 			return err
 		}

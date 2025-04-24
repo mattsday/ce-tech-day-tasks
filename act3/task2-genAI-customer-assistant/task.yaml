@@ -27,8 +27,9 @@ parts:
     type: image
     max_points: 500
     instructions_link: part1.md
-    upload_text: "Upload a screenshot of the updated Cymbal website with the Vertex Search gadget."
-    llm_instructions: "Verify that the Vertex Search gadget is integrated into the website and that relevant product information is searchable. Ensure no internal sales data is included in the datastore."
+    upload_text: "Upload a screenshot of the Search Widget"
+    llm_instructions: |
+      Verify there is a Vertex AI search app showing plausable results. Do not award partial points and give the benefit of the doubt.
   - name: "Set Up Q&A Agent: Ask the Sauce Oracle 🔮💬"
     id: qna_agent
     type: custom
