@@ -24,9 +24,9 @@ task:
   user_files:
     - source: deploy/notebooks/audio_analysis.ipynb
       destination: audio_analysis.ipynb
-    - source: tasks/act3/task1-call-to-action/recording.ogg
+    - source: tasks/act3/task5-call-to-action/recording.ogg
       destination: recording.ogg
-    - source: tasks/act3/task1-call-to-action/recording.xml
+    - source: tasks/act3/task5-call-to-action/recording.xml
       destination: recording.xml
 parts:
   - name: Tuning into Sentiment 👂
