@@ -20,6 +20,9 @@ task:
   metadata:
     service_name: vertex-ai-colab
     gemini_model: gemini-pro
+    systemPrompt: |
+      The user has submitted their thoughts on how they might further secure the AI components they plan to use with their customers.
+    security_part: security
   group: Act 3
   user_files:
     - source: deploy/notebooks/audio_analysis.ipynb
@@ -46,6 +49,15 @@ parts:
     upload_text: Upload a screenshot showcasing your creative extension of the Colab Enterprise notebook
     llm_instructions: |
       Award points based on the creativity, technical implementation, and relevance to Cymbal Supplements' global expansion. Consider the use of other Google Cloud services like Text-to-Speech for summarizing positive feedback, Imagen for visualizing sentiment trends geographically, or Vertex AI for further analysis (e.g., topic modeling). Look for clear evidence of the implemented extension in the screenshot and the user's description. Encourage solutions that provide actionable insights for the marketing team.
-      
+
       The examples show a minimal notebook - there should be more complex queries and it should not just be sentiment analysis.
     feedback_popup: true
+  - name: Security Quiz! 🔒
+    id: security
+    challenge: true
+    type: text
+    max_points: 100
+    instructions_link: part3.md
+    llm_instructions: |
+      Good answers will include using model armor and other Google Cloud tools. Do not award partial points. Award maximum points if the answer looks correct. Do not mention model armor in your feedback if the user has not mentioned it. Do not give hints to the correct answers.
+    upload_text: Check Your Answer
