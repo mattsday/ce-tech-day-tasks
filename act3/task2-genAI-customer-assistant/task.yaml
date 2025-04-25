@@ -14,8 +14,10 @@ task:
     - "Bryan Johnson's endorsement has caused a surge in global demand."
     - "The sales team needs an automated customer service solution."
     - "Your mission: create a GenAI assistant for their website."
-  # tf_enabled: true
+  tf_enabled: true
   # tf_vars: [enable_vertex_search, enable_model_armor, enable_website]
+  tf_vars:
+    - cymbal_discovery_engine
   metadata:
     data_bucket: cymbal-docs
     website_url: cymbal-supplements.com
