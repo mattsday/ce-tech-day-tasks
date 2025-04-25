@@ -21,6 +21,8 @@ task:
     brand_rival: Chronos Chutney
     negative_claim: "Cymbal Sauce makes time fly instead of rewinding it."
   group: Act 1
+  upload_files:
+    - ../../common/agentspace.md
 parts:
   - name: Register for Agentspace Access 🔑
     id: register
