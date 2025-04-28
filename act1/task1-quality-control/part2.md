@@ -4,9 +4,11 @@ Cymbal Supplements isn't just about reversing age, it's about keeping our custom
 
 ### Task
 
-1. Locate the ingredients store
-2. Take a clear, well-lit picture of all your ingredients laid out nicely. Think food blogger, but with a tech twist.
+1. Locate the ingredients store in the room
+2. Take a clear, well-lit picture of all your ingredients laid out nicely (a Pixel phone takes the best pictures, but use whatever you like 📷).
+   - Think food blogger, but with a tech twist.
 3. Upload that picture directly into your Vertex AI Chat session.
-4. Ask Vertex AI to analyze the image and identify any of the 14 allergens we've flagged. You're not only a Customer Engineer - you're also a Prompt Engineer!
+4. Ask Vertex AI to analyze the image and identify any of the 14 allergens we've flagged.
+   - You're not only a Customer Engineer - you're also a Prompt Engineer!
 5. Take a screenshot of Vertex AI's response, clearly showing the identified allergens you have found.
 6. Make sure the picture of the ingredients is also visible in the screenshot.
