@@ -60,9 +60,10 @@ parts:
     max_points: 1000
     instructions_link: part3.md
     upload_text: Upload a screenshot of your agent configuration and a description of its functionality.
-    llm_instructions: Verify the agent is configured to receive text prompts and analyze visual input (screenshots) to generate marketing campaign ideas for brand protection.
+    llm_instructions: Verify the agent is configured to receive text prompts to generate marketing campaign ideas for brand protection.
     good_examples:
       - examples/part3-1.jpg
+      - examples/part3-2.jpg
     depends_on: [login]
   - name: Test the Brand Defender! 🧪
     id: test_agent

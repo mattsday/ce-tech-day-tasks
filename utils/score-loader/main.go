@@ -137,7 +137,13 @@ func updateScoreTotal(data ScoreSchema, taskId string) ScoreSchema {
 }
 
 type Metadata struct {
-	Version int `yaml:"version"`
+	Version int      `yaml:"version"`
+	Authors []Author `yaml:"authors" firestore:"authors"`
+}
+
+type Author struct {
+	Name  string `yaml:"name" firestore:"name"`
+	Email string `yaml:"email" firestore:"email"`
 }
 
 type Tasks struct {

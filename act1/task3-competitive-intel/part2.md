@@ -4,7 +4,7 @@ Now let's login to the Agentspace Demo!
 
 Access the Cymbal Agentspace environment using one of the following methods:
 
-1. Launch the [Agentspace Environment](https://vertexaisearch.cloud.google.com/u/1/home/cid/6798d158-f8a3-4d67-88ff-27e8005b00bf)
+1. In an **Incognito Tab**, launch the [Agentspace Environment](https://vertexaisearch.cloud.google.com/u/1/home/cid/6798d158-f8a3-4d67-88ff-27e8005b00bf)
 
 ::alert[**Note**: If you recieve an error saying `Configuration is not authorized on "vertexaisearch.cloud.google.com". That's all we know.` then expand below for instructions]{severity=info}
 
