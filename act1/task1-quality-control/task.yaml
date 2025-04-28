@@ -75,7 +75,7 @@ parts:
   - name: "Visual Compliance: Green Light, Go! 🚦"
     id: part4
     type: image
-    max_points: 1500
+    max_points: 1000
     instructions_link: part4.md
     depends_on:
       - part3

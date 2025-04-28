@@ -4,6 +4,8 @@ metadata:
   authors:
     - name: Matt Day
       email: mattsday@google.com
+    - name: Stephanie Anani
+      email: stephanieanani@google.com
 task:
   id: act3-task5
   name: "The Sound of Longevity! 🎶"

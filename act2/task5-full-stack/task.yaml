@@ -43,7 +43,7 @@ parts:
   - name: "[Optional] Code Enhancement: Gemini's Verdict 🧑‍💻"
     id: code_enhancement
     type: image
-    max_points: 750
+    max_points: 1000
     instructions_link: part3.md
     llm_instructions: "The provided examples show the original version of the app without changes. Look for colour differences, major additions, and meaningful changes to the app. The screenshot will not show any use of Gemini Code Assist - so trust that any changes or modifications to the app have been done this way, but it is not important - so long as the app is clearly modified in some way."
     upload_text: "Upload Improved App Screenshot"
