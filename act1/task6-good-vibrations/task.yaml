@@ -1,0 +1,38 @@
+---
+metadata:
+  version: 1
+  authors:
+    - name: Matt Day
+      email: mattsday@google.com
+task:
+  id: act1-task6
+  name: "Virtuous Vibing 💥"
+  enabled: true
+  lb_hidden: false
+  hidden: false
+  description: "Cymbal Supplements needs a sizzling app FAST! Use Firebase Studio to vibe out a new app"
+  overview:
+    - "Cymbal Supplements, the soon-to-be-legendary age-reversing hot sauce company, needs to make a splash online."
+  tf_enabled: false # Firebase Studio is primarily UI-driven for this
+  group: Act 1 # Startups love Firebase!
+parts:
+  - name: "Prompt Your Masterpiece ✨"
+    id: design
+    type: image
+    max_points: 500
+    instructions_link: part1.md
+    upload_text: "Upload a screenshot of Firebase Studio with your generated app"
+    llm_instructions: |
+      Verify the screenshot shows the Firebase Studio interface, a generated webpage that meets the brief. Ensure the prompt is visible. In general give the benefit of the doubt and award maximum points for a correct submission"
+  - name: "Go full vibe 🚀"
+    id: impress
+    type: image
+    max_points: 1500
+    instructions_link: part2.md
+    depends_on: [design]
+    llm_instructions: |
+      The intention of this submission is to create a unique, original, and fun app using vibe coding. Use your interpretation as to what that means, provide candid feedback, and challenge users to submit truly original ideas.
+
+      Don't be afraid to award maximum points for attractive, original, fun apps. It's OK to give partial points too - for example if there are missing areas or room for improvement.
+    feedback_popup: true
+    upload_text: "Upload a screenshot of your killer app"
