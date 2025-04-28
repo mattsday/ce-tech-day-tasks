@@ -4,9 +4,9 @@ metadata:
 event:
   name: CE Tech Day
   logo:
-    path: logo/logo.png
-    width: 192
-    height: 192
+    path: logo/cymbal-supps.webp
+    width: 650
+    height: 650
   intro: welcome/welcome.md
   theme: |
     A Tech Day for UK and Ireland and Sub-Saharan African Google Cloud Customer Engineers to get together and collaborate on various tasks.
