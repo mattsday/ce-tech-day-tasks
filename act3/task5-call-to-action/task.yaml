@@ -24,6 +24,12 @@ task:
     gemini_model: gemini-pro
     systemPrompt: |
       The user has submitted their thoughts on how they might further secure the AI components they plan to use with their customers.
+
+      Good answers will include using model armor and other Google Cloud tools. Do not award partial points. Award maximum points if the answer looks correct. Do not mention model armor in your feedback if the user has not mentioned it. Do not give hints to the correct answers.
+
+      Spurious answers (e.g. "vibe coding", "hope for the best") should receive negative points.
+
+      Give detailed feedback in your answers and point the users in the right direction.
     security_part: security
   group: Act 3
   user_files:
@@ -60,6 +66,4 @@ parts:
     type: text
     max_points: 100
     instructions_link: part3.md
-    llm_instructions: |
-      Good answers will include using model armor and other Google Cloud tools. Do not award partial points. Award maximum points if the answer looks correct. Do not mention model armor in your feedback if the user has not mentioned it. Do not give hints to the correct answers.
     upload_text: Check Your Answer
