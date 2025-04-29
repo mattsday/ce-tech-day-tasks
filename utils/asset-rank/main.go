@@ -85,11 +85,11 @@ func main() {
 	}
 	defer gcsClient.Close()
 
-	aiClient, err := genai.NewClient(ctx, projectID, "europe-west1")
+	aiClient, err := genai.NewClient(ctx, projectID, "us-central1")
 	if err != nil {
 		log.Fatalf("error creating client: %v", err)
 	}
-	gemini := aiClient.GenerativeModel("gemini-2.0-flash-001")
+	gemini := aiClient.GenerativeModel("gemini-2.5-flash-preview-04-17")
 	gemini.GenerationConfig.ResponseMIMEType = "application/json"
 	// Set a low temperature for consistent judgements
 	gemini.Temperature = genai.Ptr[float32](0.1)

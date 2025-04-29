@@ -7,7 +7,7 @@ Now it's time to put your AI Hypercomputer to work! You'll be running a Python p
 2. **Copy the Slurm Submission Script:**
    - Copy the provided slurm script that executes the `optimising_elixir.py` to the Slurm Login Node
 3. **Submit the Job:**
-   - Submit the Slurm job to the cluster.
+   - Submit the Slurm job to the cluster (check the docs or Gemini to find out how!)
 4. **Verification:**
    - Once the job has run, run the results collection tool to determine the best pepper combination for optimal youthfulness!
 

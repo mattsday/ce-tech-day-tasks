@@ -3,9 +3,15 @@ Before running the complex AI optimisation program, you need to verify that your
 ### Task
 
 1. **Login to your controller:**
-    * Check out the [Quickstart guide](https://cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster#run_a_job_on_the_hpc_cluster) for instructions on how to login to your slurm controller
+    * You completed this in the previous step. You can run this command to get back in:
+
+```bash
+gcloud compute ssh hpcslurm-slurm-login-001 --tunnel-through-iap --zone "%%LOCATION%%-b" --project %%CLIENT_PROJECT_ID%%
+```
+
 2. **Create a Simple Slurm Script:**
     * Write a Slurm script that prints the hostname of the compute node it runs on.
+    * The [Quickstart guide](https://cloud.google.com/cluster-toolkit/docs/quickstarts/slurm-cluster#run_a_job_on_the_hpc_cluster) and/or Gemini will definitely help you here!
 3. **Submit the Job:**
     * Submit the script to the Slurm cluster.
 4. **Verification:**

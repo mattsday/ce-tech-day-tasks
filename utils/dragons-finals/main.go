@@ -159,7 +159,7 @@ func main() {
 		fbVerdict := make(map[string]Verdict)
 		apVerdict := make(map[string]Appointments)
 
-		appointments := []string{"16:10", "16:18", "16:27", "16:35", "16:43"}
+		appointments := []string{"15:55", "16:05", "16:15", "16:25", "16:35"}
 
 		a := 0
 

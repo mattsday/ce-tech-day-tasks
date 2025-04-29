@@ -197,7 +197,7 @@ func end(ctx context.Context) {
 // End Act 1 - disable all tasks and score the consequences task in act 2
 func act1End(ctx context.Context) {
 	// Allow list to keep
-	allowList := []string{"act1-task2"}
+	allowList := []string{"act1-task2", "act1-task2", "act1-task3", "act1-task6"}
 	blockList := []string{}
 	disableGroups := []string{"Act 1"}
 	enableGroups := []string{"Act 2"}
@@ -283,7 +283,8 @@ func act1End(ctx context.Context) {
 
 func act2End(ctx context.Context) {
 	// Allow list to keep
-	allowList := []string{"act1-task2"}
+	// allowList := []string{"act1-task2"}
+	allowList := []string{"act1-task1", "act1-task2", "act1-task2", "act1-task3", "act1-task6", "act2-task3", "act2-task4", "act2-task5", "act2-task6"}
 	blockList := []string{}
 	disableGroups := []string{"Act 1", "Act 2"}
 	enableGroups := []string{"Act 3"}

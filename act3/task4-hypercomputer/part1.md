@@ -1,15 +1,29 @@
-Cymbal Supplements has a mountain of data that needs processing to perfect the Inferno Elixir. To handle this massive workload, you need to deploy a high-performance computing cluster using [Google Cloud's Cluster Toolkit](https://cloud.google.com/cluster-toolkit/docs/overview).
+Cymbal Supplements has a mountain of data that needs processing to perfect the Inferno Elixir. To handle this massive workload, you need to deploy a high-performance computing cluster using [Google Cloud's Cluster Toolkit](https://cloud.google.com/cluster-toolkit/docs/overview). We've saved you a job and pre-installed this onto your workstation 💪.
 
 This cluster will be the foundation for your **AI Hypercomputer**, enabling you to analyse chili pepper varieties, fermentation times, customer feedback, and genetic markers.
 
 ### Task
 
-1. **Deploy a Slurm Cluster:**
-    * [Open your Cloud Workstation](https://console.cloud.google.com/workstations/overview) and use the provided Cluster Toolkit and YAML blueprint to deploy a Slurm cluster.
-    * Ensure the cluster has sufficient compute resources to handle the upcoming AI workload.
-2. **Verification:**
-    * Provide a screenshot of the Slurm login screen. You should be able to navigate to your instance in the GCE console and ssh into it.
-    * Login to your cluster with the following command:
+1. Open Cloud Workstations and start your instance: [Cloud Workstations](https://console.cloud.google.com/workstations/overview?project=%%CLIENT_PROJECT_ID%%).
+2. Inside workstations, select **Open Folder** and select **cluster-toolkit**
+3. Select the menu in the top-left and select **Terminal --> New Terminal**
+4. You can now use the `gcluster` command to deploy a cluster! Use the below deployment file and [the documentation](https://cloud.google.com/cluster-toolkit/docs/overview) to get started!
+5. Read teh tips below if you get stuck
+
+#### Deployment File
+
+Expand the below to view your deployment specification to get you started
+
+:::collapse{title="Show deployment.yaml"}
+
+::rawfile{file=deployment.yaml type=code language=yaml}
+
+:::
+
+### Verification
+
+* Provide a screenshot of the Slurm login screen. You should be able to navigate to your instance in the GCE console and ssh into it.
+* Login to your cluster with the following command:
 
 ```bash
 gcloud compute ssh hpcslurm-slurm-login-001 --tunnel-through-iap --zone "%%LOCATION%%-b" --project %%CLIENT_PROJECT_ID%%
@@ -29,12 +43,3 @@ gcloud auth login
 gcloud auth application-default login
 ```
 
-#### Deployment File
-
-Expand the below to view your deployment specification to get you started
-
-:::collapse{title="Show deployment.yaml"}
-
-::rawfile{file=deployment.yaml type=code language=yaml}
-
-:::
