@@ -26,3 +26,5 @@ Tasks can be completed in **any order** - and new tasks will be added as your bu
 This platform powered by [Google Cloud](https://cloud.google.com/) and [Gemini 2.0 Flash](https://deepmind.google/technologies/gemini/flash/).
 
 Are you ready to earn points to impress Judge Gemini? 🧑‍⚖
+
+Well done for reading this far. Follow the link to have [some bonus points](https://ce.hacksday.io/qr/cymbal-secrets/welcome?key=9e54d07e-257e-11f0-b371-00163e0445b1) for your trouble.
